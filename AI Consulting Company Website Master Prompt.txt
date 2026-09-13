@@ -1,0 +1,1103 @@
+================================================================================
+MASTER PROMPT: BUILD A USA-BASED AI CONSULTING COMPANY & WEBSITE
+================================================================================
+File:            AI Consulting Company Website Master Prompt.txt
+Project owner:   indiawork102@gmail.com
+Created:         2026-09-10
+Status:          v1.0 — ACTIVE. This is the single source of truth.
+Working dir:     C:\Users\home\WORK\sts
+
+HOW TO USE THIS FILE
+--------------------
+Part A (below) is the master prompt, stored verbatim. Feed Part A to any capable
+model to regenerate the entire company concept and website from scratch.
+Part B is the build record: decisions made, files produced, and open items.
+================================================================================
+
+
+################################################################################
+#                                                                              #
+#   PART A — THE MASTER PROMPT (VERBATIM)                                      #
+#                                                                              #
+################################################################################
+
+# MASTER PROMPT: BUILD A USA-BASED AI CONSULTING COMPANY & WEBSITE
+
+## ROLE
+
+Act as an expert **AI Business Consultant, AI/ML Technical Architect, U.S. Technology Recruiter, AI Training Strategist, Business Analyst, UX/UI Designer, Website Developer, SEO Specialist, and Digital Marketing Strategist.**
+
+Your task is to research, design, and create a professional **USA-based AI Consulting, AI Solutions, AI Training, and AI Talent company**, along with a complete modern website.
+
+The company should be designed as a scalable business that can serve **businesses, startups, enterprises, professionals, students, and organizations in the USA and worldwide.**
+
+---
+
+# 1. COMPANY CONCEPT
+
+Create an AI company whose primary purpose is:
+
+> **"We help businesses identify, solve, implement, and manage their AI-related problems."**
+
+Clients can approach the company whenever they have an AI-related business or technology problem.
+
+We will:
+
+* Understand the client's problem
+* Analyze the requirements
+* Identify the appropriate AI solution
+* Provide AI consultants and engineers
+* Develop and implement the solution
+* Test and deploy the solution
+* Train the client's employees
+* Provide ongoing support
+* Provide AI professionals on contract when required
+
+The company should operate as a **one-stop AI services and talent platform.**
+
+---
+
+# 2. MAIN BUSINESS AREAS
+
+Build the company around these major divisions:
+
+### A. AI CONSULTING
+
+Help organizations with:
+
+* AI strategy
+* AI transformation
+* AI adoption
+* Generative AI
+* Machine Learning
+* AI automation
+* AI agents
+* AI architecture
+* AI integration
+* AI governance
+* AI implementation
+
+### B. AI SOLUTIONS & DEVELOPMENT
+
+Develop customized solutions such as:
+
+* Generative AI applications
+* AI chatbots
+* AI assistants
+* AI agents
+* LLM applications
+* RAG systems
+* Machine Learning solutions
+* Predictive analytics
+* Computer Vision
+* NLP
+* AI automation
+* AI-powered SaaS applications
+* API integrations
+
+### C. AI TRAINING & ACADEMY
+
+Create an online AI Academy serving people worldwide.
+
+Training should be divided into:
+
+**Beginner -> Intermediate -> Advanced**
+
+Courses may include:
+
+* AI Fundamentals
+* Generative AI
+* Prompt Engineering
+* Python for AI
+* Machine Learning
+* Deep Learning
+* NLP
+* LLMs
+* RAG
+* AI Agents
+* AI Engineering
+* MLOps
+* AI Architecture
+* AI Security
+* Enterprise AI
+
+Provide:
+
+* Online courses
+* Live instructor-led training
+* Self-paced courses
+* Workshops
+* Bootcamps
+* Corporate training
+* Customized enterprise training
+
+---
+
+# 3. ONLINE AI TESTING & ASSESSMENT
+
+Create an online AI assessment platform.
+
+Users should be able to test their knowledge in:
+
+* AI
+* Generative AI
+* Python
+* Machine Learning
+* LLMs
+* Prompt Engineering
+* AI Engineering
+* MLOps
+* AI Agents
+* AI Architecture
+
+Create assessments for:
+
+* Beginner
+* Intermediate
+* Advanced
+
+After completing an assessment, provide:
+
+* Score
+* Skill level
+* Strengths
+* Skill gaps
+* Recommended courses
+* Recommended career path
+
+---
+
+# 4. AI CAREER DEVELOPMENT
+
+Create an AI Career Center where people can:
+
+* Learn AI
+* Take assessments
+* Improve their skills
+* Build AI projects
+* Prepare resumes
+* Prepare for interviews
+* Take mock interviews
+* Practice interview questions
+* Build portfolios
+* Find AI job opportunities
+
+Include career paths such as:
+
+**AI Engineer -> Senior AI Engineer -> Staff AI Engineer -> Principal AI Engineer -> AI Architect -> Director of AI -> VP of AI -> Chief AI Officer**
+
+Also include:
+
+* ML Engineer
+* Data Scientist
+* MLOps Engineer
+* AI Solutions Architect
+* Generative AI Engineer
+* AI Agent Engineer
+* AI Research Engineer
+* AI Product Manager
+* AI Security Engineer
+
+---
+
+# 5. AI TALENT & RECRUITMENT
+
+Create a separate **AI Talent Solutions** division.
+
+The company should identify, assess, train, and recruit AI professionals.
+
+The process should be:
+
+**Candidate Registration**
+|
+**Skill Assessment**
+|
+**Technical Evaluation**
+|
+**Training / Upskilling**
+|
+**Interview**
+|
+**Candidate Profile**
+|
+**Match With Client Requirements**
+|
+**Contract or Full-Time Placement**
+
+Recruit and provide professionals such as:
+
+* AI Engineers
+* ML Engineers
+* Data Scientists
+* MLOps Engineers
+* AI Developers
+* AI Architects
+* AI Technical Leads
+* AI Project Managers
+* AI Directors
+* AI specialists
+
+---
+
+# 6. AI CONTRACT SERVICES
+
+Provide AI professionals and teams to companies on:
+
+* Short-term contracts
+* Long-term contracts
+* Project-based contracts
+* Staff augmentation
+* Dedicated AI teams
+* AI implementation projects
+* AI maintenance and support
+
+Clients should be able to submit:
+
+**"I need an AI professional/team for my project."**
+
+The company then evaluates the requirement and provides suitable professionals.
+
+---
+
+# 7. CLIENT PROBLEM-SOLVING MODEL
+
+Create a prominent website feature called:
+
+## "SOLVE MY AI PROBLEM"
+
+The client submits:
+
+* Company name
+* Industry
+* Business problem
+* Current technology
+* AI requirement
+* Desired outcome
+* Timeline
+* Budget range
+* Type of support required
+
+Options:
+
+[ ] AI Consulting
+[ ] AI Development
+[ ] AI Automation
+[ ] AI Agent
+[ ] AI Training
+[ ] AI Engineer
+[ ] AI Team
+[ ] Contract Staffing
+[ ] Recruitment
+[ ] AI Support
+
+After submission, the company reviews the requirement and recommends the appropriate service.
+
+---
+
+# 8. AI PROJECT DELIVERY PROCESS
+
+Show a clear visual process:
+
+### 01 — DISCOVER
+
+Understand the client's business problem.
+
+### 02 — ASSESS
+
+Analyze the data, technology, requirements, risks, and feasibility.
+
+### 03 — DESIGN
+
+Create the AI solution and architecture.
+
+### 04 — BUILD
+
+Develop and test the AI solution.
+
+### 05 — DEPLOY
+
+Implement the solution in the client's environment.
+
+### 06 — TRAIN
+
+Train the client's employees.
+
+### 07 — SUPPORT
+
+Provide ongoing maintenance and AI expertise.
+
+### 08 — SCALE
+
+Improve and expand the AI solution as the business grows.
+
+---
+
+# 9. INDUSTRIES
+
+Create AI solutions for industries including:
+
+* Healthcare
+* Banking
+* Financial Services
+* Insurance
+* Retail
+* E-commerce
+* Manufacturing
+* Technology
+* SaaS
+* Education
+* Real Estate
+* Logistics
+* Telecommunications
+* Professional Services
+* Government
+
+Do not make unsupported claims about regulatory approvals or compliance.
+
+---
+
+# 10. REVENUE MODEL
+
+Design multiple legitimate revenue streams:
+
+### AI Consulting
+
+Charge clients for consulting and advisory services.
+
+### AI Development
+
+Charge for AI projects and implementations.
+
+### AI Contracts
+
+Generate revenue from project-based and long-term contracts.
+
+### AI Training
+
+Generate revenue from individual and corporate training.
+
+### Online Courses
+
+Sell AI courses and learning programs.
+
+### Assessments
+
+Offer paid assessments, certifications, or evaluation services where appropriate.
+
+### Recruitment
+
+Generate recruitment fees for successful placements.
+
+### Contract Staffing
+
+Generate revenue through AI professionals placed on client projects.
+
+### Managed AI Services
+
+Offer recurring monthly AI support and maintenance.
+
+### AI Products
+
+Eventually develop proprietary AI software/SaaS products.
+
+Do not make unrealistic or guaranteed revenue claims.
+
+---
+
+# 11. WEBSITE STRUCTURE
+
+Create a professional website with the following navigation:
+
+**Home | About | AI Consulting | AI Solutions | AI Development | AI Agents | AI Training | AI Academy | AI Assessments | AI Careers | AI Talent | Contract Services | Industries | Case Studies | Resources | Blog | Contact**
+
+---
+
+# 12. HOMEPAGE
+
+The homepage should immediately explain what the company does.
+
+### HERO HEADLINE
+
+**"Solve Your Business Problems with AI."**
+
+### SUBHEADING
+
+**"AI consulting, development, training, and talent solutions that help organizations turn AI challenges into practical business solutions."**
+
+Primary CTA:
+
+**Solve My AI Problem**
+
+Secondary CTAs:
+
+**Talk to an AI Expert**
+
+**Explore AI Services**
+
+**Learn AI**
+
+**Hire AI Talent**
+
+---
+
+# 13. AI TECHNOLOGY AREAS
+
+Show the areas of expertise:
+
+### Generative AI
+
+LLMs, RAG, embeddings, fine-tuning, AI applications
+
+### AI Agents
+
+Agentic AI, autonomous workflows, multi-agent systems
+
+### Machine Learning
+
+Predictive analytics, classification, recommendation systems
+
+### NLP
+
+Text analysis, language applications, conversational AI
+
+### Computer Vision
+
+Image analysis, video analysis, visual AI
+
+### AI Automation
+
+Business workflow and process automation
+
+### MLOps
+
+Model deployment, monitoring, CI/CD and AI infrastructure
+
+### AI Architecture
+
+Enterprise AI architecture and solution design
+
+### Responsible AI
+
+AI governance, risk, security, privacy and evaluation
+
+---
+
+# 14. AI ADVISOR
+
+Add an AI-powered website assistant called:
+
+## "AI Advisor"
+
+It should help visitors determine what type of AI service they may need.
+
+The assistant can ask:
+
+1. What business problem are you trying to solve?
+2. What industry are you in?
+3. What technology are you currently using?
+4. Do you need consulting, development, training, or talent?
+5. What is your expected timeline?
+
+Then recommend an appropriate service.
+
+Clearly state that the AI Advisor provides preliminary guidance and that a human consultant will review actual project requirements.
+
+---
+
+# 15. CLIENT PORTAL
+
+Design a future client portal containing:
+
+* Client dashboard
+* Projects
+* Project status
+* Proposals
+* Contracts
+* Documents
+* Invoices
+* Support tickets
+* Training progress
+* Communication
+
+---
+
+# 16. STUDENT PORTAL
+
+Create a student dashboard with:
+
+* Courses
+* Lessons
+* Videos
+* Assignments
+* Tests
+* Mock exams
+* Certificates
+* Skill assessments
+* Learning progress
+* Recommended courses
+* Career roadmap
+
+---
+
+# 17. AI PROFESSIONAL / TALENT PORTAL
+
+Create a professional dashboard containing:
+
+* Candidate profile
+* Resume
+* Skills
+* Certifications
+* Assessment scores
+* Portfolio
+* Experience
+* Availability
+* Preferred roles
+* Contract preferences
+* Interview status
+* Client opportunities
+
+---
+
+# 18. ADMIN DASHBOARD
+
+Create an internal administration system for:
+
+* Leads
+* Clients
+* Candidates
+* Students
+* Projects
+* Courses
+* Assessments
+* Contracts
+* Recruitment
+* Invoices
+* Support
+* Analytics
+
+---
+
+# 19. CASE STUDIES
+
+Create case-study templates showing:
+
+**Problem -> Analysis -> AI Solution -> Implementation -> Technology -> Result**
+
+Use only genuine client information for real case studies.
+
+Until real projects exist, clearly label examples as:
+
+**"Illustrative Example"**
+
+Never create fake clients, fake testimonials, fake revenue, fake statistics, or fake partnerships.
+
+---
+
+# 20. WEBSITE DESIGN
+
+The website should look like a premium U.S. technology company.
+
+Design style:
+
+* Modern
+* Professional
+* Enterprise-grade
+* Clean
+* Futuristic
+* Trustworthy
+* Minimal
+* High-quality typography
+* Subtle animations
+* Professional AI graphics
+* Mobile responsive
+
+Avoid excessive futuristic effects, generic robot images, fake statistics, and exaggerated claims.
+
+---
+
+# 21. SEO
+
+Optimize the website for searches such as:
+
+* AI consulting company USA
+* AI consulting services
+* AI consultant USA
+* Generative AI consulting
+* AI development company
+* AI solutions company
+* AI automation company
+* AI agent development
+* Enterprise AI consulting
+* AI training
+* AI courses
+* AI recruitment
+* AI staffing
+* AI engineers for hire
+* AI contract engineers
+
+Create:
+
+* SEO page titles
+* Meta descriptions
+* Keywords
+* Structured headings
+* Internal linking
+* FAQ sections
+* Schema markup
+* Search-friendly content
+
+---
+
+# 22. COMPETITOR RESEARCH
+
+Before designing the final website, research leading U.S. AI consulting and technology companies.
+
+Study companies such as:
+
+* Accenture
+* IBM Consulting
+* Deloitte
+* McKinsey / QuantumBlack
+* BCG / BCG X
+* PwC
+* Slalom
+* Other leading AI consulting and AI engineering companies
+
+Analyze their:
+
+* Website structure
+* Services
+* AI offerings
+* Target customers
+* Positioning
+* Content strategy
+* Navigation
+* Calls-to-action
+* Training offerings
+* Consulting model
+* Talent model
+* Case-study presentation
+* User experience
+
+Do **not copy their website, branding, content, designs, logos, or copyrighted material.**
+
+Use the research only to identify best practices and opportunities for differentiation.
+
+---
+
+# 23. DIFFERENTIATION
+
+Our company should differentiate itself by combining:
+
+**AI CONSULTING**
++
+**AI DEVELOPMENT**
++
+**AI TRAINING**
++
+**AI ASSESSMENT**
++
+**AI TALENT**
++
+**AI CONTRACT SERVICES**
+
+The central concept should be:
+
+> **"One AI partner from problem identification to solution implementation, training, and talent."**
+
+---
+
+# 24. TRUST & LEGAL ACCURACY
+
+Do not invent:
+
+* Clients
+* Employees
+* Certifications
+* Partnerships
+* Revenue
+* Awards
+* Testimonials
+* Office locations
+* Government contracts
+* Technology partnerships
+
+Use placeholders where necessary:
+
+[COMPANY NAME]
+
+[FOUNDER NAME]
+
+[BUSINESS EMAIL]
+
+[PHONE]
+
+[BUSINESS ADDRESS]
+
+[STATE OF INCORPORATION]
+
+[DOMAIN]
+
+Recommend verification of:
+
+* U.S. business registration
+* USPTO trademark availability
+* Domain availability
+* State business-name availability
+* Privacy requirements
+* Contracts
+* Recruitment/staffing regulations
+* Applicable tax and employment requirements
+
+Recommend consulting a qualified U.S. attorney and CPA before launching the business.
+
+---
+
+# 25. BRANDING
+
+Generate 20 possible company names that sound:
+
+* Professional
+* U.S.-based
+* Global
+* Innovative
+* Enterprise-focused
+* Trustworthy
+* AI/technology-oriented
+
+For each name, provide:
+
+* Meaning
+* Brand positioning
+* Suggested tagline
+* Domain-name idea
+
+Do not assume a domain or trademark is available. Recommend checking actual availability before selecting the final name.
+
+---
+
+# 26. FINAL WEBSITE MESSAGE
+
+The website should communicate this simple idea:
+
+> **"Bring us your AI challenge. We provide the expertise, technology, training, and talent to help you solve it."**
+
+The company should ultimately become an integrated ecosystem where:
+
+**Businesses -> Bring AI Problems**
+
+**Consultants -> Analyze Problems**
+
+**AI Engineers -> Build Solutions**
+
+**Trainers -> Upskill People**
+
+**Assessments -> Measure Skills**
+
+**Talent Team -> Identify Professionals**
+
+**Recruitment -> Connect Talent With Clients**
+
+**Contracts -> Deliver AI Professionals & Projects**
+
+**Support -> Maintain & Scale Solutions**
+
+---
+
+# FINAL INSTRUCTION
+
+Create the complete website concept based on this business model.
+
+The output should include:
+
+1. Company concept
+2. Recommended company names
+3. Tagline
+4. Brand positioning
+5. Complete website architecture
+6. Homepage content
+7. All major service pages
+8. AI Academy
+9. AI assessments
+10. AI Career Center
+11. AI Talent & Recruitment
+12. AI Contract Services
+13. Client portal
+14. Student portal
+15. Talent portal
+16. Admin dashboard
+17. AI Advisor chatbot
+18. Lead-generation strategy
+19. Revenue model
+20. SEO strategy
+21. Competitor analysis
+22. Website UI/UX design
+23. Mobile design
+24. Legal/trust considerations
+25. Future scalability plan
+
+Build the company as a **credible, scalable USA-based AI consulting and technology business**, with the long-term potential to serve clients and AI professionals globally.
+
+
+################################################################################
+#                                                                              #
+#   PART B — BUILD RECORD                                                      #
+#                                                                              #
+################################################################################
+
+B.1 — DELIVERABLES PRODUCED FROM THIS PROMPT
+--------------------------------------------------------------------------------
+  01  AI Consulting Company Website Master Prompt.txt   <- this file
+  02  COMPANY-CONCEPT-AND-STRATEGY.md                   Items 1-25 of the
+                                                        FINAL INSTRUCTION list:
+                                                        names, positioning,
+                                                        architecture, portals,
+                                                        revenue, SEO, competitor
+                                                        analysis, legal, scale
+  03  index.html                                        The website. Single
+                                                        self-contained file,
+                                                        no build step, no
+                                                        frameworks.
+
+
+B.2 — NAME DECISION
+--------------------------------------------------------------------------------
+  20 candidate names are in COMPANY-CONCEPT-AND-STRATEGY.md Section 2.
+  Working name used throughout the build:  NORTHKEY AI
+  Tagline:                                 "From AI problem to AI outcome."
+
+  NORTHKEY AI IS A PROPOSAL, NOT A CLEARED NAME.
+  Before any public use, verify:
+    [ ] USPTO trademark search (TESS) - classes 042 and 035
+    [ ] Domain availability (.com primary, .ai secondary)
+    [ ] Secretary of State business-name availability in the incorporation state
+    [ ] Common-law use search (Google, LinkedIn, Crunchbase, GitHub)
+    [ ] Social handle availability
+  If NORTHKEY AI is unavailable, the name is a single find-and-replace in
+  index.html and the strategy document. Nothing else changes.
+
+
+B.3 — TRUST RULES ENFORCED IN THE BUILD (from Section 24)
+--------------------------------------------------------------------------------
+  The following are NOT present anywhere in the generated website:
+    - Invented client names
+    - Invented testimonials or quotes
+    - Invented employee names, headcounts, or bios
+    - Invented certifications (no SOC 2, ISO, HIPAA badge claims)
+    - Invented technology partnerships or partner logos
+    - Invented revenue, funding, or award claims
+    - Invented office addresses or phone numbers
+    - Invented performance statistics presented as real client results
+
+  Every factual slot is a bracketed placeholder: [COMPANY NAME], [FOUNDER NAME],
+  [BUSINESS EMAIL], [PHONE], [BUSINESS ADDRESS], [STATE OF INCORPORATION],
+  [DOMAIN], [FOUNDED YEAR], [TEAM SIZE].
+
+  All case studies carry a visible "ILLUSTRATIVE EXAMPLE" badge and an explicit
+  disclaimer that they describe solution patterns, not delivered client work.
+
+  Pricing figures are labeled as indicative planning ranges, not quotes.
+
+
+B.4 — DESIGN DECISIONS
+--------------------------------------------------------------------------------
+  Direction:  "Technical document, premium print." Enterprise-credible,
+              editorial, numerate. Deliberately NOT the default AI-startup look.
+  Ground:     Warm bone paper (#F4F2EC) light / deep graphite (#0E1114) dark
+  Ink:        #0F1216
+  Accent 1:   Deep pine green #1C5D4A  (primary accent, used sparingly)
+  Accent 2:   Burnt orange #C0521B     (single-use signal accent)
+  Display:    Newsreader (editorial serif, variable)
+  Body/UI:    Instrument Sans (grotesk with character - NOT Inter/Roboto)
+  Mono:       IBM Plex Mono (section numbers, labels, metrics)
+  Devices:    Numbered sections, hairline rules, sharp corners, asymmetric
+              splits, generous vertical rhythm, subtle paper grain.
+  Banned:     Purple/blue gradients, glassmorphism, glowing orbs, neural-net
+              hero art, robot imagery, stock photos, neon-on-black.
+  Motion:     One staggered page-load reveal + IntersectionObserver scroll
+              reveals. Fully disabled under prefers-reduced-motion.
+  Themes:     Light + dark, via prefers-color-scheme and a persistent toggle.
+  A11y:       WCAG 2.2 AA target, semantic landmarks, visible focus rings,
+              full keyboard operation, no horizontal page scroll.
+
+
+B.5 — WORKING FEATURES IN index.html (not mockups)
+--------------------------------------------------------------------------------
+  [x] AI Advisor - 5-question rule-based recommender with scored routing to a
+      service, plus the required "preliminary guidance only" disclaimer
+  [x] Sample AI Assessment - 8 scored questions, returns score, skill level,
+      strengths, skill gaps, recommended courses, recommended career path
+  [x] SOLVE MY AI PROBLEM - full 9-field intake form with client-side
+      validation and a service-type multi-select
+  [x] AI Academy - Beginner / Intermediate / Advanced curriculum tabs
+  [x] Career ladder - interactive AI career path explorer
+  [x] Theme toggle with localStorage persistence
+  [x] Mobile navigation
+  [x] JSON-LD ProfessionalService + FAQPage structured data
+
+
+B.6 — OPEN ITEMS BEFORE LAUNCH
+--------------------------------------------------------------------------------
+  LEGAL & CORPORATE
+    [ ] Choose and clear the company name (see B.2)
+    [ ] Incorporate - entity type and state chosen with a U.S. attorney and CPA
+    [ ] EIN, business bank account, business insurance (E&O / professional
+        liability is essential for consulting; add cyber liability)
+    [ ] MSA, SOW, NDA, and IP-assignment templates - attorney drafted
+    [ ] Staffing/recruitment: confirm state-level agency licensing where it
+        applies, worker-classification (W-2 vs 1099) rules, and co-employment
+        exposure for staff augmentation. This is the highest-risk division.
+    [ ] Training/education: check whether the state treats paid instruction as
+        a regulated private career school
+    [ ] Privacy policy, terms of service, cookie notice, CCPA/CPRA and other
+        state privacy compliance, GDPR if serving EU learners
+    [ ] Accessibility statement (ADA/WCAG exposure on public sites)
+    [ ] Do not publish any certification, partnership, or compliance claim that
+        has not actually been earned
+
+  PRODUCT & CONTENT
+    [ ] Replace every bracketed placeholder with real information
+    [ ] Replace illustrative case studies with real, client-approved ones
+    [ ] Record and publish the first 3 Academy courses
+    [ ] Build the real assessment item bank (target 60+ items per track,
+        psychometrically reviewed before any certification claim)
+    [ ] Write the 12 launch blog articles targeting the SEO map
+
+  TECHNICAL
+    [ ] Wire forms to a backend / CRM (HubSpot or Zoho) + email notification
+    [ ] Add spam protection (honeypot is in place; add rate limiting server-side)
+    [ ] Privacy-first analytics (Plausible or Fathom rather than GA4)
+    [ ] Custom domain, HTTPS, CDN
+    [ ] Replace the rule-based AI Advisor with a real LLM-backed advisor once a
+        backend exists - keep the human-review disclaimer either way
+    [ ] Build the four portals (client, student, talent, admin) - specs are in
+        COMPANY-CONCEPT-AND-STRATEGY.md Sections 13-16
+
+  DISCLAIMER
+    Nothing in these files is legal, tax, or financial advice. Engage a
+    qualified U.S. attorney and CPA before operating.
+
+
+B.7 — v2 REVISION: COMPETITOR RESEARCH APPLIED (2026-09-10)
+--------------------------------------------------------------------------------
+  Section 22 of the master prompt was executed: 18 leading AI consulting,
+  AI development, and AI talent websites were fetched and analysed directly,
+  with a further 7 covered via market listings. Full findings, the sources,
+  and the reasoning behind every change are in COMPETITOR-RESEARCH.md.
+
+  No competitor content, copy, design, branding, or code was reproduced.
+
+  ADDED TO index.html
+    [x] AI Maturity Assessment  - working 6-question business-facing tool.
+        Returns maturity level 1-5, a scored six-dimension profile, the
+        BINDING CONSTRAINT (weakest dimension), and a fitting engagement.
+        Only 2 of 18 competitors offer anything comparable.
+    [x] The NorthKey Method     - the 8 delivery phases are now branded and
+        compressed into three beats: Prove -> Produce -> Pass on.
+    [x] Engagements & pricing   - a full published table. ZERO of the 18
+        sites reviewed publish any price. This is the clearest gap found.
+    [x] "What we don't claim"   - names the analyst badges, certifications,
+        client logos, partner tiers and statistics we do NOT have, and what
+        to judge instead. Inverts the universal badge-wall pattern and turns
+        the Section 24 trust rules into the primary differentiator.
+    [x] Accelerators            - six named reusable components, delivered
+        into the client repo under the client licence with no separate fee.
+    [x] Commitments band        - replaces the invented-stat bar every
+        competitor runs with six commitments that are true by construction.
+    [x] Industries explorer     - interactive; 15 sectors, each with six
+        typical use cases and the constraint that usually blocks them.
+    [x] "Hire [role]" grid      - 15 high-intent entries for the long-tail
+        search play that the AI development companies use effectively.
+    [x] Resources & insights    - 8 assets including a signature annual
+        publication concept, each marked honestly as planned or live.
+    [x] Leadership placeholders - the slots every competitor fills with real
+        named people, left visibly empty until they hold real names.
+    [x] Free-tools route in the hero and a "Free tools" nav group.
+
+  STRUCTURAL
+    [x] Section numbers are now computed at runtime in DOM order, so
+        inserting or reordering a section never requires renumbering.
+    [x] Section count 19 -> 23. All anchors verified, no broken targets.
+
+  DELIBERATELY NOT ADOPTED
+    Client logo walls, analyst badge grids, partner tier claims, round-number
+    statistics, gated PDF downloads, auto-rotating carousels, and chat
+    widgets. Reasons are recorded in COMPETITOR-RESEARCH.md Section 7.
+
+  ONGOING OBLIGATION
+    The "What we don't claim" section is only credible while it stays true.
+    When SOC 2, a real case study, a partner enrolment, or a genuine metric
+    is earned, that section must be updated honestly - not quietly deleted.
+
+B.8 — DELIVERABLES (UPDATED)
+--------------------------------------------------------------------------------
+  01  AI Consulting Company Website Master Prompt.txt   this file
+  02  COMPANY-CONCEPT-AND-STRATEGY.md                   outputs 1-25
+  03  COMPETITOR-RESEARCH.md                            Section 22 research
+  04  index.html                                        the website, v2
+
+
+B.9 — v3 REVISION: 50-FIRM RESEARCH + SELF-UPDATING AI BRIEFING
+--------------------------------------------------------------------------------
+  Research widened from ~25 to ~50 firms. 28 sites were fetched and
+  analysed directly; the remainder covered via market listings. Round 2
+  added RTS Labs, Grid Dynamics, SoftServe, Addepto, Xebia, Valtech, and
+  - importantly - the ACADEMY and ASSESSMENT competitors that NorthKey
+  also competes with but that round 1 had missed: DataCamp for Business,
+  Coursera for Business, HackerRank and CodeSignal.
+
+  Full findings and sources: COMPETITOR-RESEARCH.md sections 8-10.
+
+  CONFIRMED ACROSS ~28 DIRECTLY-INSPECTED SITES
+    - STILL zero firms publish pricing. Not one. Most durable gap found.
+    - Analyst badges, partner grids, client logos and round-number
+      metrics remain near-universal.
+    - Nobody states what they cannot do.
+    - Nobody publishes anything on their site that changes daily.
+
+  ADDED TO index.html
+    [x] AI BRIEFING - a daily self-updating column. Three tiers:
+        A. window.NORTHKEY_NEWS_ENDPOINT - a real feed the company hosts.
+           JSON: {generatedAt, items:[{topic,title,detail,action,url,
+           source}]}. Wins when set. Used by the self-hosted site.
+        B. Artifact runtime - `db` caches ONE briefing per day at
+           briefing/current; `sample` generates it. First visitor of the
+           day refreshes it for everyone. One generation per day, not
+           one per visitor.
+        C. Neither available - an honest empty state explaining why,
+           with NO placeholder headlines.
+
+        HONESTY CONSTRAINT: the model has no live feed, so the prompt
+        explicitly forbids inventing events, dates, funding rounds,
+        launches, announcements, benchmarks or sourced statistics. The
+        column is labelled PERSPECTIVE, NOT REPORTING, shows its
+        generation date, and tells readers to verify before acting.
+        Presenting model output as verified news would be the exact
+        failure the "What we don't claim" section exists to prevent.
+
+    [x] AUDIENCE SWITCHER - three tabs (I run a business / I want to
+        learn / I build AI), each with a tailored three-step route and
+        its own CTAs. Standard on assessment and learning platforms
+        (HackerRank, CodeSignal, Coursera, DataCamp, Toptal, Andela);
+        absent from every consulting site reviewed.
+
+  PUBLISHED ARTIFACT
+    Capabilities declared: db, sample. Runtime contract 0.2.44.
+    briefing/current seeded with a dated opening briefing so the first
+    visitor sees content rather than an empty state.
+
+  TO MAKE THE BRIEFING REAL NEWS ON THE HOSTED SITE
+    Stand up a scheduled function (Cloudflare Worker, Vercel cron, or
+    AWS Lambda) that pulls curated RSS/API sources once a day,
+    normalises them to the JSON shape above, and serves it with
+    permissive CORS. Then set window.NORTHKEY_NEWS_ENDPOINT. Tier A
+    takes over automatically and the url/source fields render as
+    attributed outbound links. Budget: a few hours of work.
+
+  SECTION COUNT
+    23 numbered sections plus the commitments band, the AI Briefing and
+    the audience switcher. Numbers are computed at runtime in DOM order.
+
+================================================================================
+END OF FILE
+================================================================================

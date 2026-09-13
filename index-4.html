@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — AI Consulting, Development, Training &amp; Talent | USA</title>
+<title>NorthKey AI — AI Consulting, Development, Training &amp; Talent | USA · Layout C (Product)</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract. Free AI maturity assessment and published pricing.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="AI consulting, development, training, assessments, and talent. One accountable partner.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,300..500&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    NORTHKEY AI — design system
@@ -623,8 +623,6 @@ td span{display:block;font-size:.8125rem;color:var(--ink-3);margin-top:.2rem}
   .dim{grid-template-columns:1fr;gap:.3rem}
   .dim .bar{order:2}
 }
-
-
 /* ---------- AI job classifieds ----------
    Built on .rescards so every layout variant's card treatment applies. */
 .jobs{margin-top:1.5rem}
@@ -673,52 +671,257 @@ td span{display:block;font-size:.8125rem;color:var(--ink-3);margin-top:.2rem}
 }
 .jobs-pattern li{opacity:.92}
 
+</style>
+<style>
 /* ============================================================
-   VIBRANT PALETTE — index
+   LAYOUT C — "PRODUCT"
+   Centred measure, floating pill navigation, rounded elevated cards,
+   generous vertical rhythm. The familiar modern SaaS register.
+   ============================================================ */
+
+:root{
+  --bg:#FFFFFF; --bg-2:#F6F7FB; --bg-3:#EDEFF7;
+  --ink:#131625; --ink-2:#565C74; --ink-3:#8890A8;
+  --rule:#E6E8F0; --rule-2:#D2D6E4;
+  --accent:#4338CA; --accent-hi:#372FAE; --accent-wash:#EEECFD;
+  --accent-2:#0E7490; --accent-2-wash:#E0F2F7;
+  --inverse-bg:#131625; --inverse-ink:#F6F7FB;
+  --ff-display:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ff-body:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ff-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --pad:clamp(1.15rem,4vw,2.5rem);
+  --sec:clamp(4rem,7.5vw,7rem);
+  --maxw:1150px;
+  --r:16px;                 /* card radius */
+  --shadow:0 1px 2px rgba(19,22,37,.04),0 8px 24px -12px rgba(19,22,37,.14);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C0E16; --bg-2:#141826; --bg-3:#1C2133;
+    --ink:#EEF0F7; --ink-2:#A2A9C0; --ink-3:#727A94;
+    --rule:#212637; --rule-2:#2E3549;
+    --accent:#9A8CFF; --accent-hi:#B3A7FF; --accent-wash:#1B1936;
+    --accent-2:#5CC5DE; --accent-2-wash:#10262E;
+    --inverse-bg:#EEF0F7; --inverse-ink:#0C0E16;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C0E16; --bg-2:#141826; --bg-3:#1C2133;
+  --ink:#EEF0F7; --ink-2:#A2A9C0; --ink-3:#727A94;
+  --rule:#212637; --rule-2:#2E3549;
+  --accent:#9A8CFF; --accent-hi:#B3A7FF; --accent-wash:#1B1936;
+  --accent-2:#5CC5DE; --accent-2-wash:#10262E;
+  --inverse-bg:#EEF0F7; --inverse-ink:#0C0E16;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -14px rgba(0,0,0,.7);
+}
+
+body.lay-product{font-size:1rem;line-height:1.6}
+body.lay-product::before{display:none}
+h1,h2,h3,h4{letter-spacing:-.03em}
+.serif{font-family:var(--ff-display)}
+
+/* ---------- floating pill header ---------- */
+.hdr{
+  position:sticky;top:0;background:none;border-bottom:none;backdrop-filter:none;
+  padding:.75rem var(--pad) 0;
+}
+.hdr-in{
+  height:auto;padding:.5rem .55rem .5rem 1rem;max-width:1240px;border:1px solid var(--rule);
+  border-radius:999px;background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:saturate(180%) blur(16px);box-shadow:var(--shadow);
+}
+.logo-tx{font-weight:700;font-family:var(--ff-display);font-size:1.1rem;letter-spacing:-.04em}
+.logo-mk{color:var(--accent)}
+.nav a{border-radius:999px;font-size:.8125rem;font-weight:500;padding:.42rem .7rem}
+.nav a:hover{background:var(--accent-wash);color:var(--accent)}
+.tgl{border-radius:999px}
+.burger{border-radius:999px}
+.mnav{inset:0;padding-top:5.5rem;border-top:none}
+.mnav a{border-bottom-color:var(--rule);font-weight:500}
+
+/* ---------- buttons and surfaces ---------- */
+.btn{border-radius:999px;font-weight:600;padding:.78rem 1.35rem;box-shadow:var(--shadow)}
+.btn-o{background:var(--bg);box-shadow:none;border-color:var(--rule-2)}
+.btn-o:hover{background:var(--accent-wash);border-color:var(--accent)}
+.btn-lg{padding:.95rem 1.7rem}
+.btn-sm{padding:.55rem 1rem}
+
+/* ---------- rhythm ---------- */
+.wrap{max-width:var(--maxw)}
+section{border-top:none}
+.sec{padding-block:var(--sec)}
+.sec.feature{background:var(--bg-2)}
+.sec.inv{background:var(--inverse-bg)}
+.sec-head{
+  display:block;text-align:center;max-width:70ch;margin:0 auto clamp(2.25rem,4vw,3.5rem);
+}
+.sec-num{
+  display:inline-block;font-family:var(--ff-mono);font-size:.6875rem;letter-spacing:.14em;
+  padding:.28rem .7rem;border-radius:999px;background:var(--accent-wash);color:var(--accent);
+  margin-bottom:1rem;
+}
+.sec-title{
+  font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;letter-spacing:-.04em;
+  max-width:none;line-height:1.1;
+}
+.sec-lead{margin-inline:auto;max-width:64ch;font-size:clamp(1rem,1.4vw,1.125rem)}
+.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+
+/* left-align the copy inside split blocks so centred heads stay the exception */
+.split .eyebrow,.split .sec-lead{text-align:left;margin-inline:0}
+
+/* ---------- hero ---------- */
+.hero{
+  padding-block:clamp(4rem,9vw,7.5rem) clamp(3rem,6vw,5rem);
+  text-align:center;position:relative;overflow:hidden;background:var(--bg-2);
+}
+.hero-grid{display:none}
+.hero-glow{
+  position:absolute;inset:-30% -10% auto;height:70vh;pointer-events:none;
+  background:radial-gradient(ellipse 55% 55% at 50% 40%,var(--accent-wash),transparent 70%);
+  opacity:.9;
+}
+.hero-in{position:relative}
+.hero h1{
+  font-weight:800;letter-spacing:-.05em;font-size:clamp(2.5rem,6.4vw,4.75rem);
+  line-height:1.02;max-width:18ch;margin:1.15rem auto 0;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{margin:1.35rem auto 0;max-width:58ch;font-size:clamp(1.0625rem,1.7vw,1.25rem)}
+.hero-cta{justify-content:center;margin-top:2rem}
+.hero-msg{
+  margin:2.25rem auto 0;border-left:none;padding:1.15rem 1.5rem;max-width:56ch;
+  font-family:var(--ff-body);font-style:normal;font-size:1.0625rem;
+  background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);
+}
+.hero-alt{margin:1.25rem auto 0;max-width:62ch}
+.hero-alt a{color:var(--accent);font-weight:600;text-underline-offset:3px}
+.hero .trust{justify-content:center;border-top:1px solid var(--rule);margin-top:2.5rem}
+
+/* ---------- band ---------- */
+.band{background:var(--bg);border-block:1px solid var(--rule)}
+.band-in li{border-right:1px solid var(--rule);text-align:center}
+.band-in .v{font-weight:800;letter-spacing:-.05em;color:var(--accent)}
+
+/* ---------- cards get radius and lift ---------- */
+.divs,.tech,.journey,.pipe,.beats,.proc,.paths,.trustgrid,.aud-steps,.fmts{
+  border:none;gap:1rem;
+}
+.dcard,.tech li,.journey li,.pipe li,.beats li,.pstep,.paths li,.trustgrid li,.aud-steps li,.fmts li{
+  border:1px solid var(--rule);border-radius:var(--r);background:var(--bg);
+}
+.feature .dcard,.feature .tech li,.feature .journey li,.feature .pipe li,
+.feature .paths li,.feature .trustgrid li,.feature .aud-steps li,.feature .fmts li{background:var(--bg)}
+.dcard{padding:1.6rem;box-shadow:var(--shadow);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.dcard:hover{transform:translateY(-3px);box-shadow:0 12px 32px -14px rgba(19,22,37,.3);background:var(--bg)}
+.dcard::after{display:none}
+.dcard h3{font-size:1.3rem;font-weight:700}
+.dcard .n{
+  display:inline-grid;place-items:center;width:30px;height:30px;border-radius:999px;
+  background:var(--accent-wash);color:var(--accent);font-weight:600;
+}
+.inv .pstep{border-color:color-mix(in srgb,var(--inverse-ink) 18%,transparent);background:color-mix(in srgb,var(--inverse-ink) 6%,transparent)}
+.inv .beats li{border-color:color-mix(in srgb,var(--inverse-ink) 18%,transparent);background:color-mix(in srgb,var(--inverse-ink) 6%,transparent);border-radius:var(--r)}
+.inv .beats,.inv .proc{border-top:none}
+
+.sols,.courses,.accel,.inds,.rescards,.roles,.adj,.people,.brief-items{
+  background:none;border:none;gap:.75rem;
+}
+.sols li,.courses li,.accel li,.inds li,.rescards li,.roles a,.adj li,.people li,.brief-items li{
+  background:var(--bg);border:1px solid var(--rule);border-radius:12px;
+}
+.feature .sols li,.feature .courses li,.feature .accel li,.feature .inds li,
+.feature .rescards li,.feature .roles a,.feature .adj li{background:var(--bg)}
+.sols li:hover,.inds li:hover,.roles a:hover{background:var(--accent-wash);border-color:var(--accent)}
+
+.panel,.roleinfo,.case,.ok,.brief-empty,.tscroll,.indwrap{
+  border-radius:var(--r);box-shadow:var(--shadow);border-color:var(--rule);background:var(--bg);
+}
+.case{padding:1.75rem}
+.opt,.chk,.field input,.field select,.field textarea{border-radius:10px}
+.opt:hover{border-color:var(--accent)}
+.rec,.note{border-radius:12px}
+.note{border-left-width:3px}
+.badge,.lvl,.brief-badge,.rung{border-radius:999px}
+.ladder{background:none;border:none;gap:.6rem}
+.rung{border:1px solid var(--rule);background:var(--bg);border-radius:12px}
+.caps li{border-bottom:1px solid var(--rule)}
+.faq{border-top:none;display:grid;gap:.75rem}
+.faq details{
+  border:1px solid var(--rule);border-radius:12px;background:var(--bg);padding:0 1.15rem;
+}
+.feature .faq details{background:var(--bg)}
+.prog,.meter-track i,.dim .bar{border-radius:999px}
+.indlist button{border-bottom:1px solid var(--rule)}
+
+/* ---------- footer ---------- */
+.ftr{background:var(--bg-2);border-top:1px solid var(--rule)}
+.ftr a{font-weight:500}
+.disc{border-radius:12px;border-style:solid}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:grid;place-items:center}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .sec-head{text-align:left}
+  .hero{text-align:left}
+  .hero h1,.hero-sub,.hero-msg,.hero-alt{margin-inline:0}
+  .hero-cta,.hero .trust{justify-content:flex-start}
+}
+
+/* ============================================================
+   VIBRANT PALETTE — v4
    Six hues plus the two workhorse accents, restated against every
    theme selector the base sheet uses so the toggle keeps working.
    ============================================================ */
 
 :root{
-  --h1:#0E8A5F;
-  --h2:#E0532F;
-  --h3:#C98A00;
-  --h4:#6D4AD8;
-  --h5:#0E86A8;
-  --h6:#C32E86;
-  --accent:#0E8A5F; --accent-hi:#0A6E4B; --accent-wash:#DCF2E8;
-  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
+  --h1:#4F46E5;
+  --h2:#0891B2;
+  --h3:#DB2777;
+  --h4:#059669;
+  --h5:#D97706;
+  --h6:#7C3AED;
+  --accent:#4F46E5; --accent-hi:#4038C4; --accent-wash:#EEEDFD;
+  --accent-2:#0891B2; --accent-2-wash:#E0F4F9;
 }
 :root[data-theme="light"]{
-  --h1:#0E8A5F;
-  --h2:#E0532F;
-  --h3:#C98A00;
-  --h4:#6D4AD8;
-  --h5:#0E86A8;
-  --h6:#C32E86;
-  --accent:#0E8A5F; --accent-hi:#0A6E4B; --accent-wash:#DCF2E8;
-  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
+  --h1:#4F46E5;
+  --h2:#0891B2;
+  --h3:#DB2777;
+  --h4:#059669;
+  --h5:#D97706;
+  --h6:#7C3AED;
+  --accent:#4F46E5; --accent-hi:#4038C4; --accent-wash:#EEEDFD;
+  --accent-2:#0891B2; --accent-2-wash:#E0F4F9;
 }
 :root[data-theme="dark"]{
-  --h1:#3ED9A0;
-  --h2:#FF8A5E;
-  --h3:#F5C542;
-  --h4:#A78BFA;
-  --h5:#4CC9E8;
-  --h6:#F472B6;
-  --accent:#3ED9A0; --accent-hi:#6FE8BC; --accent-wash:#0C2A22;
-  --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
+  --h1:#A5A0FF;
+  --h2:#4FD3EE;
+  --h3:#FF6FB0;
+  --h4:#34D399;
+  --h5:#FBBF24;
+  --h6:#C4A6FF;
+  --accent:#A5A0FF; --accent-hi:#BFBBFF; --accent-wash:#1B1940;
+  --accent-2:#4FD3EE; --accent-2-wash:#0E2A33;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --h1:#3ED9A0;
-    --h2:#FF8A5E;
-    --h3:#F5C542;
-    --h4:#A78BFA;
-    --h5:#4CC9E8;
-    --h6:#F472B6;
-    --accent:#3ED9A0; --accent-hi:#6FE8BC; --accent-wash:#0C2A22;
-    --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
+    --h1:#A5A0FF;
+    --h2:#4FD3EE;
+    --h3:#FF6FB0;
+    --h4:#34D399;
+    --h5:#FBBF24;
+    --h6:#C4A6FF;
+    --accent:#A5A0FF; --accent-hi:#BFBBFF; --accent-wash:#1B1940;
+    --accent-2:#4FD3EE; --accent-2-wash:#0E2A33;
   }
 }
 
@@ -913,17 +1116,16 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 
 </style>
 </head>
-<body>
+<body class="lay-product">
 
-<a class="btn btn-sm" href="#main" style="position:absolute;left:-9999px" onfocus="this.style.cssText='position:fixed;top:8px;left:8px;z-index:999'" onblur="this.style.cssText='position:absolute;left:-9999px'">Skip to content</a>
+<a class="skip btn btn-sm" href="#main" style="position:absolute;left:-9999px" onfocus="this.style.cssText='position:fixed;top:8px;left:8px;z-index:999'" onblur="this.style.cssText='position:absolute;left:-9999px'">Skip to content</a>
 
-<!-- ============ HEADER ============ -->
 <header class="hdr">
   <div class="hdr-in">
     <a class="logo" href="#top" aria-label="NorthKey AI home">
       <svg class="logo-mk" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 21V3l18 18V3" stroke="currentColor" stroke-width="2.1" stroke-linecap="square"/>
-        <circle cx="12" cy="12" r="2.6" fill="#1C5D4A"/>
+        <path d="M3 21V3l18 18V3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="12" r="2.6" fill="currentColor"/>
       </svg>
       <span class="logo-tx"><b>North</b>Key<span>.</span></span>
     </a>
@@ -973,7 +1175,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   <h4>Talent</h4>
   <a href="#talent">AI Talent &amp; Recruitment</a>
   <a href="#contract">Contract Services</a>
-  <a href="#classifieds">AI Job Classifieds</a>
   <a href="#pricing">Engagements &amp; Pricing</a>
   <h4>Company</h4>
   <a href="#industries">Industries</a>
@@ -985,17 +1186,16 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   <a class="btn" href="#solve">Solve My AI Problem</a>
 </div>
 
+
 <main id="main">
 <div id="top"></div>
 
-<!-- ============ 01 HERO ============ -->
 <section class="hero">
-  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <p class="eyebrow" style="margin-bottom:1.5rem">USA-based AI consulting, development, training &amp; talent</p>
+    <p class="eyebrow">USA-based AI consulting, development, training &amp; talent</p>
     <h1>Solve Your Business Problems with <em>AI</em>.</h1>
     <p class="hero-sub">AI consulting, development, training, and talent solutions that help organizations turn AI challenges into practical business solutions.</p>
-    <p class="hero-msg">Bring us your AI challenge. We provide the expertise, technology, training, and talent to help you solve it.</p>
     <div class="hero-cta">
       <a class="btn btn-lg" href="#solve">Solve My AI Problem</a>
       <a class="btn btn-lg btn-o" href="#contact">Talk to an AI Expert</a>
@@ -1003,7 +1203,8 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
       <a class="btn btn-lg btn-o" href="#academy">Learn AI</a>
       <a class="btn btn-lg btn-o" href="#talent">Hire AI Talent</a>
     </div>
-    <p class="tiny muted" style="margin-top:1.5rem;max-width:60ch">Not ready to talk to anyone? Start with the free <a href="#maturity" style="color:var(--accent);text-underline-offset:3px">AI Maturity Assessment</a> — six questions, an instant scored profile, and no email required. Our <a href="#pricing" style="color:var(--accent);text-underline-offset:3px">prices are published</a> too.</p>
+    <p class="hero-msg">Bring us your AI challenge. We provide the expertise, technology, training, and talent to help you solve it.</p>
+    <p class="tiny muted hero-alt">Not ready to talk to anyone? Start with the free <a href="#maturity">AI Maturity Assessment</a> — six questions, an instant scored profile, and no email required. Our <a href="#pricing">prices are published</a> too.</p>
     <ul class="trust">
       <li>U.S.-based delivery</li>
       <li>You own all code and IP</li>
@@ -1014,7 +1215,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ COMMITMENTS BAND ============ -->
 <section class="band" aria-label="Our commitments">
   <ul class="band-in">
     <li><span class="v">1</span><span class="k">Business day to a human reply</span></li>
@@ -1027,32 +1227,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   <p class="band-note wrap" style="padding-inline:var(--pad)">These are commitments we can be held to, not performance statistics. We publish no client counts, project totals, or accuracy figures until they are real, attributable, and approved for release.</p>
 </section>
 
-<!-- ============ AI BRIEFING (self-updating daily) ============ -->
-<section class="brief" id="briefing">
-  <div class="wrap">
-    <div class="brief-hd">
-      <div>
-        <p class="eyebrow">AI Briefing</p>
-        <h2>What we're watching</h2>
-      </div>
-      <div class="brief-meta">
-        <span class="brief-badge" id="briefBadge">Checking</span>
-        <button class="btn btn-o btn-sm" id="briefGo" hidden>Generate today's briefing</button>
-      </div>
-    </div>
-    <div id="briefBody">
-      <ul class="brief-items brief-skel" aria-hidden="true">
-        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
-        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
-        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
-        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
-      </ul>
-    </div>
-    <p class="brief-disc" id="briefDisc"></p>
-  </div>
-</section>
-
-<!-- ============ AUDIENCE SWITCHER ============ -->
 <section class="aud" id="audience">
   <div class="wrap" style="padding-inline:0">
     <div class="aud-tabs" role="tablist" aria-label="Choose your path">
@@ -1104,36 +1278,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 02 WHAT WE DO ============ -->
-<section class="sec alt" id="what">
-  <div class="wrap">
-    <div class="split rv">
-      <div>
-        <div class="sec-head" style="margin-bottom:1.25rem">
-          <span class="sec-num">01</span>
-          <h2 class="sec-title">We help businesses identify, solve, implement, and manage their AI problems.</h2>
-        </div>
-      </div>
-      <div>
-        <p class="sec-lead" style="margin-top:0">You do not need to arrive knowing what to build. Most clients arrive with a problem — a process that costs too much, a backlog nobody can clear, a board asking what the AI plan is, a pilot that stalled, a team that lacks the skills, or a role they cannot fill.</p>
-        <p class="sec-lead">One intake. One accountable owner. One path from the problem to the outcome. And if AI is not the right answer, we say so — that is a legitimate result of the assessment, not a failure of it.</p>
-      </div>
-    </div>
-    <ul class="journey rv" style="margin-top:3rem">
-      <li><b>01</b><span>Understand the client's problem</span></li>
-      <li><b>02</b><span>Analyze the requirements</span></li>
-      <li><b>03</b><span>Identify the appropriate AI solution</span></li>
-      <li><b>04</b><span>Provide AI consultants and engineers</span></li>
-      <li><b>05</b><span>Develop and implement the solution</span></li>
-      <li><b>06</b><span>Test and deploy the solution</span></li>
-      <li><b>07</b><span>Train the client's employees</span></li>
-      <li><b>08</b><span>Provide ongoing support</span></li>
-      <li><b>09</b><span>Provide AI professionals on contract</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ 03 DIVISIONS ============ -->
 <section class="sec" id="divisions">
   <div class="wrap">
     <div class="sec-head rv">
@@ -1179,192 +1323,34 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 04 CONSULTING ============ -->
-<section class="sec alt" id="consulting">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">03</span>
-      <div>
-        <h2 class="sec-title">AI Consulting</h2>
-        <p class="sec-lead">Decide what is actually worth building. Before code, you need to know which processes will pay, what your data can support, what it will cost to run, and what your risk function will allow.</p>
-      </div>
-    </div>
-    <ul class="caps rv">
-      <li><i>01</i><b>AI Strategy<em>Where AI fits the operating model, investment plan, and sequencing</em></b></li>
-      <li><i>02</i><b>AI Transformation<em>Operating-model redesign, change management, org design</em></b></li>
-      <li><i>03</i><b>AI Adoption<em>Rollout, enablement, measurement, internal communication</em></b></li>
-      <li><i>04</i><b>Generative AI Advisory<em>Use-case selection, model choice, cost and risk modelling</em></b></li>
-      <li><i>05</i><b>Machine Learning Advisory<em>When classical ML beats an LLM — which is more often than the market admits</em></b></li>
-      <li><i>06</i><b>AI Automation Strategy<em>Process mining and ranking of automation candidates</em></b></li>
-      <li><i>07</i><b>AI Agent Strategy<em>Where autonomy is safe, and where a human gate belongs</em></b></li>
-      <li><i>08</i><b>AI Architecture<em>Reference architecture, build-vs-buy, platform selection</em></b></li>
-      <li><i>09</i><b>AI Integration Planning<em>Systems, data contracts, identity, sequencing</em></b></li>
-      <li><i>10</i><b>AI Governance<em>Policy, risk tiering, review boards, evaluation, audit trails</em></b></li>
-      <li><i>11</i><b>AI Implementation Oversight<em>Program management across internal and vendor teams</em></b></li>
-    </ul>
-    <div class="tscroll rv" style="margin-top:2.5rem">
-      <table>
-        <caption class="tiny muted" style="text-align:left;padding:.75rem 1rem;caption-side:top">Engagement shapes. Durations are typical; scope is fixed in writing before work starts.</caption>
-        <thead><tr><th>Engagement</th><th>Typical duration</th><th>Core deliverables</th></tr></thead>
-        <tbody>
-          <tr><td><b>AI Readiness Assessment</b></td><td>4–6 weeks</td><td>Scored opportunity register, data readiness report, top business cases, 12-month roadmap</td></tr>
-          <tr><td><b>AI Strategy &amp; Roadmap</b></td><td>6–8 weeks</td><td>Strategy document, target operating model, capability gaps, investment plan, board deck</td></tr>
-          <tr><td><b>AI Governance Program</b></td><td>6–10 weeks</td><td>Governance framework, acceptable-use policy, model risk register, review board charter, control catalog</td></tr>
-          <tr><td><b>Vendor &amp; Model Selection</b></td><td>3–5 weeks</td><td>Requirements matrix, shortlist, hands-on bake-off on your data, TCO model, recommendation memo</td></tr>
-          <tr><td><b>Fractional AI Leadership</b></td><td>Retainer</td><td>Senior AI leadership without the headcount — runs your review board, owns the roadmap, reports to your board</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tiny muted rv" style="margin-top:1rem">We take no margin on cloud, license, or model spend. When we recommend a technology, that is the whole reason.</p>
-  </div>
-</section>
-
-<!-- ============ 05 SOLUTIONS ============ -->
-<section class="sec" id="solutions">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">04</span>
-      <div>
-        <h2 class="sec-title">AI Solutions &amp; Development</h2>
-        <p class="sec-lead">Build it, ship it, hand over the keys. Production systems integrated with the software you already run — governed, monitored, documented, and owned by you.</p>
-      </div>
-    </div>
-    <ul class="sols rv">
-      <li><b>Generative AI Applications</b><span>LLM-powered products and internal tools</span></li>
-      <li><b>AI Chatbots</b><span>Customer and employee-facing conversational systems</span></li>
-      <li><b>AI Assistants</b><span>Domain assistants embedded in real workflows</span></li>
-      <li><b>AI Agents</b><span>Multi-step autonomous workflows with guardrails</span></li>
-      <li><b>LLM Applications</b><span>Prompt systems, structured output, orchestration</span></li>
-      <li><b>RAG Systems</b><span>Permission-aware, cited retrieval over your content</span></li>
-      <li><b>Machine Learning</b><span>Classification, ranking, recommendation, clustering</span></li>
-      <li><b>Predictive Analytics</b><span>Demand, churn, risk, pricing, maintenance</span></li>
-      <li><b>Computer Vision</b><span>Image and video analysis, inspection, OCR pipelines</span></li>
-      <li><b>Natural Language Processing</b><span>Extraction, classification, summarization</span></li>
-      <li><b>AI Automation</b><span>Document and workflow automation end to end</span></li>
-      <li><b>AI-Powered SaaS</b><span>Product engineering for AI-native applications</span></li>
-      <li><b>API Integrations</b><span>Connecting AI to the systems that run the business</span></li>
-    </ul>
-
-    <div class="split rv" style="margin-top:3.5rem">
-      <div>
-        <p class="eyebrow">Engineering standards</p>
-        <h3 class="serif" style="font-size:clamp(1.5rem,3vw,2.1rem);font-weight:300;margin-top:.75rem">What we commit to in writing.</h3>
-      </div>
-      <ul class="caps" style="grid-template-columns:1fr">
-        <li><i>—</i><b>Everything lives in your repository, under your license, from day one.</b></li>
-        <li><i>—</i><b>Infrastructure as code. No consultant-configured console clicks.</b></li>
-        <li><i>—</i><b>Evaluation suites ship with the feature and run in CI on every change.</b></li>
-        <li><i>—</i><b>Every AI decision touching a customer is logged and reversible.</b></li>
-        <li><i>—</i><b>Human-in-the-loop by default on anything financial, clinical, or legal.</b></li>
-        <li><i>—</i><b>Documentation and a recorded handover are in scope, not a change order.</b></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 06 AGENTS ============ -->
-<section class="sec alt" id="agents">
+<section class="sec feature" id="what">
   <div class="wrap">
     <div class="split rv">
       <div>
-        <div class="sec-head" style="margin-bottom:1rem">
-          <span class="sec-num">05</span>
-          <h2 class="sec-title">AI Agents</h2>
+        <div class="sec-head" style="margin-bottom:1.25rem">
+          <span class="sec-num">01</span>
+          <h2 class="sec-title">We help businesses identify, solve, implement, and manage their AI problems.</h2>
         </div>
-        <p class="sec-lead" style="margin-top:0">Autonomy is granted, not assumed. Every agent we build ships with a defined blast radius, an audit trail, and a human gate on consequential actions.</p>
-        <a class="btn" href="#solve" style="margin-top:1.75rem">Scope an agent project</a>
       </div>
-      <ul class="sols" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
-        <li><b>Single-agent workflows</b><span>One agent, one bounded job</span></li>
-        <li><b>Multi-agent systems</b><span>Specialist agents with an orchestrator</span></li>
-        <li><b>Tool &amp; API integration</b><span>Real actions in your real systems</span></li>
-        <li><b>Retrieval-grounded agents</b><span>Answers anchored to your sources</span></li>
-        <li><b>Human approval gates</b><span>Consequential steps require a person</span></li>
-        <li><b>Observability &amp; tracing</b><span>Every step recorded and inspectable</span></li>
-        <li><b>Evaluation harnesses</b><span>Regression gates on every change</span></li>
-        <li><b>Cost &amp; latency governance</b><span>Budgets enforced, not hoped for</span></li>
-        <li><b>Failure &amp; rollback design</b><span>Assume it will go wrong; plan for it</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ACCELERATORS ============ -->
-<section class="sec" id="accelerators">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num"></span>
       <div>
-        <h2 class="sec-title">Accelerators</h2>
-        <p class="sec-lead">Every serious AI firm has a library of reusable internal components. Ours exist to cut the boring 40% of a build — the scaffolding, the plumbing, the evaluation harness — so the budget goes into the part that is specific to you.</p>
+        <p class="sec-lead" style="margin-top:0">You do not need to arrive knowing what to build. Most clients arrive with a problem — a process that costs too much, a backlog nobody can clear, a board asking what the AI plan is, a pilot that stalled, a team that lacks the skills, or a role they cannot fill.</p>
+        <p class="sec-lead">One intake. One accountable owner. One path from the problem to the outcome. And if AI is not the right answer, we say so — that is a legitimate result of the assessment, not a failure of it.</p>
       </div>
     </div>
-    <ul class="accel rv">
-      <li><span class="tag">Retrieval</span><b>Grounding Kit</b><span>Chunking, embedding, re-ranking, citation enforcement, and a retrieval evaluation harness. Turns "we want to search our documents" into a measurable baseline in days rather than weeks.</span></li>
-      <li><span class="tag">Agents</span><b>Agent Frame</b><span>Tool registry, permission scoping, human approval gates, step-level tracing, cost and latency budgets, and a rollback path. The guardrails are the starting point, not the retrofit.</span></li>
-      <li><span class="tag">Quality</span><b>Eval Bench</b><span>Golden datasets, automated evaluations in CI, regression gates on every prompt and model change, and drift monitoring. The component most teams skip and then wish they had.</span></li>
-      <li><span class="tag">Documents</span><b>Doc Pipeline</b><span>Classification, extraction, validation, and confidence-based routing — straight-through where the model is sure, escalated to a person where it is not.</span></li>
-      <li><span class="tag">Governance</span><b>Control Pack</b><span>Model inventory, risk tiering, review-board templates, audit logging standards, and an acceptable-use policy your employees can actually follow.</span></li>
-      <li><span class="tag">Platform</span><b>Ground Works</b><span>Infrastructure-as-code baselines for AWS, Azure, and GCP — identity, networking, secrets, observability, and CI — so nothing is configured by hand in a console.</span></li>
-    </ul>
-    <div class="note rv" style="max-width:88ch"><strong>How this works commercially.</strong> Accelerators are not products we license to you and they carry no separate fee. They are delivered into your repository under your license along with everything else, and you are free to modify or discard them. We name them because "we have reusable components" is a claim; naming them is an invitation to ask what is in them.</div>
-  </div>
-</section>
-
-<!-- ============ 07 TECH AREAS ============ -->
-<section class="sec" id="tech">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">06</span>
-      <div>
-        <h2 class="sec-title">Technology areas</h2>
-        <p class="sec-lead">Model-agnostic and cloud-agnostic by design. The stack follows the problem, not a partnership agreement.</p>
-      </div>
-    </div>
-    <ul class="tech rv">
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/></svg><h3>Generative AI</h3><p>LLMs, RAG, embeddings, fine-tuning, and applications built on them.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 6.5h4a3.5 3.5 0 013.5 3.5v4" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Agents</h3><p>Agentic AI, autonomous workflows, and multi-agent systems with guardrails.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17l5-6 4 3.5L21 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.6"/></svg><h3>Machine Learning</h3><p>Predictive analytics, classification, and recommendation systems.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 11h11M4 17h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg><h3>NLP</h3><p>Text analysis, language applications, and conversational AI.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.6"/></svg><h3>Computer Vision</h3><p>Image analysis, video analysis, inspection, and visual AI.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4zM13 13h7v7h-7z" stroke="currentColor" stroke-width="1.6"/><path d="M11 7.5h4.5V12M12.5 16.5H8V12" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Automation</h3><p>Business workflow and process automation, document to decision.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.6"/></svg><h3>MLOps</h3><p>Model deployment, monitoring, evaluation, CI/CD, and AI infrastructure.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l9-5M12 12v10M12 12L3 7" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Architecture</h3><p>Enterprise AI architecture and end-to-end solution design.</p></li>
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5l8 3.2v6c0 5-3.4 8.8-8 10-4.6-1.2-8-5-8-10v-6l8-3.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12.2l2.3 2.3 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg><h3>Responsible AI</h3><p>Governance, risk, security, privacy, and systematic evaluation.</p></li>
+    <ul class="journey rv" style="margin-top:3rem">
+      <li><b>01</b><span>Understand the client's problem</span></li>
+      <li><b>02</b><span>Analyze the requirements</span></li>
+      <li><b>03</b><span>Identify the appropriate AI solution</span></li>
+      <li><b>04</b><span>Provide AI consultants and engineers</span></li>
+      <li><b>05</b><span>Develop and implement the solution</span></li>
+      <li><b>06</b><span>Test and deploy the solution</span></li>
+      <li><b>07</b><span>Train the client's employees</span></li>
+      <li><b>08</b><span>Provide ongoing support</span></li>
+      <li><b>09</b><span>Provide AI professionals on contract</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 08 PROCESS ============ -->
-<section class="sec inv" id="method">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num"></span>
-      <div>
-        <h2 class="sec-title">The NorthKey Method</h2>
-        <p class="sec-lead">Three beats, eight phases, and a written exit criterion at every one. You can stop at the end of any phase and keep everything produced up to that point — which is the opposite of how most AI engagements are sold.</p>
-      </div>
-    </div>
-    <ul class="beats rv">
-      <li><i>Beat one</i><b>Prove</b><span>Establish that the problem is real, the data supports it, and the money is there. Two phases, and a genuine right to walk away at the end of them.</span></li>
-      <li><i>Beat two</i><b>Produce</b><span>Design, build, and deploy the working system — in your repository, on your cloud, with evaluations running in CI from the first commit.</span></li>
-      <li><i>Beat three</i><b>Pass on</b><span>Train your people on this system, support it while they take it over, then scale to the next use case. Success is you not needing us.</span></li>
-    </ul>
-    <div class="proc rv">
-      <div class="pstep"><div class="pn">01</div><h3>Discover</h3><p>Understand the client's business problem, the operators who live with it, and the money attached to it.</p><div class="exit">EXIT — A written problem statement both sides sign.</div></div>
-      <div class="pstep"><div class="pn">02</div><h3>Assess</h3><p>Analyze the data, technology, requirements, risks, and feasibility.</p><div class="exit">EXIT — A go/no-go with the reasoning shown.</div></div>
-      <div class="pstep"><div class="pn">03</div><h3>Design</h3><p>Create the AI solution, the architecture, the governance model, and the evaluation plan.</p><div class="exit">EXIT — Approved architecture and success metric.</div></div>
-      <div class="pstep"><div class="pn">04</div><h3>Build</h3><p>Develop and test the AI solution — in your repository, on your cloud, from the first commit.</p><div class="exit">EXIT — Working system passing its evaluation suite.</div></div>
-      <div class="pstep"><div class="pn">05</div><h3>Deploy</h3><p>Implement the solution in the client's environment, with monitoring and a proven rollback.</p><div class="exit">EXIT — Live, monitored, reversible.</div></div>
-      <div class="pstep"><div class="pn">06</div><h3>Train</h3><p>Train the client's employees on this system — their data, their workflows, their guardrails.</p><div class="exit">EXIT — Your staff operating it unaided.</div></div>
-      <div class="pstep"><div class="pn">07</div><h3>Support</h3><p>Ongoing maintenance, monitoring, model upgrades, and cost tuning.</p><div class="exit">EXIT — Agreed service levels being met.</div></div>
-      <div class="pstep"><div class="pn">08</div><h3>Scale</h3><p>Improve and expand the AI solution as the business grows, and take the next use case.</p><div class="exit">EXIT — Next phase scoped from measured results.</div></div>
-    </div>
-    <p class="sec-lead rv" style="margin-top:2.5rem"><em>If the assessment says AI is not the right answer, we say so and stop. That is a legitimate outcome of Phase 02 — and a far cheaper one than the alternative.</em></p>
-  </div>
-</section>
-
-<!-- ============ AI MATURITY ASSESSMENT ============ -->
 <section class="sec" id="maturity">
   <div class="wrap">
     <div class="sec-head rv">
@@ -1414,8 +1400,234 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 09 ACADEMY ============ -->
-<section class="sec alt" id="academy">
+<section class="sec feature" id="consulting">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">03</span>
+      <div>
+        <h2 class="sec-title">AI Consulting</h2>
+        <p class="sec-lead">Decide what is actually worth building. Before code, you need to know which processes will pay, what your data can support, what it will cost to run, and what your risk function will allow.</p>
+      </div>
+    </div>
+    <ul class="caps rv">
+      <li><i>01</i><b>AI Strategy<em>Where AI fits the operating model, investment plan, and sequencing</em></b></li>
+      <li><i>02</i><b>AI Transformation<em>Operating-model redesign, change management, org design</em></b></li>
+      <li><i>03</i><b>AI Adoption<em>Rollout, enablement, measurement, internal communication</em></b></li>
+      <li><i>04</i><b>Generative AI Advisory<em>Use-case selection, model choice, cost and risk modelling</em></b></li>
+      <li><i>05</i><b>Machine Learning Advisory<em>When classical ML beats an LLM — which is more often than the market admits</em></b></li>
+      <li><i>06</i><b>AI Automation Strategy<em>Process mining and ranking of automation candidates</em></b></li>
+      <li><i>07</i><b>AI Agent Strategy<em>Where autonomy is safe, and where a human gate belongs</em></b></li>
+      <li><i>08</i><b>AI Architecture<em>Reference architecture, build-vs-buy, platform selection</em></b></li>
+      <li><i>09</i><b>AI Integration Planning<em>Systems, data contracts, identity, sequencing</em></b></li>
+      <li><i>10</i><b>AI Governance<em>Policy, risk tiering, review boards, evaluation, audit trails</em></b></li>
+      <li><i>11</i><b>AI Implementation Oversight<em>Program management across internal and vendor teams</em></b></li>
+    </ul>
+    <div class="tscroll rv" style="margin-top:2.5rem">
+      <table>
+        <caption class="tiny muted" style="text-align:left;padding:.75rem 1rem;caption-side:top">Engagement shapes. Durations are typical; scope is fixed in writing before work starts.</caption>
+        <thead><tr><th>Engagement</th><th>Typical duration</th><th>Core deliverables</th></tr></thead>
+        <tbody>
+          <tr><td><b>AI Readiness Assessment</b></td><td>4–6 weeks</td><td>Scored opportunity register, data readiness report, top business cases, 12-month roadmap</td></tr>
+          <tr><td><b>AI Strategy &amp; Roadmap</b></td><td>6–8 weeks</td><td>Strategy document, target operating model, capability gaps, investment plan, board deck</td></tr>
+          <tr><td><b>AI Governance Program</b></td><td>6–10 weeks</td><td>Governance framework, acceptable-use policy, model risk register, review board charter, control catalog</td></tr>
+          <tr><td><b>Vendor &amp; Model Selection</b></td><td>3–5 weeks</td><td>Requirements matrix, shortlist, hands-on bake-off on your data, TCO model, recommendation memo</td></tr>
+          <tr><td><b>Fractional AI Leadership</b></td><td>Retainer</td><td>Senior AI leadership without the headcount — runs your review board, owns the roadmap, reports to your board</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tiny muted rv" style="margin-top:1rem">We take no margin on cloud, license, or model spend. When we recommend a technology, that is the whole reason.</p>
+  </div>
+</section>
+
+<section class="sec" id="solutions">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">04</span>
+      <div>
+        <h2 class="sec-title">AI Solutions &amp; Development</h2>
+        <p class="sec-lead">Build it, ship it, hand over the keys. Production systems integrated with the software you already run — governed, monitored, documented, and owned by you.</p>
+      </div>
+    </div>
+    <ul class="sols rv">
+      <li><b>Generative AI Applications</b><span>LLM-powered products and internal tools</span></li>
+      <li><b>AI Chatbots</b><span>Customer and employee-facing conversational systems</span></li>
+      <li><b>AI Assistants</b><span>Domain assistants embedded in real workflows</span></li>
+      <li><b>AI Agents</b><span>Multi-step autonomous workflows with guardrails</span></li>
+      <li><b>LLM Applications</b><span>Prompt systems, structured output, orchestration</span></li>
+      <li><b>RAG Systems</b><span>Permission-aware, cited retrieval over your content</span></li>
+      <li><b>Machine Learning</b><span>Classification, ranking, recommendation, clustering</span></li>
+      <li><b>Predictive Analytics</b><span>Demand, churn, risk, pricing, maintenance</span></li>
+      <li><b>Computer Vision</b><span>Image and video analysis, inspection, OCR pipelines</span></li>
+      <li><b>Natural Language Processing</b><span>Extraction, classification, summarization</span></li>
+      <li><b>AI Automation</b><span>Document and workflow automation end to end</span></li>
+      <li><b>AI-Powered SaaS</b><span>Product engineering for AI-native applications</span></li>
+      <li><b>API Integrations</b><span>Connecting AI to the systems that run the business</span></li>
+    </ul>
+
+    <div class="split rv" style="margin-top:3.5rem">
+      <div>
+        <p class="eyebrow">Engineering standards</p>
+        <h3 class="serif" style="font-size:clamp(1.5rem,3vw,2.1rem);font-weight:300;margin-top:.75rem">What we commit to in writing.</h3>
+      </div>
+      <ul class="caps" style="grid-template-columns:1fr">
+        <li><i>—</i><b>Everything lives in your repository, under your license, from day one.</b></li>
+        <li><i>—</i><b>Infrastructure as code. No consultant-configured console clicks.</b></li>
+        <li><i>—</i><b>Evaluation suites ship with the feature and run in CI on every change.</b></li>
+        <li><i>—</i><b>Every AI decision touching a customer is logged and reversible.</b></li>
+        <li><i>—</i><b>Human-in-the-loop by default on anything financial, clinical, or legal.</b></li>
+        <li><i>—</i><b>Documentation and a recorded handover are in scope, not a change order.</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec feature" id="agents">
+  <div class="wrap">
+    <div class="split rv">
+      <div>
+        <div class="sec-head" style="margin-bottom:1rem">
+          <span class="sec-num">05</span>
+          <h2 class="sec-title">AI Agents</h2>
+        </div>
+        <p class="sec-lead" style="margin-top:0">Autonomy is granted, not assumed. Every agent we build ships with a defined blast radius, an audit trail, and a human gate on consequential actions.</p>
+        <a class="btn" href="#solve" style="margin-top:1.75rem">Scope an agent project</a>
+      </div>
+      <ul class="sols" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+        <li><b>Single-agent workflows</b><span>One agent, one bounded job</span></li>
+        <li><b>Multi-agent systems</b><span>Specialist agents with an orchestrator</span></li>
+        <li><b>Tool &amp; API integration</b><span>Real actions in your real systems</span></li>
+        <li><b>Retrieval-grounded agents</b><span>Answers anchored to your sources</span></li>
+        <li><b>Human approval gates</b><span>Consequential steps require a person</span></li>
+        <li><b>Observability &amp; tracing</b><span>Every step recorded and inspectable</span></li>
+        <li><b>Evaluation harnesses</b><span>Regression gates on every change</span></li>
+        <li><b>Cost &amp; latency governance</b><span>Budgets enforced, not hoped for</span></li>
+        <li><b>Failure &amp; rollback design</b><span>Assume it will go wrong; plan for it</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="accelerators">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num"></span>
+      <div>
+        <h2 class="sec-title">Accelerators</h2>
+        <p class="sec-lead">Every serious AI firm has a library of reusable internal components. Ours exist to cut the boring 40% of a build — the scaffolding, the plumbing, the evaluation harness — so the budget goes into the part that is specific to you.</p>
+      </div>
+    </div>
+    <ul class="accel rv">
+      <li><span class="tag">Retrieval</span><b>Grounding Kit</b><span>Chunking, embedding, re-ranking, citation enforcement, and a retrieval evaluation harness. Turns "we want to search our documents" into a measurable baseline in days rather than weeks.</span></li>
+      <li><span class="tag">Agents</span><b>Agent Frame</b><span>Tool registry, permission scoping, human approval gates, step-level tracing, cost and latency budgets, and a rollback path. The guardrails are the starting point, not the retrofit.</span></li>
+      <li><span class="tag">Quality</span><b>Eval Bench</b><span>Golden datasets, automated evaluations in CI, regression gates on every prompt and model change, and drift monitoring. The component most teams skip and then wish they had.</span></li>
+      <li><span class="tag">Documents</span><b>Doc Pipeline</b><span>Classification, extraction, validation, and confidence-based routing — straight-through where the model is sure, escalated to a person where it is not.</span></li>
+      <li><span class="tag">Governance</span><b>Control Pack</b><span>Model inventory, risk tiering, review-board templates, audit logging standards, and an acceptable-use policy your employees can actually follow.</span></li>
+      <li><span class="tag">Platform</span><b>Ground Works</b><span>Infrastructure-as-code baselines for AWS, Azure, and GCP — identity, networking, secrets, observability, and CI — so nothing is configured by hand in a console.</span></li>
+    </ul>
+    <div class="note rv" style="max-width:88ch"><strong>How this works commercially.</strong> Accelerators are not products we license to you and they carry no separate fee. They are delivered into your repository under your license along with everything else, and you are free to modify or discard them. We name them because "we have reusable components" is a claim; naming them is an invitation to ask what is in them.</div>
+  </div>
+</section>
+
+<section class="sec feature" id="tech">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">06</span>
+      <div>
+        <h2 class="sec-title">Technology areas</h2>
+        <p class="sec-lead">Model-agnostic and cloud-agnostic by design. The stack follows the problem, not a partnership agreement.</p>
+      </div>
+    </div>
+    <ul class="tech rv">
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/></svg><h3>Generative AI</h3><p>LLMs, RAG, embeddings, fine-tuning, and applications built on them.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 6.5h4a3.5 3.5 0 013.5 3.5v4" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Agents</h3><p>Agentic AI, autonomous workflows, and multi-agent systems with guardrails.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17l5-6 4 3.5L21 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.6"/></svg><h3>Machine Learning</h3><p>Predictive analytics, classification, and recommendation systems.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 11h11M4 17h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg><h3>NLP</h3><p>Text analysis, language applications, and conversational AI.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.6"/></svg><h3>Computer Vision</h3><p>Image analysis, video analysis, inspection, and visual AI.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4zM13 13h7v7h-7z" stroke="currentColor" stroke-width="1.6"/><path d="M11 7.5h4.5V12M12.5 16.5H8V12" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Automation</h3><p>Business workflow and process automation, document to decision.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.6"/></svg><h3>MLOps</h3><p>Model deployment, monitoring, evaluation, CI/CD, and AI infrastructure.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l9-5M12 12v10M12 12L3 7" stroke="currentColor" stroke-width="1.6"/></svg><h3>AI Architecture</h3><p>Enterprise AI architecture and end-to-end solution design.</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5l8 3.2v6c0 5-3.4 8.8-8 10-4.6-1.2-8-5-8-10v-6l8-3.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12.2l2.3 2.3 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg><h3>Responsible AI</h3><p>Governance, risk, security, privacy, and systematic evaluation.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec inv" id="method">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num"></span>
+      <div>
+        <h2 class="sec-title">The NorthKey Method</h2>
+        <p class="sec-lead">Three beats, eight phases, and a written exit criterion at every one. You can stop at the end of any phase and keep everything produced up to that point — which is the opposite of how most AI engagements are sold.</p>
+      </div>
+    </div>
+    <ul class="beats rv">
+      <li><i>Beat one</i><b>Prove</b><span>Establish that the problem is real, the data supports it, and the money is there. Two phases, and a genuine right to walk away at the end of them.</span></li>
+      <li><i>Beat two</i><b>Produce</b><span>Design, build, and deploy the working system — in your repository, on your cloud, with evaluations running in CI from the first commit.</span></li>
+      <li><i>Beat three</i><b>Pass on</b><span>Train your people on this system, support it while they take it over, then scale to the next use case. Success is you not needing us.</span></li>
+    </ul>
+    <div class="proc rv">
+      <div class="pstep"><div class="pn">01</div><h3>Discover</h3><p>Understand the client's business problem, the operators who live with it, and the money attached to it.</p><div class="exit">EXIT — A written problem statement both sides sign.</div></div>
+      <div class="pstep"><div class="pn">02</div><h3>Assess</h3><p>Analyze the data, technology, requirements, risks, and feasibility.</p><div class="exit">EXIT — A go/no-go with the reasoning shown.</div></div>
+      <div class="pstep"><div class="pn">03</div><h3>Design</h3><p>Create the AI solution, the architecture, the governance model, and the evaluation plan.</p><div class="exit">EXIT — Approved architecture and success metric.</div></div>
+      <div class="pstep"><div class="pn">04</div><h3>Build</h3><p>Develop and test the AI solution — in your repository, on your cloud, from the first commit.</p><div class="exit">EXIT — Working system passing its evaluation suite.</div></div>
+      <div class="pstep"><div class="pn">05</div><h3>Deploy</h3><p>Implement the solution in the client's environment, with monitoring and a proven rollback.</p><div class="exit">EXIT — Live, monitored, reversible.</div></div>
+      <div class="pstep"><div class="pn">06</div><h3>Train</h3><p>Train the client's employees on this system — their data, their workflows, their guardrails.</p><div class="exit">EXIT — Your staff operating it unaided.</div></div>
+      <div class="pstep"><div class="pn">07</div><h3>Support</h3><p>Ongoing maintenance, monitoring, model upgrades, and cost tuning.</p><div class="exit">EXIT — Agreed service levels being met.</div></div>
+      <div class="pstep"><div class="pn">08</div><h3>Scale</h3><p>Improve and expand the AI solution as the business grows, and take the next use case.</p><div class="exit">EXIT — Next phase scoped from measured results.</div></div>
+    </div>
+    <p class="sec-lead rv" style="margin-top:2.5rem"><em>If the assessment says AI is not the right answer, we say so and stop. That is a legitimate outcome of Phase 02 — and a far cheaper one than the alternative.</em></p>
+  </div>
+</section>
+
+<section class="sec" id="pricing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num"></span>
+      <div>
+        <h2 class="sec-title">Engagements &amp; indicative pricing</h2>
+        <p class="sec-lead">Almost no firm in this market publishes a number. That is convenient for the firm and useless for you — it means a discovery call before you can even tell whether the conversation is worth having. Here is roughly what things cost.</p>
+      </div>
+    </div>
+    <div class="tscroll rv">
+      <table>
+        <thead><tr><th>Engagement</th><th>Duration</th><th>Indicative range</th><th>What you leave with</th></tr></thead>
+        <tbody>
+          <tr><td><b>AI Triage Session</b><span>The front door</span></td><td>45 minutes</td><td><b style="color:var(--accent)">No charge</b></td><td>A written one-page point of view on whether AI is the right answer here</td></tr>
+          <tr><td><b>AI Readiness Assessment</b><span>Consulting</span></td><td>4–6 weeks</td><td>from $45,000</td><td>Scored opportunity register, data readiness report, ranked business cases, 12-month roadmap</td></tr>
+          <tr><td><b>AI Strategy &amp; Roadmap</b><span>Consulting</span></td><td>6–8 weeks</td><td>from $65,000</td><td>Strategy document, operating model, capability gaps, investment plan, board deck</td></tr>
+          <tr><td><b>AI Governance Program</b><span>Consulting</span></td><td>6–10 weeks</td><td>from $55,000</td><td>Governance framework, acceptable-use policy, risk register, review board charter, control catalog</td></tr>
+          <tr><td><b>Vendor &amp; Model Selection</b><span>Consulting</span></td><td>3–5 weeks</td><td>from $35,000</td><td>Requirements matrix, hands-on bake-off on your data, TCO model, recommendation memo</td></tr>
+          <tr><td><b>Proof of Value</b><span>Development</span></td><td>4–6 weeks</td><td>from $85,000</td><td>A narrow but genuine slice running on your real data, measured against the business case</td></tr>
+          <tr><td><b>Production Build</b><span>Development</span></td><td>8–16 weeks</td><td>from $250,000</td><td>Hardened, integrated, governed, monitored, documented, and handed over</td></tr>
+          <tr><td><b>Data &amp; AI Platform Build</b><span>Development</span></td><td>12–20 weeks</td><td>from $220,000</td><td>Pipelines, storage, feature and vector stores, lineage, access control, CI</td></tr>
+          <tr><td><b>Corporate Training Program</b><span>Academy</span></td><td>2–8 weeks</td><td>from $12,000</td><td>Cohort training delivered on your own stack, with assessed outcomes</td></tr>
+          <tr><td><b>Managed AI Operations</b><span>Support</span></td><td>Ongoing</td><td>from $18,000/month</td><td>Monitoring, on-call, eval maintenance, model upgrades, quarterly business review</td></tr>
+          <tr><td><b>Fractional AI Leadership</b><span>Consulting</span></td><td>6-month minimum</td><td>from $14,000/month</td><td>Senior AI leadership without the headcount — runs your review board, owns the roadmap</td></tr>
+          <tr><td><b>Contract &amp; Staff Augmentation</b><span>Talent</span></td><td>1–24 months</td><td>Scoped per role</td><td>Assessed, upskilled professionals — named candidates before any contract</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="split rv" style="margin-top:2.5rem">
+      <div>
+        <p class="eyebrow">How we price</p>
+        <ul class="caps" style="grid-template-columns:1fr;margin-top:1rem">
+          <li><i>01</i><b>Fixed fee per phase<em>Not hourly. You approve a scope and a price before work starts.</em></b></li>
+          <li><i>02</i><b>Phase-gated<em>Exit at any gate and keep everything produced to that point.</em></b></li>
+          <li><i>03</i><b>No margin on software<em>You pay cloud, license, and model vendors directly. We take nothing.</em></b></li>
+          <li><i>04</i><b>Change orders priced first<em>Only for scope you add, and always quoted before work begins.</em></b></li>
+        </ul>
+      </div>
+      <div>
+        <div class="note" style="margin-top:0">
+          <strong>Read these as planning ranges, not quotes.</strong> They exist so you can tell whether a conversation is worth having before you spend an hour on a call. Real pricing depends on scope, data condition, integration surface, and compliance requirements, and is fixed in writing in a proposal. A concept-stage firm should be honest that these are modelled figures rather than a rate card proven across many engagements — validate them against your own market before treating them as settled.
+        </div>
+        <a class="btn" href="#solve" style="margin-top:1.25rem">Get a scoped proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec feature" id="academy">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">08</span>
@@ -1468,7 +1680,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 10 ASSESSMENTS ============ -->
 <section class="sec" id="assessments">
   <div class="wrap">
     <div class="sec-head rv">
@@ -1518,8 +1729,41 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 11 CAREERS ============ -->
-<section class="sec alt" id="careers">
+<section class="sec feature" id="advisor">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">15</span>
+      <div>
+        <h2 class="sec-title">AI Advisor</h2>
+        <p class="sec-lead">Not sure which service you need? Answer five questions and get a preliminary recommendation in about thirty seconds. Nothing you enter here leaves your browser.</p>
+      </div>
+    </div>
+    <div class="panel rv" id="advPanel" style="max-width:820px">
+      <div class="panel-hd">
+        <h3>AI Advisor</h3>
+        <span class="mono tiny muted" id="aCount">5 questions</span>
+      </div>
+      <div class="prog" aria-hidden="true"><i id="aBar"></i></div>
+      <div id="advStart">
+        <p class="muted" style="font-size:.9375rem;line-height:1.6">The Advisor asks about your problem, your industry, your current technology, the kind of help you want, and your timeline — then points you at the service that fits.</p>
+        <div class="panel-ft"><button class="btn" id="aGo">Start</button></div>
+      </div>
+      <div id="advBody" hidden>
+        <p class="qmeta" id="aMeta"></p>
+        <p class="q" id="aText"></p>
+        <div class="opts" id="aOpts"></div>
+        <div class="panel-ft">
+          <button class="btn btn-o btn-sm" id="aBack">Back</button>
+          <span class="mono tiny muted" id="aPos"></span>
+        </div>
+      </div>
+      <div id="advRes" hidden aria-live="polite"></div>
+      <div class="note">The AI Advisor provides <strong>preliminary guidance only</strong>. It is not a proposal, a quote, or professional advice. A human consultant reviews every actual project requirement before any recommendation is made.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="careers">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">10</span>
@@ -1542,9 +1786,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-
-<!-- ============ AI JOB CLASSIFIEDS ============ -->
-<section class="sec" id="classifieds">
+<section class="sec feature" id="classifieds">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num"></span>
@@ -1640,7 +1882,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 12 TALENT ============ -->
 <section class="sec" id="talent">
   <div class="wrap">
     <div class="sec-head rv">
@@ -1691,8 +1932,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 13 CONTRACT ============ -->
-<section class="sec alt" id="contract">
+<section class="sec feature" id="contract">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">12</span>
@@ -1724,57 +1964,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ ENGAGEMENTS & PRICING ============ -->
-<section class="sec" id="pricing">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num"></span>
-      <div>
-        <h2 class="sec-title">Engagements &amp; indicative pricing</h2>
-        <p class="sec-lead">Almost no firm in this market publishes a number. That is convenient for the firm and useless for you — it means a discovery call before you can even tell whether the conversation is worth having. Here is roughly what things cost.</p>
-      </div>
-    </div>
-    <div class="tscroll rv">
-      <table>
-        <thead><tr><th>Engagement</th><th>Duration</th><th>Indicative range</th><th>What you leave with</th></tr></thead>
-        <tbody>
-          <tr><td><b>AI Triage Session</b><span>The front door</span></td><td>45 minutes</td><td><b style="color:var(--accent)">No charge</b></td><td>A written one-page point of view on whether AI is the right answer here</td></tr>
-          <tr><td><b>AI Readiness Assessment</b><span>Consulting</span></td><td>4–6 weeks</td><td>from $45,000</td><td>Scored opportunity register, data readiness report, ranked business cases, 12-month roadmap</td></tr>
-          <tr><td><b>AI Strategy &amp; Roadmap</b><span>Consulting</span></td><td>6–8 weeks</td><td>from $65,000</td><td>Strategy document, operating model, capability gaps, investment plan, board deck</td></tr>
-          <tr><td><b>AI Governance Program</b><span>Consulting</span></td><td>6–10 weeks</td><td>from $55,000</td><td>Governance framework, acceptable-use policy, risk register, review board charter, control catalog</td></tr>
-          <tr><td><b>Vendor &amp; Model Selection</b><span>Consulting</span></td><td>3–5 weeks</td><td>from $35,000</td><td>Requirements matrix, hands-on bake-off on your data, TCO model, recommendation memo</td></tr>
-          <tr><td><b>Proof of Value</b><span>Development</span></td><td>4–6 weeks</td><td>from $85,000</td><td>A narrow but genuine slice running on your real data, measured against the business case</td></tr>
-          <tr><td><b>Production Build</b><span>Development</span></td><td>8–16 weeks</td><td>from $250,000</td><td>Hardened, integrated, governed, monitored, documented, and handed over</td></tr>
-          <tr><td><b>Data &amp; AI Platform Build</b><span>Development</span></td><td>12–20 weeks</td><td>from $220,000</td><td>Pipelines, storage, feature and vector stores, lineage, access control, CI</td></tr>
-          <tr><td><b>Corporate Training Program</b><span>Academy</span></td><td>2–8 weeks</td><td>from $12,000</td><td>Cohort training delivered on your own stack, with assessed outcomes</td></tr>
-          <tr><td><b>Managed AI Operations</b><span>Support</span></td><td>Ongoing</td><td>from $18,000/month</td><td>Monitoring, on-call, eval maintenance, model upgrades, quarterly business review</td></tr>
-          <tr><td><b>Fractional AI Leadership</b><span>Consulting</span></td><td>6-month minimum</td><td>from $14,000/month</td><td>Senior AI leadership without the headcount — runs your review board, owns the roadmap</td></tr>
-          <tr><td><b>Contract &amp; Staff Augmentation</b><span>Talent</span></td><td>1–24 months</td><td>Scoped per role</td><td>Assessed, upskilled professionals — named candidates before any contract</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="split rv" style="margin-top:2.5rem">
-      <div>
-        <p class="eyebrow">How we price</p>
-        <ul class="caps" style="grid-template-columns:1fr;margin-top:1rem">
-          <li><i>01</i><b>Fixed fee per phase<em>Not hourly. You approve a scope and a price before work starts.</em></b></li>
-          <li><i>02</i><b>Phase-gated<em>Exit at any gate and keep everything produced to that point.</em></b></li>
-          <li><i>03</i><b>No margin on software<em>You pay cloud, license, and model vendors directly. We take nothing.</em></b></li>
-          <li><i>04</i><b>Change orders priced first<em>Only for scope you add, and always quoted before work begins.</em></b></li>
-        </ul>
-      </div>
-      <div>
-        <div class="note" style="margin-top:0">
-          <strong>Read these as planning ranges, not quotes.</strong> They exist so you can tell whether a conversation is worth having before you spend an hour on a call. Real pricing depends on scope, data condition, integration surface, and compliance requirements, and is fixed in writing in a proposal. A concept-stage firm should be honest that these are modelled figures rather than a rate card proven across many engagements — validate them against your own market before treating them as settled.
-        </div>
-        <a class="btn" href="#solve" style="margin-top:1.25rem">Get a scoped proposal</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 14 INDUSTRIES ============ -->
-<section class="sec alt" id="industries">
+<section class="sec" id="industries">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num"></span>
@@ -1791,8 +1981,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 15 CASE STUDIES ============ -->
-<section class="sec" id="cases">
+<section class="sec feature" id="cases">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num"></span>
@@ -1842,8 +2031,68 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ RESOURCES & INSIGHTS ============ -->
-<section class="sec alt" id="resources">
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num"></span>
+      <div>
+        <h2 class="sec-title">What we don't claim</h2>
+        <p class="sec-lead">Look at any competitor's AI page and you will find the same wall: analyst badges, client logos, a partner grid, and a round number of projects delivered. Most of it is real. Some of it is decoration. None of it is verifiable by you in the moment you are reading it.</p>
+        <p class="sec-lead">So here is the inverse — stated plainly, because a firm that will tell you what it cannot do is more useful than one that tells you it can do everything.</p>
+      </div>
+    </div>
+    <ul class="trustgrid rv">
+      <li>
+        <span class="no">No analyst recognition</span>
+        <b>We are not a Gartner, Forrester, IDC, HFS, or Everest-rated firm.</b>
+        <span class="yes">Instead</span>
+        <span>Judge the method. It is published in full on this page, including the exit rights, so you can evaluate it before spending anything.</span>
+      </li>
+      <li>
+        <span class="no">No certifications yet</span>
+        <b>No SOC 2, no ISO 42001, no HIPAA attestation. We will not display a badge we have not earned.</b>
+        <span class="yes">Instead</span>
+        <span>Security and governance practices are described concretely and can be reviewed under NDA before any engagement.</span>
+      </li>
+      <li>
+        <span class="no">No client logos</span>
+        <b>No logo wall, no named references, no testimonials.</b>
+        <span class="yes">Instead</span>
+        <span>Case studies here are labelled illustrative solution patterns. Real ones will be published only with written client approval.</span>
+      </li>
+      <li>
+        <span class="no">No partner tier claims</span>
+        <b>We are not advertising ourselves as an AWS, Microsoft, Google, Databricks, or Snowflake partner.</b>
+        <span class="yes">Instead</span>
+        <span>We build on all of them and take zero margin on any of them — which is precisely why our recommendation is worth something.</span>
+      </li>
+      <li>
+        <span class="no">No performance statistics</span>
+        <b>No "40% faster", no "500+ projects delivered", no accuracy percentages.</b>
+        <span class="yes">Instead</span>
+        <span>Every engagement defines its own success metric in Phase 01, and that number is reported to you — not to a marketing page.</span>
+      </li>
+      <li>
+        <span class="no">No certification claims</span>
+        <b>Our assessments issue certificates of completion, not certifications.</b>
+        <span class="yes">Instead</span>
+        <span>The distinction is real: a certification requires a psychometrically reviewed item bank and proctoring. We will say so when that exists.</span>
+      </li>
+    </ul>
+    <div class="split rv" style="margin-top:3rem">
+      <div>
+        <p class="eyebrow">Why this is on the website</p>
+        <h3 class="serif" style="font-size:clamp(1.4rem,2.6vw,2rem);font-weight:300;margin-top:.7rem;max-width:22ch">The claims are the product.</h3>
+      </div>
+      <div>
+        <p class="sec-lead" style="margin-top:0;font-size:1rem">An AI consultancy sells judgement. If the first judgement you see is a marketing page willing to overstate, that tells you what the second one will look like when a pilot is not working and there is a Phase 03 invoice at stake.</p>
+        <p class="sec-lead" style="font-size:1rem">Our rule is simple, and it applies internally as well as here: <strong>if a claim would be uncomfortable to defend under oath, it does not get published.</strong> That rule is why this section exists — and it is the same rule that makes a "no-go" recommendation in Phase 02 possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec feature" id="resources">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num"></span>
@@ -1866,43 +2115,56 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 16 AI ADVISOR ============ -->
-<section class="sec" id="advisor">
+<section class="brief" id="briefing">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">15</span>
+    <div class="brief-hd">
       <div>
-        <h2 class="sec-title">AI Advisor</h2>
-        <p class="sec-lead">Not sure which service you need? Answer five questions and get a preliminary recommendation in about thirty seconds. Nothing you enter here leaves your browser.</p>
+        <p class="eyebrow">AI Briefing</p>
+        <h2>What we're watching</h2>
+      </div>
+      <div class="brief-meta">
+        <span class="brief-badge" id="briefBadge">Checking</span>
+        <button class="btn btn-o btn-sm" id="briefGo" hidden>Generate today's briefing</button>
       </div>
     </div>
-    <div class="panel rv" id="advPanel" style="max-width:820px">
-      <div class="panel-hd">
-        <h3>AI Advisor</h3>
-        <span class="mono tiny muted" id="aCount">5 questions</span>
+    <div id="briefBody">
+      <ul class="brief-items brief-skel" aria-hidden="true">
+        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
+        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
+        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
+        <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>
+      </ul>
+    </div>
+    <p class="brief-disc" id="briefDisc"></p>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">17</span>
+      <div>
+        <h2 class="sec-title">Frequently asked questions</h2>
       </div>
-      <div class="prog" aria-hidden="true"><i id="aBar"></i></div>
-      <div id="advStart">
-        <p class="muted" style="font-size:.9375rem;line-height:1.6">The Advisor asks about your problem, your industry, your current technology, the kind of help you want, and your timeline — then points you at the service that fits.</p>
-        <div class="panel-ft"><button class="btn" id="aGo">Start</button></div>
-      </div>
-      <div id="advBody" hidden>
-        <p class="qmeta" id="aMeta"></p>
-        <p class="q" id="aText"></p>
-        <div class="opts" id="aOpts"></div>
-        <div class="panel-ft">
-          <button class="btn btn-o btn-sm" id="aBack">Back</button>
-          <span class="mono tiny muted" id="aPos"></span>
-        </div>
-      </div>
-      <div id="advRes" hidden aria-live="polite"></div>
-      <div class="note">The AI Advisor provides <strong>preliminary guidance only</strong>. It is not a proposal, a quote, or professional advice. A human consultant reviews every actual project requirement before any recommendation is made.</div>
+    </div>
+    <div class="faq rv">
+      <details><summary>What does an AI consulting company actually do?</summary><div class="a">An AI consulting company helps an organization work out where artificial intelligence will produce a business result, whether its data and systems can support that, what it will cost to build and run, and what risk it carries. We do that — and then, unlike a pure advisory firm, we also build the solution, train your staff on it, and supply the AI professionals to run it.</div></details>
+      <details><summary>How is this different from hiring a strategy firm and a development shop separately?</summary><div class="a">The seam between them is where most AI programs die. A strategy firm's recommendation is handed to a development shop that was not in the room when the business case was written, and the translation loss is expensive. Here the person who wrote the business case sits in the build reviews. One team, one accountable owner, one number.</div></details>
+      <details><summary>We already tried an AI pilot and it stalled. Can you help?</summary><div class="a">That is one of the most common reasons clients come to us. Pilots usually stall for one of four reasons: no real business case, no data foundation, no governance path to approval, or no owner once the vendor left. The first thing we do is work out which of those it was — because the fix is different in each case.</div></details>
+      <details><summary>What if AI is not the right answer to our problem?</summary><div class="a">Then we tell you, and we say so during the assessment rather than after you have paid for a build. Sometimes the answer is a process change, better reporting, or conventional software. That is a legitimate outcome of the assessment phase and a far cheaper one than the alternative.</div></details>
+      <details><summary>Who owns the code and the intellectual property?</summary><div class="a">You do, from day one. Everything is built in your repository, under your license, with no license-back to us. Source code, prompts, evaluation sets, infrastructure-as-code, and documentation are all yours. Handover, documentation, and a recorded walkthrough are in scope, not a change order.</div></details>
+      <details><summary>Which AI models and cloud platforms do you work with?</summary><div class="a">We are deliberately model-agnostic and cloud-agnostic, and we take no reseller margin on software, cloud, or model spend. The model is chosen per use case on the basis of evaluation results, cost, latency, and data-residency requirements — not a partnership agreement.</div></details>
+      <details><summary>Do you provide AI engineers on contract?</summary><div class="a">Yes. Short-term contracts, long-term contracts, project-based work, staff augmentation, and dedicated AI teams. Every professional is assessed and upskilled by us before presentation, and you see named candidates before any contract is signed.</div></details>
+      <details><summary>How is your AI training different from an online course platform?</summary><div class="a">For individuals, the Academy is a structured curriculum from beginner to advanced with assessments that name your specific gaps. For enterprises, the difference is bigger: when we have built a system for you, the training is delivered on <em>that</em> system — your data, your workflows, your guardrails — because we built it and know exactly how it behaves.</div></details>
+      <details><summary>Are your assessments a certification?</summary><div class="a">No. We issue certificates of completion, and we are precise about the distinction. A certification implies an independently validated standard behind it, with a psychometrically reviewed item bank and proctoring. We will not describe our assessments as certifications until that standard is genuinely met.</div></details>
+      <details><summary>How do you price engagements?</summary><div class="a">Fixed fee per phase, with scope and exit criteria written down before work begins. You approve each phase before it starts and can stop at any gate, keeping everything produced to that point. Contract staffing is priced per engagement.</div></details>
+      <details><summary>Where are you based and who do you serve?</summary><div class="a"><span class="ph">[COMPANY NAME]</span> is a United States company based in <span class="ph">[BUSINESS ADDRESS]</span>, incorporated in <span class="ph">[STATE OF INCORPORATION]</span>. Consulting, development, and talent services are delivered for U.S. organizations. The AI Academy and assessment platform serve learners worldwide.</div></details>
+      <details><summary>How quickly can you start?</summary><div class="a">A triage session is usually available within a few business days. Assessment and advisory work typically starts within two to three weeks of a signed scope. Contract staffing depends on the role — we present candidates from the assessed talent pool rather than starting a search from zero.</div></details>
     </div>
   </div>
 </section>
 
-<!-- ============ 17 SOLVE MY AI PROBLEM ============ -->
-<section class="sec alt" id="solve">
+<section class="sec feature" id="solve">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">16</span>
@@ -1990,95 +2252,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
   </div>
 </section>
 
-<!-- ============ 18 FAQ ============ -->
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">17</span>
-      <div>
-        <h2 class="sec-title">Frequently asked questions</h2>
-      </div>
-    </div>
-    <div class="faq rv">
-      <details><summary>What does an AI consulting company actually do?</summary><div class="a">An AI consulting company helps an organization work out where artificial intelligence will produce a business result, whether its data and systems can support that, what it will cost to build and run, and what risk it carries. We do that — and then, unlike a pure advisory firm, we also build the solution, train your staff on it, and supply the AI professionals to run it.</div></details>
-      <details><summary>How is this different from hiring a strategy firm and a development shop separately?</summary><div class="a">The seam between them is where most AI programs die. A strategy firm's recommendation is handed to a development shop that was not in the room when the business case was written, and the translation loss is expensive. Here the person who wrote the business case sits in the build reviews. One team, one accountable owner, one number.</div></details>
-      <details><summary>We already tried an AI pilot and it stalled. Can you help?</summary><div class="a">That is one of the most common reasons clients come to us. Pilots usually stall for one of four reasons: no real business case, no data foundation, no governance path to approval, or no owner once the vendor left. The first thing we do is work out which of those it was — because the fix is different in each case.</div></details>
-      <details><summary>What if AI is not the right answer to our problem?</summary><div class="a">Then we tell you, and we say so during the assessment rather than after you have paid for a build. Sometimes the answer is a process change, better reporting, or conventional software. That is a legitimate outcome of the assessment phase and a far cheaper one than the alternative.</div></details>
-      <details><summary>Who owns the code and the intellectual property?</summary><div class="a">You do, from day one. Everything is built in your repository, under your license, with no license-back to us. Source code, prompts, evaluation sets, infrastructure-as-code, and documentation are all yours. Handover, documentation, and a recorded walkthrough are in scope, not a change order.</div></details>
-      <details><summary>Which AI models and cloud platforms do you work with?</summary><div class="a">We are deliberately model-agnostic and cloud-agnostic, and we take no reseller margin on software, cloud, or model spend. The model is chosen per use case on the basis of evaluation results, cost, latency, and data-residency requirements — not a partnership agreement.</div></details>
-      <details><summary>Do you provide AI engineers on contract?</summary><div class="a">Yes. Short-term contracts, long-term contracts, project-based work, staff augmentation, and dedicated AI teams. Every professional is assessed and upskilled by us before presentation, and you see named candidates before any contract is signed.</div></details>
-      <details><summary>How is your AI training different from an online course platform?</summary><div class="a">For individuals, the Academy is a structured curriculum from beginner to advanced with assessments that name your specific gaps. For enterprises, the difference is bigger: when we have built a system for you, the training is delivered on <em>that</em> system — your data, your workflows, your guardrails — because we built it and know exactly how it behaves.</div></details>
-      <details><summary>Are your assessments a certification?</summary><div class="a">No. We issue certificates of completion, and we are precise about the distinction. A certification implies an independently validated standard behind it, with a psychometrically reviewed item bank and proctoring. We will not describe our assessments as certifications until that standard is genuinely met.</div></details>
-      <details><summary>How do you price engagements?</summary><div class="a">Fixed fee per phase, with scope and exit criteria written down before work begins. You approve each phase before it starts and can stop at any gate, keeping everything produced to that point. Contract staffing is priced per engagement.</div></details>
-      <details><summary>Where are you based and who do you serve?</summary><div class="a"><span class="ph">[COMPANY NAME]</span> is a United States company based in <span class="ph">[BUSINESS ADDRESS]</span>, incorporated in <span class="ph">[STATE OF INCORPORATION]</span>. Consulting, development, and talent services are delivered for U.S. organizations. The AI Academy and assessment platform serve learners worldwide.</div></details>
-      <details><summary>How quickly can you start?</summary><div class="a">A triage session is usually available within a few business days. Assessment and advisory work typically starts within two to three weeks of a signed scope. Contract staffing depends on the role — we present candidates from the assessed talent pool rather than starting a search from zero.</div></details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TRUST & TRANSPARENCY ============ -->
-<section class="sec alt" id="trust">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num"></span>
-      <div>
-        <h2 class="sec-title">What we don't claim</h2>
-        <p class="sec-lead">Look at any competitor's AI page and you will find the same wall: analyst badges, client logos, a partner grid, and a round number of projects delivered. Most of it is real. Some of it is decoration. None of it is verifiable by you in the moment you are reading it.</p>
-        <p class="sec-lead">So here is the inverse — stated plainly, because a firm that will tell you what it cannot do is more useful than one that tells you it can do everything.</p>
-      </div>
-    </div>
-    <ul class="trustgrid rv">
-      <li>
-        <span class="no">No analyst recognition</span>
-        <b>We are not a Gartner, Forrester, IDC, HFS, or Everest-rated firm.</b>
-        <span class="yes">Instead</span>
-        <span>Judge the method. It is published in full on this page, including the exit rights, so you can evaluate it before spending anything.</span>
-      </li>
-      <li>
-        <span class="no">No certifications yet</span>
-        <b>No SOC 2, no ISO 42001, no HIPAA attestation. We will not display a badge we have not earned.</b>
-        <span class="yes">Instead</span>
-        <span>Security and governance practices are described concretely and can be reviewed under NDA before any engagement.</span>
-      </li>
-      <li>
-        <span class="no">No client logos</span>
-        <b>No logo wall, no named references, no testimonials.</b>
-        <span class="yes">Instead</span>
-        <span>Case studies here are labelled illustrative solution patterns. Real ones will be published only with written client approval.</span>
-      </li>
-      <li>
-        <span class="no">No partner tier claims</span>
-        <b>We are not advertising ourselves as an AWS, Microsoft, Google, Databricks, or Snowflake partner.</b>
-        <span class="yes">Instead</span>
-        <span>We build on all of them and take zero margin on any of them — which is precisely why our recommendation is worth something.</span>
-      </li>
-      <li>
-        <span class="no">No performance statistics</span>
-        <b>No "40% faster", no "500+ projects delivered", no accuracy percentages.</b>
-        <span class="yes">Instead</span>
-        <span>Every engagement defines its own success metric in Phase 01, and that number is reported to you — not to a marketing page.</span>
-      </li>
-      <li>
-        <span class="no">No certification claims</span>
-        <b>Our assessments issue certificates of completion, not certifications.</b>
-        <span class="yes">Instead</span>
-        <span>The distinction is real: a certification requires a psychometrically reviewed item bank and proctoring. We will say so when that exists.</span>
-      </li>
-    </ul>
-    <div class="split rv" style="margin-top:3rem">
-      <div>
-        <p class="eyebrow">Why this is on the website</p>
-        <h3 class="serif" style="font-size:clamp(1.4rem,2.6vw,2rem);font-weight:300;margin-top:.7rem;max-width:22ch">The claims are the product.</h3>
-      </div>
-      <div>
-        <p class="sec-lead" style="margin-top:0;font-size:1rem">An AI consultancy sells judgement. If the first judgement you see is a marketing page willing to overstate, that tells you what the second one will look like when a pilot is not working and there is a Phase 03 invoice at stake.</p>
-        <p class="sec-lead" style="font-size:1rem">Our rule is simple, and it applies internally as well as here: <strong>if a claim would be uncomfortable to defend under oath, it does not get published.</strong> That rule is why this section exists — and it is the same rule that makes a "no-go" recommendation in Phase 02 possible.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 19 CONTACT ============ -->
 <section class="sec inv" id="contact">
   <div class="wrap">
     <div class="sec-head rv">
@@ -2129,7 +2302,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 </section>
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="ftr">
   <div class="wrap">
     <div class="ftr-grid">
@@ -2165,7 +2337,6 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
       <div><h4>Talent</h4><ul>
         <li><a href="#talent">AI Talent</a></li>
         <li><a href="#contract">Contract Services</a></li>
-        <li><a href="#classifieds">AI Job Classifieds</a></li>
         <li><a href="#solve">Submit a Requirement</a></li>
         <li><a href="#talent">Join the Network</a></li>
       </ul></div>
@@ -2193,6 +2364,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
     </div>
   </div>
 </footer>
+
 
 <script type="application/ld+json">
 {
@@ -2996,7 +3168,6 @@ if(bGo){
   });
 }
 briefInit();
-
 
 /* ================= AI JOB CLASSIFIEDS =================
    A posted board, not a generated one. Listings live in the artifact's

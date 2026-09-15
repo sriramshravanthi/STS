@@ -787,6 +787,20 @@ function lsRead(){
   try{ var raw=localStorage.getItem(JOBS_LS); var v=raw?JSON.parse(raw):[]; return v.length?v:[]; }
   catch(e){ return []; }
 }
+/* Listings published with the page itself: a JSON block in the HTML. This is
+   the tier that works on a plain static deploy, with no runtime and no feed. */
+var jSeedStatus="";
+function seedRead(){
+  var el=$("#jobsSeed"); if(!el) return [];
+  try{
+    var d=JSON.parse(el.textContent||"{}");
+    jSeedStatus=d.status||"live";
+    return (d.items||[]).map(function(it){
+      var o=Object.assign({},it); o.seeded=true; return o;
+    });
+  }catch(e){ return []; }
+}
+
 function lsWrite(items){
   try{ localStorage.setItem(JOBS_LS,JSON.stringify(items)); return true; }catch(e){ return false; }
 }
@@ -914,7 +928,7 @@ function cardHtml(it,editable){
     +'<span>'+esc(it.summary||'')+'</span>'
     +(skills?'<span class="sk"><i>Skills</i>'+skills+'</span>':'')
     +(it.apply?applyLink(it.apply):'<span class="soon"><a href="ai-talent.html#talent">Join the talent network</a></span>')
-    +(editable
+    +(editable && !it.seeded
       ? '<span class="acts"><button type="button" class="jact" data-act="edit" data-id="'+esc(it.id)+'">Edit</button>'
         +'<button type="button" class="jact jdel" data-act="del" data-id="'+esc(it.id)+'">Remove</button></span>'
       : '')
@@ -927,7 +941,17 @@ function paintBoard(items,source){
   var editable = source==='db' || source==='local';
   jBody.innerHTML='<ul class="rescards jobs">'+jItems.map(function(it){return cardHtml(it,editable);}).join('')+'</ul>';
   jCount.textContent=jItems.length+(jItems.length===1?' open listing':' open listings');
-  if(source==='db'){
+  if(source==='seed'){
+    if(jSeedStatus==='example'){
+      jbadge('Example listings','warn');
+      jCount.textContent=jItems.length+(jItems.length===1?' example listing':' example listings');
+      jBody.insertAdjacentHTML('afterbegin','<p class="jobs-pattern-note">These are <strong>example listings</strong>, shown so the board is not empty before launch. They are not open positions. Replace the <code>#jobsSeed</code> block in this page with real roles and set its <code>status</code> to <code>"live"</code>.</p>');
+      jDisc.innerHTML='<strong>Example listings.</strong> Published with the page so the board reads as intended before launch, and labelled as examples rather than dressed up as vacancies. No employer, salary or closing date is implied by any entry here.';
+    }else{
+      jbadge('Open roles','live');
+      jDisc.innerHTML='<strong>Published with the page.</strong> These listings are stored in the page itself, so every visitor sees the same board with no backend to keep in sync. A role appears here only once it is genuinely open.';
+    }
+  }else if(source==='db'){
     jbadge('Live board','live');
     jDisc.innerHTML='<strong>Stored with the page.</strong> These listings are saved in the artifact’s own store, shared by everyone who opens it and updated live — an edit made here replaces the listing for every visitor. Posting and editing require edit access on this page.';
   }else{
@@ -959,6 +983,7 @@ function renderJobsEmpty(reason){
   jBody.innerHTML='<div class="brief-empty"><p><strong>The board has no listings yet.</strong> '+esc(reason)+'</p>'
    +'<p style="margin-top:.75rem">Post a listing and it is stored with the page, so every visitor sees it until it is edited or removed. Published as an Artifact the board uses shared storage; opened as a local file it falls back to this browser only.</p></div>';
   jCount.textContent='No open listings';
+  jbadge('Board empty','');
   jDisc.innerHTML='No placeholder vacancies are shown here on purpose. Invented job ads are exactly the kind of claim this firm says it will not publish.';
 }
 
@@ -1022,6 +1047,9 @@ async function jobsFallback(){
       }
     }catch(e){}
   }
+  var seeded=seedRead();
+  if(seeded.length) return paintBoard(seeded,'seed');
+
   if(jDb){
     try{
       var snap=await jDb.doc(JOBS_CACHE).get();
@@ -1092,7 +1120,8 @@ async function jobsInit(){
   /* No shared store in this view — fall back to this browser. */
   jMode='local'; jshow(jPost,true); jStore.textContent='Saved in this browser only';
   var local=lsRead();
-  if(local.length) paintBoard(local,'local');
+  var merged=local.concat(seedRead());
+  if(merged.length) paintBoard(merged, local.length?'local':'seed');
   else jobsFallback();
 }
 jobsInit();

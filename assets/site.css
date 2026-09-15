@@ -897,8 +897,8 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 /* ===== mega menu ===== */
 .hdr{overflow:visible}
 .mega{margin-left:auto}
-.mega-l{display:flex;gap:.1rem;list-style:none;margin:0;padding:0}
-.mega-i{position:static}
+.mega-l{display:flex;align-items:stretch;height:66px;gap:.1rem;list-style:none;margin:0;padding:0}
+.mega-i{position:static;display:flex;align-items:center}
 .mega-t{font:inherit;font-size:.875rem;letter-spacing:-.005em;color:var(--ink-2);background:none;border:none;text-decoration:none;
   cursor:pointer;padding:.45rem .7rem;border-radius:2px;display:inline-flex;align-items:center;gap:.35rem;position:relative}
 .mega-t::after{content:"";width:5px;height:5px;border-right:1.4px solid currentColor;
@@ -932,7 +932,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 .mega-feat b{display:block;font-family:var(--ff-display);font-size:1.2rem;font-weight:400;letter-spacing:-.015em;
   margin:.5rem 0 .4rem;color:var(--ink)}
 .mega-feat p{font-size:.8125rem;line-height:1.5;color:var(--ink-2);margin:0 0 1rem}
-.mega-scrim{position:fixed;inset:66px 0 0;z-index:200;background:color-mix(in srgb,var(--ink) 26%,transparent);
+.mega-scrim{position:fixed;inset:66px 0 0;z-index:180;background:color-mix(in srgb,var(--ink) 26%,transparent);
   opacity:0;pointer-events:none;transition:opacity .2s}
 .mega-scrim.on{opacity:1;pointer-events:auto}
 .hdr-cta{white-space:nowrap}

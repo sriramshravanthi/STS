@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — AI Consulting, Development, Training &amp; Talent | USA</title>
+<!-- LAYOUT: Stacked Panels -->
+<title>Stacked Panels — NorthKey AI — AI Consulting, Development, Training &amp; Talent | USA</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract. Free AI maturity assessment and published pricing.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -24,13 +25,11 @@
    Direction: "technical document, premium print"
    ============================================================ */
 :root{
-  --bg:#1E615B; --bg-2:#195450; --bg-3:#27716A;
-  --ink:#F2FAF8; --ink-2:#C6DFDA; --ink-3:#A3C4BE;
-  --rule:#2E7A72; --rule-2:#3D8F86;
-  --accent:#5FE8C2; --accent-hi:#8CF2D6; --accent-wash:#17554E;
-  --accent-2:#FFAE72; --accent-2-wash:#46301E;
-  --inverse-bg:#F2FAF8; --inverse-ink:#0F1216;
-  --inv-a:#0B6B47; --inv-a2:#B4460D;
+  --bg:#F4F2EC; --bg-2:#EDEAE1; --bg-3:#E5E1D5;
+  --ink:#0F1216; --ink-2:#4C525A; --ink-3:#7E858E;
+  --rule:#D9D4C7; --rule-2:#C7C0AE;
+  --inverse-bg:#0F1216; --inverse-ink:#EDEAE1;
+  --inv-a:#3ED9A0; --inv-a2:#FF8A5E;
   --ff-display:"Newsreader",Georgia,"Times New Roman",serif;
   --ff-body:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --ff-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
@@ -44,20 +43,16 @@
     --bg:#0E1114; --bg-2:#161A1F; --bg-3:#1D2228;
     --ink:#EDEAE1; --ink-2:#A3A9B2; --ink-3:#6E747C;
     --rule:#262B32; --rule-2:#343A42;
-    --accent:#5FBFA0; --accent-hi:#7FD3B7; --accent-wash:#152520;
-    --accent-2:#E08046; --accent-2-wash:#2A1B12;
     --inverse-bg:#EDEAE1; --inverse-ink:#0F1216;
-    --inv-a:#0B6B47; --inv-a2:#BE420C;
+    --inv-a:#0B6B47; --inv-a2:#A63A0A;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0E1114; --bg-2:#161A1F; --bg-3:#1D2228;
   --ink:#EDEAE1; --ink-2:#A3A9B2; --ink-3:#6E747C;
   --rule:#262B32; --rule-2:#343A42;
-  --accent:#5FBFA0; --accent-hi:#7FD3B7; --accent-wash:#152520;
-  --accent-2:#E08046; --accent-2-wash:#2A1B12;
   --inverse-bg:#EDEAE1; --inverse-ink:#0F1216;
-  --inv-a:#0B6B47; --inv-a2:#BE420C;
+  --inv-a:#0B6B47; --inv-a2:#A63A0A;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -80,6 +75,8 @@ p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:fixed;top:8px;left:8px;z-index:999;transform:translateY(-250%);transition:transform .18s}
+.skip:focus{transform:none}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
 .serif{font-family:var(--ff-display)}
@@ -167,12 +164,12 @@ section:first-of-type{border-top:none}
 .alt{background:var(--bg-2)}
 .inv{background:var(--inverse-bg);color:var(--inverse-ink)}
 .inv .sec-lead,.inv .muted{color:color-mix(in srgb,var(--inverse-ink) 68%,transparent)}
-.inv .eyebrow,.inv .sec-num{color:var(--accent-2)}
 .inv .eyebrow,.inv .sec-num{color:var(--inv-a2)}
-.inv .btn{background:var(--inv-a);border-color:var(--inv-a);color:#FFFFFF}
-.inv .btn:hover{background:var(--inv-a);border-color:var(--inv-a);filter:brightness(1.12)}
+.inv .btn{background:var(--inv-a);border-color:var(--inv-a);color:var(--inverse-bg)}
+.inv .btn:hover{background:var(--inv-a);border-color:var(--inv-a);filter:brightness(1.1)}
 .inv .btn-o{background:none;color:var(--inverse-ink);border-color:color-mix(in srgb,var(--inverse-ink) 38%,transparent)}
 .inv .btn-o:hover{color:var(--inv-a);border-color:var(--inv-a)}
+.inv a:not(.btn):not(.btn-o){color:var(--inv-a)}
 
 /* ---------- hero ---------- */
 .hero{padding-block:clamp(3.5rem,8vw,7rem) clamp(3rem,6vw,5.5rem);position:relative;overflow:hidden}
@@ -688,24 +685,24 @@ td span{display:block;font-size:.8125rem;color:var(--ink-3);margin-top:.2rem}
    ============================================================ */
 
 :root{
-  --h1:#5FE8C2;
-  --h2:#FFAE72;
-  --h3:#F5D442;
-  --h4:#BBA4FF;
-  --h5:#6FDDF5;
-  --h6:#FF9CCB;
-  --accent:#5FE8C2; --accent-hi:#8CF2D6; --accent-wash:#17554E;
-  --accent-2:#FFAE72; --accent-2-wash:#46301E;
+  --h1:#0A6E4B;
+  --h2:#E0532F;
+  --h3:#C98A00;
+  --h4:#6D4AD8;
+  --h5:#0E86A8;
+  --h6:#C32E86;
+  --accent:#0A6E4B; --accent-hi:#085437; --accent-wash:#DCF2E8;
+  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
 }
 :root[data-theme="light"]{
-  --h1:#5FE8C2;
-  --h2:#FFAE72;
-  --h3:#F5D442;
-  --h4:#BBA4FF;
-  --h5:#6FDDF5;
-  --h6:#FF9CCB;
-  --accent:#5FE8C2; --accent-hi:#8CF2D6; --accent-wash:#17554E;
-  --accent-2:#FFAE72; --accent-2-wash:#46301E;
+  --h1:#0A6E4B;
+  --h2:#E0532F;
+  --h3:#C98A00;
+  --h4:#6D4AD8;
+  --h5:#0E86A8;
+  --h6:#C32E86;
+  --accent:#0A6E4B; --accent-hi:#085437; --accent-wash:#DCF2E8;
+  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
 }
 :root[data-theme="dark"]{
   --h1:#3ED9A0;
@@ -920,11 +917,59 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 .meter-track i:nth-child(5).on{background:var(--h5)}
 
 </style>
-<script>document.documentElement.setAttribute("data-theme","light");</script>
+<script>
+/* Launch placeholders. [DOMAIN]/[PHONE]/[NAME] stay literal in the repo so nothing
+   is invented; when the page is served from a real origin they resolve here, which
+   keeps canonical, og:url and the JSON-LD graph valid in production. */
+(function(){
+  var o = location.origin;
+  if (!o || o === 'null' || location.protocol === 'file:') return;
+  var c = document.querySelector('link[rel=canonical]');
+  if (c) c.href = o + '/';
+  var g = document.querySelector('meta[property="og:url"]');
+  if (g) g.content = o + '/';
+  var ld = document.querySelector('script[type="application/ld+json"]');
+  if (!ld) return;
+  var t = ld.textContent;
+  if (t.indexOf('[DOMAIN]') < 0) return;
+  t = t.split('https://[DOMAIN]').join(o);
+  try {
+    var j = JSON.parse(t);
+    (function strip(x){                       // drop nodes still holding placeholders
+      if (Array.isArray(x)) return x.forEach(strip);
+      if (x && typeof x === 'object') for (var k in x){
+        if (typeof x[k] === 'string' && /\[[A-Z]+\]/.test(x[k])) delete x[k];
+        else strip(x[k]);
+      }
+    })(j);
+    ld.textContent = JSON.stringify(j);
+  } catch(e){}
+})();
+</script>
+<style>/* ===== LAYOUT STACKED PANELS ===== */
+/* One idea per viewport. Oversized display type, generous air, alternating grounds. */
+.sec{min-height:88vh;display:flex;align-items:center;padding-block:clamp(3rem,8vw,7rem)}
+.sec>*{width:100%}
+.sec-title{font-size:clamp(2rem,5vw,3.6rem);line-height:1.04;letter-spacing:-.035em;max-width:18ch}
+.sec-lead{font-size:clamp(1.05rem,1.9vw,1.4rem);line-height:1.5;max-width:54ch}
+.eyebrow{font-size:.7rem;letter-spacing:.2em}
+.hero{min-height:94vh;display:flex;align-items:center}
+.hero h1{font-size:clamp(2.8rem,9vw,7rem);line-height:.92;letter-spacing:-.045em}
+.hero-sub{font-size:clamp(1.1rem,2.2vw,1.6rem);max-width:40ch}
+.hero-cta .btn{padding:.9rem 1.5rem}
+.dcard{padding:1.8rem 1.4rem}
+.dcard h3{font-size:1.2rem}
+.tech li,.courses li,.sols li{padding:1.6rem 1.3rem}
+@media(max-width:700px){.sec{min-height:auto}}
+@media(prefers-reduced-motion:no-preference){
+  .sec-title,.sec-lead{animation:pnl .7s var(--ease) both}
+  @keyframes pnl{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style>
 </head>
 <body>
 
-<a class="btn btn-sm" href="#main" style="position:absolute;left:-9999px" onfocus="this.style.cssText='position:fixed;top:8px;left:8px;z-index:999'" onblur="this.style.cssText='position:absolute;left:-9999px'">Skip to content</a>
+<a class="btn btn-sm skip" href="#main">Skip to content</a>
 
 <!-- ============ HEADER ============ -->
 <header class="hdr">

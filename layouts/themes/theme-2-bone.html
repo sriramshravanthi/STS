@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bone">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NorthKey AI — Bone</title>
+<meta name="description" content="Bone: warm paper ground with a forest-green accent, styled as premium print.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,300..500&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THEME 2 — BONE
+   Warm paper ground, forest-green accent, editorial ledger.
+   Reference point: McKinsey / QuantumBlack print collateral.
+   ============================================================ */
+:root{
+  --bg:#F6F3EC; --bg-2:#EFEBE1; --bg-3:#E6E1D3;
+  --ink:#14171A; --ink-2:#4A5158; --ink-3:#7C838B;
+  --rule:#DAD4C6; --rule-2:#C4BCA8;
+  --accent:#1C5D4A; --accent-2:#B4532A;
+  --ff-display:"Newsreader",Georgia,serif;
+  --ff-body:"Instrument Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(1.15rem,4vw,3.5rem);
+  --sec:clamp(4.5rem,9vw,8rem);
+  --maxw:1280px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ff-body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* faint paper tooth */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(20,23,26,.055) .5px,transparent .5px);background-size:3px 3px}
+.shell{position:relative;z-index:1}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.mono{font-family:var(--ff-mono);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.hdr-in{display:flex;align-items:center;gap:2rem;height:70px;max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--ff-display);font-size:1.3rem;letter-spacing:-.03em}
+.logo b{font-weight:600}.logo i{color:var(--accent);font-style:normal}
+.logo svg{width:22px;height:22px}
+.nav{display:flex;gap:.1rem;margin-left:auto}
+.nav a{text-decoration:none;font-size:.875rem;color:var(--ink-2);padding:.45rem .7rem;position:relative}
+.nav a::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.2rem;height:1.5px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.nav a:hover{color:var(--ink)}.nav a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:inherit;font-size:.875rem;
+  font-weight:500;text-decoration:none;cursor:pointer;padding:.72rem 1.35rem;border-radius:2px;
+  border:1px solid var(--accent);background:var(--accent);color:#F6F3EC;transition:all .2s var(--ease)}
+.btn:hover{background:#164C3C;border-color:#164C3C;transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--ink);border-color:var(--rule-2)}
+.btn-o:hover{background:var(--bg-2);border-color:var(--ink);transform:translateY(-1px)}
+.btn-sm{padding:.5rem 1rem;font-size:.8125rem}
+
+/* ---------- hero: editorial masthead ---------- */
+.hero{padding-top:clamp(3rem,7vw,5.5rem);padding-bottom:var(--sec)}
+.kicker{display:flex;align-items:center;gap:1rem;color:var(--accent);margin-bottom:2rem}
+.kicker::after{content:"";flex:1;height:1px;background:var(--rule)}
+h1{font-family:var(--ff-display);font-weight:200;letter-spacing:-.035em;line-height:.98;
+  font-size:clamp(3rem,9.5vw,7rem);margin:0 0 2rem;max-width:16ch}
+h1 em{font-style:italic;font-weight:300;color:var(--accent)}
+.hero-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);
+  padding-top:2.2rem;border-top:2px solid var(--ink)}
+.lead{font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.6;margin:0;max-width:44ch;
+  font-family:var(--ff-display);font-weight:300}
+.hero-side p{color:var(--ink-2);font-size:.92rem;margin:0 0 1.6rem;max-width:46ch}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap}
+
+/* index table — print "contents" device */
+.contents{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--rule)}
+.crow{display:grid;grid-template-columns:5rem minmax(0,1fr) minmax(0,1.4fr) 7rem;gap:1.5rem;
+  align-items:baseline;padding:1.15rem 0;border-bottom:1px solid var(--rule);
+  text-decoration:none;transition:background .22s,padding-left .22s var(--ease)}
+.crow:hover{background:var(--bg-2);padding-left:.75rem}
+.crow .num{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent)}
+.crow .ttl{font-family:var(--ff-display);font-size:clamp(1.15rem,2vw,1.55rem);font-weight:300;letter-spacing:-.02em}
+.crow .dsc{color:var(--ink-2);font-size:.88rem}
+.crow .go{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-3);text-align:right}
+.crow:hover .go{color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{padding-block:var(--sec)}
+.alt{background:var(--bg-2);border-block:1px solid var(--rule)}
+.sec-head{max-width:60ch;margin-bottom:3.2rem}
+.sec-head h2{font-family:var(--ff-display);font-weight:200;letter-spacing:-.03em;
+  font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.06;margin:.7rem 0 .9rem}
+.sec-head p{color:var(--ink-2);margin:0;font-size:1rem}
+
+/* method — vertical ruled timeline */
+.tl{display:grid;gap:0}
+.tl-i{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);
+  padding:1.9rem 0;border-top:1px solid var(--rule);position:relative}
+.tl-i:last-child{border-bottom:1px solid var(--rule)}
+.tl-i .ph{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-3);padding-top:.35rem}
+.tl-i h4{font-family:var(--ff-display);font-weight:300;font-size:clamp(1.3rem,2.4vw,1.85rem);
+  letter-spacing:-.02em;margin:0 0 .4rem}
+.tl-i p{margin:0;color:var(--ink-2);font-size:.94rem;max-width:62ch}
+.tl-i::after{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--accent);transition:width .5s var(--ease)}
+.tl-i:hover::after{width:100%}
+.tl-i:hover .ph{color:var(--accent)}
+
+/* figures — print table */
+.tbl{border:1px solid var(--rule);background:var(--bg)}
+.tr{display:grid;grid-template-columns:minmax(0,1fr) 10rem;gap:1rem;align-items:center;
+  padding:1.25rem 1.6rem;border-bottom:1px solid var(--rule)}
+.tr:last-child{border-bottom:0}
+.tr span{color:var(--ink-2);font-size:.92rem}
+.tr b{font-family:var(--ff-display);font-weight:300;font-size:1.9rem;color:var(--accent);text-align:right;line-height:1}
+
+/* pull quote */
+.pull{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+.pull blockquote{margin:0;font-family:var(--ff-display);font-weight:200;font-style:italic;
+  font-size:clamp(1.5rem,3.2vw,2.5rem);line-height:1.3;letter-spacing:-.025em;
+  padding-left:1.6rem;border-left:3px solid var(--accent)}
+.pull cite{display:block;margin-top:1.5rem;font-style:normal;font-family:var(--ff-mono);
+  font-size:.72rem;letter-spacing:.12em;color:var(--ink-3);padding-left:1.6rem}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--bg);border:0}
+.cta h2{font-family:var(--ff-display);font-weight:200;font-size:clamp(2.1rem,5.2vw,3.8rem);
+  letter-spacing:-.03em;line-height:1.05;margin:0 0 1rem;max-width:18ch}
+.cta p{color:#A8AFB6;margin:0 0 2.2rem;max-width:52ch}
+.cta .btn-o{color:var(--bg);border-color:#3A4149}
+.cta .btn-o:hover{background:#20242A;border-color:var(--bg)}
+.cta-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:3rem;align-items:end}
+
+/* footer */
+.ftr{padding-block:3.4rem 2.2rem;border-top:1px solid var(--rule)}
+.ftr-g{display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:2.5rem}
+.ftr h5{font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 1rem}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.ftr a{color:var(--ink-2);text-decoration:none;font-size:.86rem}
+.ftr a:hover{color:var(--accent)}
+.ftr-b{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.8rem;
+  padding-top:1.4rem;border-top:1px solid var(--rule);color:var(--ink-3);font-size:.78rem}
+
+@media (max-width:900px){
+  .hero-cols,.pull,.cta-in,.ftr-g{grid-template-columns:1fr}
+  .ftr-g{gap:2rem}
+  .crow{grid-template-columns:3.5rem minmax(0,1fr);gap:1rem}
+  .crow .dsc,.crow .go{display:none}
+  .tl-i{grid-template-columns:1fr;gap:.5rem}
+}
+@media (max-width:640px){ .nav{display:none} }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V3l18 18V3" stroke="currentColor" stroke-width="2.1" stroke-linecap="square"/><circle cx="12" cy="12" r="2.6" fill="#1C5D4A"/></svg>
+      <span><b>North</b>Key<i>.</i></span>
+    </a>
+    <nav class="nav"><a href="#contents">Services</a><a href="#method">Method</a><a href="#figures">Evidence</a><a href="#cta">Company</a></nav>
+    <a class="btn btn-sm" href="#cta">Talk to an expert</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="mono kicker">NorthKey AI · Consulting, development, training, talent</p>
+    <h1>The seam is where AI programmes <em>die</em>.</h1>
+    <div class="hero-cols">
+      <p class="lead">Strategy firms hand over a deck. Development shops build what the deck said. Nobody owns the gap between them — so we removed it.</p>
+      <div class="hero-side">
+        <p>One team, one accountable owner, one number. The person who wrote your business case sits in the build reviews and is still there when it goes live.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#cta">Book a 45-minute triage</a>
+          <a class="btn btn-o" href="#method">Read the method</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contents" id="contents">
+      <a class="crow" href="#"><span class="num">01</span><span class="ttl">AI Consulting</span><span class="dsc">Strategy, feasibility and architecture you can defend.</span><span class="go">View →</span></a>
+      <a class="crow" href="#"><span class="num">02</span><span class="ttl">Solutions &amp; Development</span><span class="dsc">Your repository, your cloud, your IP from commit one.</span><span class="go">View →</span></a>
+      <a class="crow" href="#"><span class="num">03</span><span class="ttl">AI Agents</span><span class="dsc">Agentic workflows shipped with guardrails and evaluations.</span><span class="go">View →</span></a>
+      <a class="crow" href="#"><span class="num">04</span><span class="ttl">Training &amp; Academy</span><span class="dsc">On your data, your workflows, your guardrails.</span><span class="go">View →</span></a>
+      <a class="crow" href="#"><span class="num">05</span><span class="ttl">AI Talent</span><span class="dsc">Assessed, upskilled, presented with evidence attached.</span><span class="go">View →</span></a>
+      <a class="crow" href="#"><span class="num">06</span><span class="ttl">Contract Services</span><span class="dsc">Specialists and whole teams, without a hiring cycle.</span><span class="go">View →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="mono" style="color:var(--accent)">The NorthKey Method</p>
+      <h2>Eight phases, each with a written exit right.</h2>
+      <p>At the end of every phase you can stop — and the reason you might want to is agreed before the phase begins, not argued about afterwards.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-i"><span class="ph">Phase 01</span><div><h4>Frame</h4><p>Your problem written in your words, revised until both sides recognise it. Most engagements change shape here, and that is the cheapest place for it to happen.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 02</span><div><h4>Assess</h4><p>Whether your data, systems and people can actually carry this. If the answer is no, you hear it now rather than after you have paid for a build.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 03</span><div><h4>Design</h4><p>Architecture, cost envelope, and the failure modes named out loud while they are still cheap to design around.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 04</span><div><h4>Prove</h4><p>One narrow slice under production conditions, measured against an evaluation set you agreed to in advance.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 05</span><div><h4>Build</h4><p>In your repository and your cloud, tested continuously against the suite phase four produced.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 06</span><div><h4>Deploy</h4><p>Live, monitored, and reversible by a rollback somebody has actually rehearsed.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 07</span><div><h4>Operate</h4><p>Drift, cost and quality watched by people with the authority to act on what they see.</p></div></div>
+      <div class="tl-i"><span class="ph">Phase 08</span><div><h4>Scale</h4><p>The second and third use case, cheaper than the first because of what phase five deliberately left behind.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="figures">
+  <div class="wrap pull">
+    <div>
+      <blockquote>“They told us during the assessment that AI was the wrong answer to two of our four problems.”</blockquote>
+      <cite>Engagement pattern · Financial services · Assess phase</cite>
+    </div>
+    <div class="tbl">
+      <div class="tr"><span>Free triage session, written problem statement either way</span><b>45m</b></div>
+      <div class="tr"><span>Share of the code and IP that is yours from day one</span><b>100%</b></div>
+      <div class="tr"><span>Licence-back clauses in any contract we sign</span><b>0</b></div>
+      <div class="tr"><span>Accelerators included, with no separate fee</span><b>6</b></div>
+      <div class="tr"><span>Business days to a reply written by a human</span><b>1</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Bring us your AI challenge.</h2>
+      <p>A free 45-minute triage session. You leave with a written problem statement whether or not we end up working together.</p>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#">Solve my AI problem</a>
+      <a class="btn btn-o" href="#">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-g">
+      <div>
+        <a class="logo" href="#" style="margin-bottom:1rem">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V3l18 18V3" stroke="currentColor" stroke-width="2.1" stroke-linecap="square"/><circle cx="12" cy="12" r="2.6" fill="#1C5D4A"/></svg>
+          <span><b>North</b>Key<i>.</i></span>
+        </a>
+        <p style="color:var(--ink-3);font-size:.84rem;max-width:34ch;margin:0">From AI problem to AI outcome. One partner from identification through implementation, training and talent.</p>
+      </div>
+      <div><h5>Services</h5><ul><li><a href="#">AI Consulting</a></li><li><a href="#">AI Solutions</a></li><li><a href="#">AI Agents</a></li><li><a href="#">Accelerators</a></li></ul></div>
+      <div><h5>Free tools</h5><ul><li><a href="#">Maturity assessment</a></li><li><a href="#">Skills assessment</a></li><li><a href="#">AI advisor</a></li><li><a href="#">Triage session</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">What we don’t claim</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="ftr-b"><span>© 2026 NorthKey AI</span><span class="mono">Theme 02 — Bone</span></div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

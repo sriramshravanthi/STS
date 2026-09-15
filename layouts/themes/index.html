@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NorthKey AI — Theme comparison</title>
+<meta name="description" content="Five colour directions for the NorthKey AI site, side by side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,300..500&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1216; --bg-2:#161A20; --ink:#ECEFF3; --ink-2:#98A1AC; --ink-3:#666E78;
+  --rule:#222831; --rule-2:#333B46; --accent:#3EE9A4;
+  --ff-display:"Newsreader",Georgia,serif;
+  --ff-body:"Instrument Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(1.15rem,4vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ff-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1400px;margin:0 auto;padding-inline:var(--pad)}
+.mono{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase}
+
+header{padding-block:clamp(3rem,7vw,5rem) 2.5rem;border-bottom:1px solid var(--rule)}
+h1{font-family:var(--ff-display);font-weight:200;letter-spacing:-.035em;line-height:1.03;
+  font-size:clamp(2.2rem,6vw,4rem);margin:.9rem 0 1rem;max-width:18ch}
+h1 em{font-style:italic;color:var(--accent)}
+.sub{color:var(--ink-2);max-width:62ch;margin:0;font-size:1.02rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.4rem;padding-block:3rem}
+.card{border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--bg-2);
+  display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.22,.61,.36,1),border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--rule-2)}
+.frame{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000;border-bottom:1px solid var(--rule)}
+.frame iframe{position:absolute;top:0;left:0;width:1400px;height:875px;border:0;
+  transform:scale(var(--s,.33));transform-origin:0 0;pointer-events:none}
+.frame a{position:absolute;inset:0;z-index:2}
+.meta{padding:1.3rem 1.4rem 1.5rem}
+.meta h2{font-family:var(--ff-display);font-weight:300;font-size:1.5rem;letter-spacing:-.02em;margin:.55rem 0 .5rem}
+.meta p{color:var(--ink-2);font-size:.88rem;margin:0 0 1.1rem;line-height:1.6}
+.sw{display:flex;gap:.4rem;margin-bottom:1rem}
+.sw i{width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,255,255,.14);display:block}
+.links{display:flex;gap:.6rem;flex-wrap:wrap}
+.b{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:500;text-decoration:none;
+  padding:.5rem 1rem;border-radius:7px;border:1px solid var(--rule-2);color:var(--ink);transition:all .2s}
+.b:hover{border-color:var(--accent);color:var(--accent)}
+.b.p{background:var(--accent);border-color:var(--accent);color:#04120C}
+.b.p:hover{background:#35D294;border-color:#35D294;color:#04120C}
+.tag{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+
+.note{border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:1.3rem 1.5rem;margin-bottom:3.5rem;background:var(--bg-2);max-width:92ch}
+.note b{color:var(--ink)}
+.note p{margin:.5rem 0 0;color:var(--ink-2);font-size:.9rem}
+footer{border-top:1px solid var(--rule);padding-block:2rem;color:var(--ink-3);font-size:.8rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="mono" style="color:var(--accent)">NorthKey AI · Design directions</p>
+    <h1>Five colour worlds, one <em>structure</em>.</h1>
+    <p class="sub">Each theme is a complete, self-contained landing page — HTML with its own embedded CSS, no build step and no shared stylesheet. They use the same type stack and the same copy, so what you are comparing is colour, density and structure rather than content.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <article class="card">
+      <div class="frame"><iframe src="theme-1-obsidian.html" title="Obsidian preview" loading="lazy" scrolling="no"></iframe><a href="theme-1-obsidian.html" aria-label="Open Obsidian"></a></div>
+      <div class="meta">
+        <span class="tag">Theme 01 · Dark</span>
+        <h2>Obsidian</h2>
+        <div class="sw"><i style="background:#0A0C0F"></i><i style="background:#171C23"></i><i style="background:#3EE9A4"></i><i style="background:#FF8A5E"></i><i style="background:#ECEFF3"></i></div>
+        <p>Near-black ground with an electric mint accent and a hairline grid. Asymmetric hero with an animated node diagram. The most technical and the highest contrast of the five.</p>
+        <div class="links"><a class="b p" href="theme-1-obsidian.html">Open</a><a class="b" href="theme-1-obsidian.html" target="_blank" rel="noopener">New tab</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="theme-2-bone.html" title="Bone preview" loading="lazy" scrolling="no"></iframe><a href="theme-2-bone.html" aria-label="Open Bone"></a></div>
+      <div class="meta">
+        <span class="tag">Theme 02 · Light</span>
+        <h2>Bone</h2>
+        <div class="sw"><i style="background:#F6F3EC"></i><i style="background:#E6E1D3"></i><i style="background:#1C5D4A"></i><i style="background:#B4532A"></i><i style="background:#14171A"></i></div>
+        <p>Warm paper with a forest-green accent, built as an editorial ledger: masthead hero, a print-style contents index, and a ruled vertical timeline. Closest to your current site.</p>
+        <div class="links"><a class="b p" href="theme-2-bone.html">Open</a><a class="b" href="theme-2-bone.html" target="_blank" rel="noopener">New tab</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="theme-3-midnight.html" title="Midnight preview" loading="lazy" scrolling="no"></iframe><a href="theme-3-midnight.html" aria-label="Open Midnight"></a></div>
+      <div class="meta">
+        <span class="tag">Theme 03 · Dark</span>
+        <h2>Midnight</h2>
+        <div class="sw"><i style="background:#080E1A"></i><i style="background:#132038"></i><i style="background:#57A8FF"></i><i style="background:#A88BFF"></i><i style="background:#38E0C8"></i></div>
+        <p>Deep navy under a drifting aurora field, with frosted glass cards and a bento grid. Centred hero, gradient headline. The most obviously “AI platform” of the set.</p>
+        <div class="links"><a class="b p" href="theme-3-midnight.html">Open</a><a class="b" href="theme-3-midnight.html" target="_blank" rel="noopener">New tab</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="theme-4-slate.html" title="Slate preview" loading="lazy" scrolling="no"></iframe><a href="theme-4-slate.html" aria-label="Open Slate"></a></div>
+      <div class="meta">
+        <span class="tag">Theme 04 · Dark</span>
+        <h2>Slate</h2>
+        <div class="sw"><i style="background:#14171C"></i><i style="background:#222831"></i><i style="background:#FF9F45"></i><i style="background:#FFCE7A"></i><i style="background:#E8EAED"></i></div>
+        <p>Cool charcoal with a warm amber accent, arranged as an instrument panel: split hero with a live-looking readout, a horizontally scrolling service rail, and a progress ladder.</p>
+        <div class="links"><a class="b p" href="theme-4-slate.html">Open</a><a class="b" href="theme-4-slate.html" target="_blank" rel="noopener">New tab</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="theme-5-porcelain.html" title="Porcelain preview" loading="lazy" scrolling="no"></iframe><a href="theme-5-porcelain.html" aria-label="Open Porcelain"></a></div>
+      <div class="meta">
+        <span class="tag">Theme 05 · Light</span>
+        <h2>Porcelain</h2>
+        <div class="sw"><i style="background:#FAFBFD"></i><i style="background:#E8EBF3"></i><i style="background:#3B33C4"></i><i style="background:#7E5BE8"></i><i style="background:#12A3A0"></i></div>
+        <p>Cool white over a soft indigo-violet gradient, with rounded cards, generous whitespace and a product-style stats panel. The friendliest and most commercial of the five.</p>
+        <div class="links"><a class="b p" href="theme-5-porcelain.html">Open</a><a class="b" href="theme-5-porcelain.html" target="_blank" rel="noopener">New tab</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="note">
+    <b>Previews are scaled iframes.</b>
+    <p>Each tile renders the real page at 1400px wide and scales it down, so what you see is genuinely the page rather than a screenshot — but hover states, the scrolling rail and the drifting aurora only read properly at full size. Open each one before deciding.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 NorthKey AI · Five colour directions · self-contained HTML + CSS, no build step</div>
+</footer>
+
+<script>
+/* Scale each preview iframe to its tile, so the thumbnails stay proportional. */
+(function(){
+  var frames=[].slice.call(document.querySelectorAll('.frame'));
+  function fit(){
+    frames.forEach(function(f){
+      f.style.setProperty('--s', (f.clientWidth/1400).toFixed(4));
+    });
+  }
+  fit();
+  window.addEventListener('resize',fit);
+})();
+</script>
+</body>
+</html>

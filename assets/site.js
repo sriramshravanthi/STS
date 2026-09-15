@@ -126,7 +126,7 @@ function showRes(){
    +'<div><h4>Recommended courses</h4><ul>'+courses.map(function(c){return '<li>'+c+'</li>';}).join('')+'</ul></div>'
    +'</div>'
    +'<div class="rec"><b>Recommended career path</b><p>'+lv.p+'</p><p class="why">'+lv.next+'</p></div>'
-   +'<div class="panel-ft"><button class="btn btn-o btn-sm" id="qAgain">Retake</button><a class="btn btn-sm" href="#academy">Explore the Academy</a></div>';
+   +'<div class="panel-ft"><button class="btn btn-o btn-sm" id="qAgain">Retake</button><a class="btn btn-sm" href="ai-training.html#academy">Explore the Academy</a></div>';
   qBody.hidden=true; qRes.innerHTML=html; qRes.hidden=false;
   $('#qAgain').addEventListener('click',function(){qi=0;qAns=[];qRes.hidden=true;qBody.hidden=false;paintQ();});
 }
@@ -252,7 +252,7 @@ function showAdv(){
       +'<p style="font-size:.9375rem;line-height:1.55"><strong>'+RECS[second].n+'</strong> — '+RECS[second].d+'</p></div>';
   }
   html+='<div class="panel-ft"><button class="btn btn-o btn-sm" id="aAgain">Start over</button>'
-     +'<span style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-sm btn-o" href="'+r.href+'">Read more</a><a class="btn btn-sm" href="#solve">Submit my AI problem</a></span></div>';
+     +'<span style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-sm btn-o" href="'+r.href+'">Read more</a><a class="btn btn-sm" href="solve.html#solve">Submit my AI problem</a></span></div>';
   aBody.hidden=true; aRes.innerHTML=html; aRes.hidden=false;
   $('#aAgain').addEventListener('click',function(){ai=0;aAns=[];aRes.hidden=true;aBody.hidden=false;paintA();});
 }
@@ -278,8 +278,8 @@ if(form) form.addEventListener('submit',function(e){
 
   var services=$$('input[name="support"]:checked').map(function(i){return i.value;}).join(', ');
   var ok=$('#solveOk');
-  ok.innerHTML='<div class="ok"><b>Thank you — your submission is recorded.</b>'
-    +'<p style="font-size:.9375rem;line-height:1.6">A consultant reviews every submission personally and responds within one business day with a written point of view — not an automated sequence.</p>'
+  ok.innerHTML='<div class="ok"><b>Demo only — your submission was not sent.</b>'
+    +'<p style="font-size:.9375rem;line-height:1.6">Once this form is connected to a backend or CRM, a consultant reviews every submission personally and responds within one business day with a written point of view — not an automated sequence.</p>'
     +'<p class="tiny" style="margin-top:.9rem;opacity:.75"><strong>Requested:</strong> '+services+'</p>'
     +'<p class="tiny" style="margin-top:.9rem;opacity:.75"><strong>Demo note:</strong> this is a front-end demonstration. No data was transmitted anywhere. Connect this form to a backend or CRM before launch — see the build record for the integration checklist.</p></div>';
   ok.hidden=false;
@@ -494,7 +494,7 @@ function showMat(){
    +'<div class="rec" style="border-color:var(--accent-2);background:var(--accent-2-wash)"><b style="color:var(--accent-2)">'+fix.c+'</b><p style="font-size:.9375rem;line-height:1.55">'+fix.f+'</p></div>'
    +'<div class="rec"><b>Recommended first engagement</b><p style="font-family:var(--ff-display);font-size:1.3rem;line-height:1.25">'+lv.rec+'</p><p class="why">'+lv.why+'</p></div>'
    +'<div class="panel-ft"><button class="btn btn-o btn-sm" id="mAgain">Retake</button>'
-   +'<span style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-sm btn-o" href="'+fix.h+'">Address the constraint</a><a class="btn btn-sm" href="#solve">Book a triage session</a></span></div>';
+   +'<span style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-sm btn-o" href="'+fix.h+'">Address the constraint</a><a class="btn btn-sm" href="solve.html#solve">Book a triage session</a></span></div>';
   mBody.hidden=true; mRes.hidden=false;
   $('#mAgain').addEventListener('click',function(){mi=0;mAns=[];mRes.hidden=true;mBody.hidden=false;paintM();});
 }
@@ -568,8 +568,8 @@ function paintInd(i){
    +'<h4>What usually gets in the way</h4>'
    +'<p class="sub">'+d.b+'</p>'
    +'<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem">'
-   +'<a class="btn btn-sm" href="#solve">Discuss a '+d.n+' problem</a>'
-   +'<a class="btn btn-sm btn-o" href="#maturity">Check your maturity</a></div>';
+   +'<a class="btn btn-sm" href="solve.html#solve">Discuss a '+d.n+' problem</a>'
+   +'<a class="btn btn-sm btn-o" href="maturity-assessment.html#maturity">Check your maturity</a></div>';
 }
 if(indBody) paintInd(0);
 
@@ -913,7 +913,7 @@ function cardHtml(it,editable){
     +(it.level?'<span class="jlvl">'+esc(it.level)+'</span>':'')
     +'<span>'+esc(it.summary||'')+'</span>'
     +(skills?'<span class="sk"><i>Skills</i>'+skills+'</span>':'')
-    +(it.apply?applyLink(it.apply):'<span class="soon"><a href="#talent">Join the talent network</a></span>')
+    +(it.apply?applyLink(it.apply):'<span class="soon"><a href="ai-talent.html#talent">Join the talent network</a></span>')
     +(editable
       ? '<span class="acts"><button type="button" class="jact" data-act="edit" data-id="'+esc(it.id)+'">Edit</button>'
         +'<button type="button" class="jact jdel" data-act="del" data-id="'+esc(it.id)+'">Remove</button></span>'
@@ -947,7 +947,7 @@ function renderPatterns(items,meta,key){
       +'<span>'+esc(it.summary||'')+'</span>'
       +(skills?'<span class="sk"><i>Skills it turns on</i>'+skills+'</span>':'')
       +'<span class="soon">'+(it.evidence?'Evidenced by the '+esc(it.evidence)+' assessment · ':'')
-      +'<a href="#talent">Join the talent network</a></span>'
+      +'<a href="ai-talent.html#talent">Join the talent network</a></span>'
       +'</li>';
   }).join('')+'</ul>';
   jCount.textContent='No open listings — showing generated patterns';

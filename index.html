@@ -191,6 +191,30 @@
         <button class="btn btn-o btn-sm" id="briefGo" hidden>Generate today's briefing</button>
       </div>
     </div>
+    <script type="application/json" id="briefSeed">
+    {
+      "status": "editorial",
+      "items": [
+        {"topic":"Evaluation",
+         "title":"A pilot that passes tells you almost nothing about production",
+         "detail":"Demo conditions hide the cases that actually break a system: the messy document, the ambiguous query, the user who phrases things nobody anticipated. An evaluation set built from real traffic is the only thing that survives contact with production.",
+         "action":"Build the evaluation set before the build, and refuse to sign off a pilot that has not been measured against it."},
+        {"topic":"Unit economics",
+         "title":"Inference cost moves from R&D budget to cost of goods",
+         "detail":"During a pilot the model spend is a rounding error inside an innovation budget. At scale it becomes a per-transaction cost that sits directly against gross margin, and nobody modelled it.",
+         "action":"Price the cost per completed task, not per token, and check it against the margin on the work it replaces."},
+        {"topic":"Data readiness",
+         "title":"Most AI programmes are blocked by retrieval, not by the model",
+         "detail":"Teams replace the model looking for a quality jump and find the same failures, because the system was never surfacing the right passage to begin with. Lineage, freshness and chunking decide far more of the output than model choice.",
+         "action":"Measure retrieval quality on its own before attributing any failure to the model."},
+        {"topic":"Governance",
+         "title":"Policy that is not a test does not gate anything",
+         "detail":"Written principles get agreed in a steering meeting and then have no mechanism to stop a release. Governance only binds when it exists as an automated check that fails a build.",
+         "action":"Convert each AI policy line into a test in the deployment pipeline, or accept that it is advisory."}
+      ]
+    }
+    </script>
+
     <div id="briefBody">
       <ul class="brief-items brief-skel" aria-hidden="true">
         <li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>

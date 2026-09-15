@@ -149,6 +149,22 @@ section{padding-block:var(--sec)}
   .tl-i{grid-template-columns:1fr;gap:.5rem}
 }
 @media (max-width:640px){ .nav{display:none} }
+
+.cards.briefs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule)}
+.cards.briefs .card{background:var(--bg);padding:1.7rem 1.5rem;display:flex;flex-direction:column}
+
+/* ---- AI Briefing ---- */
+.briefs{margin-bottom:1.2rem}
+.briefs .n{font-family:var(--ff-mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.briefs h3{font-family:var(--ff-display);font-weight:300;font-size:1.28rem;letter-spacing:-.02em;margin:.75rem 0 .55rem;line-height:1.25}
+.briefs p{font-size:.88rem;line-height:1.6;margin:0}
+.briefs .bact{margin-top:.9rem;padding-top:.75rem;border-top:1px solid var(--rule);
+  font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.06em;line-height:1.5;color:var(--accent)}
+.bbadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.62rem;
+  letter-spacing:.16em;text-transform:uppercase;padding:.35rem .8rem;border:1px solid var(--rule-2);border-radius:99px}
+.bbadge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.bdisc{font-size:.74rem;line-height:1.6;color:var(--ink-3);max-width:92ch;margin:0}
 </style>
 </head>
 <body>
@@ -224,6 +240,45 @@ section{padding-block:var(--sec)}
       <div class="tr"><span>Accelerators included, with no separate fee</span><b>6</b></div>
       <div class="tr"><span>Business days to a reply written by a human</span><b>1</b></div>
     </div>
+  </div>
+</section>
+
+<section id="briefing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="mono" style="color:var(--accent)">AI Briefing</p>
+        <h2>What we&rsquo;re watching.</h2>
+      </div>
+      <p><span class="bbadge">Editorial</span></p>
+    </div>
+    <div class="cards briefs">
+      <article class="card">
+        <span class="n">Evaluation</span>
+        <h3>A pilot that passes tells you almost nothing about production</h3>
+        <p>Demo conditions hide the cases that actually break a system: the messy document, the ambiguous query, the user who phrases things nobody anticipated.</p>
+        <p class="bact">Build the evaluation set before the build.</p>
+      </article>
+      <article class="card">
+        <span class="n">Unit economics</span>
+        <h3>Inference cost moves from R&amp;D budget to cost of goods</h3>
+        <p>In a pilot the model spend is a rounding error. At scale it is a per-transaction cost sitting directly against gross margin, and nobody modelled it.</p>
+        <p class="bact">Price the cost per completed task, not per token.</p>
+      </article>
+      <article class="card">
+        <span class="n">Data readiness</span>
+        <h3>Most AI programmes are blocked by retrieval, not by the model</h3>
+        <p>Teams swap the model looking for a quality jump and meet the same failures, because the system never surfaced the right passage to begin with.</p>
+        <p class="bact">Measure retrieval quality on its own first.</p>
+      </article>
+      <article class="card">
+        <span class="n">Governance</span>
+        <h3>Policy that is not a test does not gate anything</h3>
+        <p>Principles get agreed in a steering meeting and then have no mechanism to stop a release. Governance binds only when it fails a build.</p>
+        <p class="bact">Turn each policy line into a pipeline check.</p>
+      </article>
+    </div>
+    <p class="bdisc"><strong>Written, not generated.</strong> Durable themes in enterprise AI adoption, published with the page. Deliberately not a live news feed — nothing here is dated or presented as a current event.</p>
   </div>
 </section>
 

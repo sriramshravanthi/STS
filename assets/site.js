@@ -637,6 +637,23 @@ function renderEmpty(reason){
   bDisc.innerHTML='No placeholder headlines are shown here on purpose. Filler dressed up as current information is exactly the kind of claim this firm says it will not publish.';
 }
 
+/* Briefing published with the page: a JSON block in the HTML. This is the
+   tier that works on a plain static deploy, with no feed and no runtime. */
+var bSeedStatus="";
+function briefSeedRead(){
+  var el=$("#briefSeed"); if(!el) return [];
+  try{
+    var d=JSON.parse(el.textContent||"{}");
+    bSeedStatus=d.status||"editorial";
+    return d.items||[];
+  }catch(e){ return []; }
+}
+function showBriefSeed(items){
+  badge("Editorial","");
+  renderBrief(items,
+   "<strong>Written, not generated.</strong> These are durable themes in enterprise AI adoption, published with the page and revised when our view changes. This is deliberately not a live news feed: nothing here is dated, attributed or presented as a current event, because this copy has no live source to verify one against.");
+}
+
 function briefLoading(){
   bBody.innerHTML='<ul class="brief-items brief-skel" aria-hidden="true">'
     +'<li><div class="ln s"></div><div class="ln l"></div><div class="ln m"></div><div class="ln m"></div></li>'.repeat(4)+'</ul>';
@@ -736,7 +753,11 @@ async function briefInit(){
     return;
   }
 
-  /* Tier C — nothing available */
+  /* Tier C — the briefing published with the page */
+  var seeded=briefSeedRead();
+  if(seeded.length) return showBriefSeed(seeded);
+
+  /* Tier D — nothing available */
   badge('Not live','');
   renderEmpty('This copy is running without a feed endpoint or the Artifact runtime.');
 }

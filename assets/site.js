@@ -259,7 +259,7 @@ function showAdv(){
 
 /* ================= SOLVE FORM ================= */
 var form=$('#solveForm');
-form.addEventListener('submit',function(e){
+if(form) form.addEventListener('submit',function(e){
   e.preventDefault();
   var bad=false;
   $$('.field',form).forEach(function(f){

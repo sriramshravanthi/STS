@@ -3,11 +3,11 @@
    Direction: "technical document, premium print"
    ============================================================ */
 :root{
-  --bg:#F4F2EC; --bg-2:#EDEAE1; --bg-3:#E5E1D5;
-  --ink:#0F1216; --ink-2:#4C525A; --ink-3:#7E858E;
-  --rule:#D9D4C7; --rule-2:#C7C0AE;
-  --inverse-bg:#0F1216; --inverse-ink:#EDEAE1;
-  --inv-a:#3ED9A0; --inv-a2:#FF8A5E;
+  --bg:#F6F3EC; --bg-2:#EFEBE1; --bg-3:#E6E1D3;
+  --ink:#14171A; --ink-2:#4A5158; --ink-3:#7C838B;
+  --rule:#DAD4C6; --rule-2:#C4BCA8;
+  --inverse-bg:#14171A; --inverse-ink:#ECEFF3;
+  --inv-a:#3EE9A4; --inv-a2:#FF8A5E;
   --ff-display:"Newsreader",Georgia,"Times New Roman",serif;
   --ff-body:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --ff-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
@@ -18,19 +18,19 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0E1114; --bg-2:#161A1F; --bg-3:#1D2228;
-    --ink:#EDEAE1; --ink-2:#A3A9B2; --ink-3:#6E747C;
-    --rule:#262B32; --rule-2:#343A42;
-    --inverse-bg:#EDEAE1; --inverse-ink:#0F1216;
-    --inv-a:#0B6B47; --inv-a2:#A63A0A;
+    --bg:#0A0C0F; --bg-2:#101419; --bg-3:#171C23;
+    --ink:#ECEFF3; --ink-2:#9AA3AE; --ink-3:#656D78;
+    --rule:#1D232B; --rule-2:#2A323C;
+    --inverse-bg:#ECEFF3; --inverse-ink:#14171A;
+    --inv-a:#1C5D4A; --inv-a2:#B4532A;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0E1114; --bg-2:#161A1F; --bg-3:#1D2228;
-  --ink:#EDEAE1; --ink-2:#A3A9B2; --ink-3:#6E747C;
-  --rule:#262B32; --rule-2:#343A42;
-  --inverse-bg:#EDEAE1; --inverse-ink:#0F1216;
-  --inv-a:#0B6B47; --inv-a2:#A63A0A;
+  --bg:#0A0C0F; --bg-2:#101419; --bg-3:#171C23;
+  --ink:#ECEFF3; --ink-2:#9AA3AE; --ink-3:#656D78;
+  --rule:#1D232B; --rule-2:#2A323C;
+  --inverse-bg:#ECEFF3; --inverse-ink:#14171A;
+  --inv-a:#1C5D4A; --inv-a2:#B4532A;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -105,12 +105,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
   padding:.72rem 1.15rem;font-size:.875rem;font-weight:500;text-decoration:none;
-  border:1px solid var(--accent);background:var(--accent);color:#F4F2EC;
+  border:1px solid var(--accent);background:var(--accent);color:#F6F3EC;
   border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;
   letter-spacing:-.005em;white-space:nowrap;
 }
-:root[data-theme="dark"] .btn{color:#0E1114}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0E1114}}
+:root[data-theme="dark"] .btn{color:#0A0C0F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0A0C0F}}
 .btn:hover{background:var(--accent-hi);border-color:var(--accent-hi)}
 .btn:active{transform:translateY(1px)}
 .btn-o{background:none;color:var(--ink);border-color:var(--rule-2)}
@@ -304,9 +304,9 @@ section:first-of-type{border-top:none}
 }
 .alt .rung{background:var(--bg-2)}
 .rung:hover{background:var(--accent-wash)}
-.rung[aria-pressed="true"]{background:var(--accent);color:#F4F2EC}
-:root[data-theme="dark"] .rung[aria-pressed="true"]{color:#0E1114}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rung[aria-pressed="true"]{color:#0E1114}}
+.rung[aria-pressed="true"]{background:var(--accent);color:#F6F3EC}
+:root[data-theme="dark"] .rung[aria-pressed="true"]{color:#0A0C0F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rung[aria-pressed="true"]{color:#0A0C0F}}
 .rung .lv{font-family:var(--ff-mono);font-size:.625rem;letter-spacing:.12em;opacity:.6;display:block}
 .rung .rn{font-size:.875rem;font-weight:600;margin-top:.25rem;display:block;line-height:1.25}
 .roleinfo{border:1px solid var(--rule-2);padding:1.5rem;border-radius:2px;background:var(--bg)}
@@ -504,9 +504,9 @@ td span{display:block;font-size:.8125rem;color:var(--ink-3);margin-top:.2rem}
   border-bottom:1px solid var(--rule);cursor:pointer;text-align:left;font-size:.9375rem;transition:background .18s;
 }
 .indlist button:hover{background:var(--accent-wash)}
-.indlist button[aria-pressed="true"]{background:var(--accent);color:#F4F2EC}
-:root[data-theme="dark"] .indlist button[aria-pressed="true"]{color:#0E1114}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .indlist button[aria-pressed="true"]{color:#0E1114}}
+.indlist button[aria-pressed="true"]{background:var(--accent);color:#F6F3EC}
+:root[data-theme="dark"] .indlist button[aria-pressed="true"]{color:#0A0C0F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .indlist button[aria-pressed="true"]{color:#0A0C0F}}
 .indlist button i{font-style:normal;font-family:var(--ff-mono);font-size:.625rem;opacity:.55}
 .indbody{padding:clamp(1.3rem,3vw,2.2rem)}
 .indbody h3{font-family:var(--ff-display);font-size:1.65rem;font-weight:400;margin-bottom:.4rem}
@@ -663,44 +663,44 @@ td span{display:block;font-size:.8125rem;color:var(--ink-3);margin-top:.2rem}
    ============================================================ */
 
 :root{
-  --h1:#0A6E4B;
-  --h2:#E0532F;
+  --h1:#1C5D4A;
+  --h2:#B4532A;
   --h3:#C98A00;
   --h4:#6D4AD8;
   --h5:#0E86A8;
   --h6:#C32E86;
-  --accent:#0A6E4B; --accent-hi:#085437; --accent-wash:#DCF2E8;
-  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
+  --accent:#1C5D4A; --accent-hi:#164C3C; --accent-wash:#E0EBE6;
+  --accent-2:#B4532A; --accent-2-wash:#F7E7DE;
 }
 :root[data-theme="light"]{
-  --h1:#0A6E4B;
-  --h2:#E0532F;
+  --h1:#1C5D4A;
+  --h2:#B4532A;
   --h3:#C98A00;
   --h4:#6D4AD8;
   --h5:#0E86A8;
   --h6:#C32E86;
-  --accent:#0A6E4B; --accent-hi:#085437; --accent-wash:#DCF2E8;
-  --accent-2:#E0532F; --accent-2-wash:#FCE6DF;
+  --accent:#1C5D4A; --accent-hi:#164C3C; --accent-wash:#E0EBE6;
+  --accent-2:#B4532A; --accent-2-wash:#F7E7DE;
 }
 :root[data-theme="dark"]{
-  --h1:#3ED9A0;
+  --h1:#3EE9A4;
   --h2:#FF8A5E;
   --h3:#F5C542;
   --h4:#A78BFA;
   --h5:#4CC9E8;
   --h6:#F472B6;
-  --accent:#3ED9A0; --accent-hi:#6FE8BC; --accent-wash:#0C2A22;
+  --accent:#3EE9A4; --accent-hi:#74F0BE; --accent-wash:#0B2C21;
   --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --h1:#3ED9A0;
+    --h1:#3EE9A4;
     --h2:#FF8A5E;
     --h3:#F5C542;
     --h4:#A78BFA;
     --h5:#4CC9E8;
     --h6:#F472B6;
-    --accent:#3ED9A0; --accent-hi:#6FE8BC; --accent-wash:#0C2A22;
+    --accent:#3EE9A4; --accent-hi:#74F0BE; --accent-wash:#0B2C21;
     --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
   }
 }

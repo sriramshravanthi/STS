@@ -1122,12 +1122,11 @@ jobsInit();
   function closeAll(){ items.forEach(function(i){ close(i,true); }); current=null; scrim.classList.remove('on'); }
   items.forEach(function(i,idx){
     var b=btn(i); if(!b) return;
-    b.addEventListener('click',function(e){
-      e.preventDefault(); e.stopPropagation();
-      if(current===i) closeAll(); else open(i);
-    });
+    var t;
+    i.addEventListener('mouseenter',function(){ clearTimeout(t); open(i); });
+    i.addEventListener('mouseleave',function(){ clearTimeout(t); t=setTimeout(function(){ close(i,false); },140); });
     b.addEventListener('keydown',function(e){
-      if(e.key==='ArrowDown'||e.key===' '||e.key==='Enter'){
+      if(e.key==='ArrowDown'){
         e.preventDefault(); open(i);
         var f=i.querySelector('.mega-col a'); if(f) f.focus();
       } else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){

@@ -899,7 +899,7 @@ main section:is(.alt,.feature,.raise,.mark,.brief):nth-of-type(6n){background:co
 .mega{margin-left:auto}
 .mega-l{display:flex;gap:.1rem;list-style:none;margin:0;padding:0}
 .mega-i{position:static}
-.mega-t{font:inherit;font-size:.875rem;letter-spacing:-.005em;color:var(--ink-2);background:none;border:none;
+.mega-t{font:inherit;font-size:.875rem;letter-spacing:-.005em;color:var(--ink-2);background:none;border:none;text-decoration:none;
   cursor:pointer;padding:.45rem .7rem;border-radius:2px;display:inline-flex;align-items:center;gap:.35rem;position:relative}
 .mega-t::after{content:"";width:5px;height:5px;border-right:1.4px solid currentColor;
   border-bottom:1.4px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s var(--ease)}
@@ -1015,7 +1015,6 @@ body:not(.is-home) .sec-num{display:none}
 .mnav-x{position:absolute;top:.75rem;right:var(--pad);width:36px;height:36px;display:flex;
   align-items:center;justify-content:center;background:none;border:1px solid var(--rule);
   border-radius:2px;color:var(--ink);cursor:pointer}
-.mnav{position:relative}
 .skip2{left:150px}
 
 /* ===== mega quick-link strip ===== */

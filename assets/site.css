@@ -1026,3 +1026,50 @@ body:not(.is-home) .sec-num{display:none}
 .mega-q-in a{font-size:.8125rem;color:var(--ink-2);text-decoration:none}
 .mega-q-in a:hover{color:var(--accent)}
 .mega-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+
+/* ============================================================
+   HOMEPAGE HERO — asymmetric two-column with orbit diagram
+   Ported from the Obsidian theme concept. Homepage only:
+   .hero exists on index.html and nowhere else. The diagram draws
+   entirely from tokens, so it recolours with light/dark.
+   ============================================================ */
+.hero-cols{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(1.5rem,5vw,4.5rem);align-items:center}
+.hero-copy{min-width:0}
+
+/* secondary destinations: kept, but demoted out of the button row */
+.hero-more{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.35rem 0 0;font-size:.875rem}
+.hero-more a{display:inline-flex;align-items:center;gap:.4rem;color:var(--ink-2);text-decoration:none;
+  padding-bottom:2px;border-bottom:1px solid var(--rule-2);transition:color .2s,border-color .2s}
+.hero-more a::after{content:"→";font-size:.85em;opacity:.55;transition:transform .2s var(--ease)}
+.hero-more a:hover{color:var(--accent);border-color:var(--accent)}
+.hero-more a:hover::after{transform:translateX(3px)}
+
+/* orbit diagram */
+.hero-viz{width:100%;max-width:440px;margin-inline:auto;aspect-ratio:1}
+.hero-viz svg{width:100%;height:100%;overflow:visible}
+.hv-ring{fill:none;stroke:var(--rule-2);stroke-width:1;opacity:.85}
+.hv-arc{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;
+  stroke-dasharray:180 400;transform-origin:50% 50%;animation:hvspin 16s linear infinite}
+.hv-link{stroke:var(--rule-2);stroke-width:1}
+.hv-dot{fill:var(--bg-3);stroke:var(--rule-2);stroke-width:1}
+.hv-dot.on{fill:var(--accent);stroke:none}
+.hv-core{fill:var(--bg-2);stroke:var(--accent);stroke-width:1.5}
+.hero-viz text{font-family:var(--ff-mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;fill:var(--ink-3)}
+.hero-viz .hv-c{fill:var(--accent)}
+@keyframes hvspin{to{transform:rotate(360deg)}}
+.hero-viz{animation:rise .85s var(--ease) both;animation-delay:.2s}
+
+@media (prefers-reduced-motion:reduce){
+  .hv-arc{animation:none}
+  .hero-viz{animation:none}
+}
+@media (max-width:900px){
+  .hero-cols{grid-template-columns:1fr}
+  .hero-viz{max-width:330px;margin-top:2.5rem;order:2}
+}
+@media (max-width:560px){
+  .hero-viz{display:none}
+}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — Slate</title>
+<title>NorthKey AI — Slate · Instrument panel</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -75,14 +75,14 @@
   ]
 }
 </script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Barlow:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Theme 04 — Slate — palette override
-   Loads the real site.css above, then repaints the tokens. All
-   behaviour (mega menu, classifieds, briefing, assessments) comes
-   from the real assets, so this is the live site in Slate colours.
-   Single-palette preview: the light/dark toggle is hidden because
-   both branches resolve to the same values here.
+   Theme 04 — Slate — Instrument panel
+   Palette + type + layout override on top of the real site.css.
+   Behaviour (mega menu, classifieds, briefing, assessments) all
+   comes from the real assets, so this is the live site restyled.
+   Type: Oswald / Barlow / Roboto Mono
    ============================================================ */
 :root,
 :root[data-theme="light"],
@@ -96,6 +96,9 @@
   --h4:#B49BFF; --h5:#7FD8C8; --h6:#FF8FA3;
   --accent:#FF9F45; --accent-hi:#FFCE7A; --accent-wash:#3A2814;
   --accent-2:#5FC9E8; --accent-2-wash:#102B33;
+  --ff-display:"Oswald",Impact,sans-serif;
+  --ff-body:"Barlow",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"Roboto Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]),
@@ -109,6 +112,9 @@
   --h4:#B49BFF; --h5:#7FD8C8; --h6:#FF8FA3;
   --accent:#FF9F45; --accent-hi:#FFCE7A; --accent-wash:#3A2814;
   --accent-2:#5FC9E8; --accent-2-wash:#102B33;
+  --ff-display:"Oswald",Impact,sans-serif;
+  --ff-body:"Barlow",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"Roboto Mono",ui-monospace,Menlo,monospace;
   }
 }
 .btn,
@@ -120,13 +126,43 @@
 .btn-o{color:var(--ink)}
 .btn-o:hover{color:var(--accent)}
 .tgl{display:none}
-.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.6rem;
+
+/* ---- layout: Instrument panel ---- */
+
+:root{--maxw:1400px;--sec:clamp(3rem,6vw,5rem)}
+.btn,.dcard,.pstep,.opt,.panel,.rescards li{border-radius:0}
+body{line-height:1.55}
+.hdr-in{height:64px}
+.mega-l{height:64px}
+.mega-t{font-family:var(--ff-display);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:400;border-right:1px solid var(--rule);padding:.5rem 1rem}
+.btn{font-family:var(--ff-display);letter-spacing:.09em;text-transform:uppercase;font-weight:400;padding:.65rem 1.2rem}
+h1,h2,h3,.sec-title{font-family:var(--ff-display);font-weight:400;letter-spacing:.01em;text-transform:uppercase}
+.hero{padding-block:clamp(2.5rem,5vw,4rem);border-bottom:1px solid var(--rule)}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.02}
+.hero-cols{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:2rem}
+.hero-copy{border-left:3px solid var(--accent);padding-left:clamp(1rem,2.5vw,2rem)}
+.trust{border-top:1px solid var(--rule);padding-top:1.1rem;margin-top:2rem;font-size:.78rem}
+.sec-head{border-bottom:2px solid var(--accent);padding-bottom:.9rem}
+.sec-title{font-size:clamp(1.6rem,3.4vw,2.4rem)}
+.divs{border:1px solid var(--rule)}
+.dcard{grid-template-columns:2.25rem minmax(0,.85fr) minmax(0,1.9fr) auto;padding:.95rem .7rem}
+.dcard h3{font-size:clamp(.95rem,1.6vw,1.15rem)}
+.dcard p{font-size:.84rem}
+.pstep{padding-block:1.1rem}
+.pstep h3{font-size:1.05rem}
+.pstep .exit{background:var(--bg-3);font-size:.66rem}
+.rescards li{padding:1.1rem 1rem}
+.ftr h4{font-family:var(--ff-display);text-transform:uppercase;letter-spacing:.09em}
+
+/* ---- theme ribbon ---- */
+.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.7rem;
   padding:.5rem .9rem;background:var(--bg-2);border:1px solid var(--rule);border-left:0;border-bottom:0;
-  border-radius:0 4px 0 0;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3)}
+  font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .theme-ribbon b{color:var(--accent);font-weight:500}
 .theme-ribbon a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2)}
 .theme-ribbon a:hover{color:var(--accent)}
+@media (max-width:760px){.theme-ribbon{display:none}}
 </style>
 </head>
 <body class="is-home">
@@ -609,6 +645,6 @@
   </div>
 </footer>
 <script src="../../assets/site.js" defer></script>
-<div class="theme-ribbon"><b>Theme 04 — Slate</b><a href="index.html">compare all five</a><a href="../../index.html">real site</a></div>
+<div class="theme-ribbon"><b>Theme 04 — Slate</b><span>Instrument panel</span><a href="index.html">compare</a><a href="../../index.html">real site</a></div>
 </body>
 </html>

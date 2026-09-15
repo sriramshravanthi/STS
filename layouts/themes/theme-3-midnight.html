@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — Midnight</title>
+<title>NorthKey AI — Midnight · Platform cards</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -75,14 +75,14 @@
   ]
 }
 </script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..700&family=Manrope:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Theme 03 — Midnight — palette override
-   Loads the real site.css above, then repaints the tokens. All
-   behaviour (mega menu, classifieds, briefing, assessments) comes
-   from the real assets, so this is the live site in Midnight colours.
-   Single-palette preview: the light/dark toggle is hidden because
-   both branches resolve to the same values here.
+   Theme 03 — Midnight — Platform cards
+   Palette + type + layout override on top of the real site.css.
+   Behaviour (mega menu, classifieds, briefing, assessments) all
+   comes from the real assets, so this is the live site restyled.
+   Type: Outfit / Manrope / JetBrains Mono
    ============================================================ */
 :root,
 :root[data-theme="light"],
@@ -96,6 +96,9 @@
   --h4:#FFB55C; --h5:#7CE0A0; --h6:#FF7FA8;
   --accent:#57A8FF; --accent-hi:#8FC6FF; --accent-wash:#0C1F38;
   --accent-2:#A88BFF; --accent-2-wash:#1B1533;
+  --ff-display:"Outfit",Georgia,sans-serif;
+  --ff-body:"Manrope",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]),
@@ -109,6 +112,9 @@
   --h4:#FFB55C; --h5:#7CE0A0; --h6:#FF7FA8;
   --accent:#57A8FF; --accent-hi:#8FC6FF; --accent-wash:#0C1F38;
   --accent-2:#A88BFF; --accent-2-wash:#1B1533;
+  --ff-display:"Outfit",Georgia,sans-serif;
+  --ff-body:"Manrope",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   }
 }
 .btn,
@@ -120,13 +126,43 @@
 .btn-o{color:var(--ink)}
 .btn-o:hover{color:var(--accent)}
 .tgl{display:none}
-.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.6rem;
+
+/* ---- layout: Platform cards ---- */
+
+:root{--maxw:1200px;--sec:clamp(4.5rem,9vw,8rem)}
+.hdr-in{height:76px}
+.mega-t{border-radius:99px;padding:.45rem .85rem}
+.btn,.btn-o{border-radius:99px;padding:.8rem 1.6rem;font-weight:600}
+.hero{text-align:center}
+.hero-cols{grid-template-columns:1fr;gap:2.5rem}
+.hero h1{margin-inline:auto;max-width:15ch;font-weight:300;letter-spacing:-.04em}
+.hero-sub,.hero-msg,.sec-lead{margin-inline:auto}
+.hero-cta,.hero-more,.trust{justify-content:center}
+.hero-viz{order:-1;max-width:260px}
+.sec-head{text-align:center;max-width:58ch;margin-inline:auto}
+.divs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;border:0}
+.dcard{display:block;border:1px solid var(--rule);border-radius:18px;padding:1.9rem 1.7rem;
+  background:var(--bg-2);transition:transform .3s var(--ease),border-color .3s}
+.dcard:hover{transform:translateY(-5px);padding-left:1.7rem}
+.dcard::after{display:none}
+.dcard h3{margin:.7rem 0 .6rem;font-weight:400}
+.dcard p,.dcard .lnk{display:block}
+.dcard .lnk{margin-top:1.1rem}
+.rescards{gap:1rem;background:none;border:0}
+.rescards li{border:1px solid var(--rule);border-radius:16px}
+.pstep{border-radius:14px;border:1px solid var(--rule);margin-bottom:.75rem;padding:1.5rem 1.4rem;background:var(--bg-2)}
+.proc .pstep:last-child{border-bottom:1px solid var(--rule)}
+.pstep::after{display:none}
+.panel,.opt,.brief-empty{border-radius:16px}
+
+/* ---- theme ribbon ---- */
+.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.7rem;
   padding:.5rem .9rem;background:var(--bg-2);border:1px solid var(--rule);border-left:0;border-bottom:0;
-  border-radius:0 4px 0 0;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3)}
+  font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .theme-ribbon b{color:var(--accent);font-weight:500}
 .theme-ribbon a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2)}
 .theme-ribbon a:hover{color:var(--accent)}
+@media (max-width:760px){.theme-ribbon{display:none}}
 </style>
 </head>
 <body class="is-home">
@@ -609,6 +645,6 @@
   </div>
 </footer>
 <script src="../../assets/site.js" defer></script>
-<div class="theme-ribbon"><b>Theme 03 — Midnight</b><a href="index.html">compare all five</a><a href="../../index.html">real site</a></div>
+<div class="theme-ribbon"><b>Theme 03 — Midnight</b><span>Platform cards</span><a href="index.html">compare</a><a href="../../index.html">real site</a></div>
 </body>
 </html>

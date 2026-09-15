@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — Bone</title>
+<title>NorthKey AI — Bone · Editorial print</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -75,14 +75,14 @@
   ]
 }
 </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Theme 02 — Bone — palette override
-   Loads the real site.css above, then repaints the tokens. All
-   behaviour (mega menu, classifieds, briefing, assessments) comes
-   from the real assets, so this is the live site in Bone colours.
-   Single-palette preview: the light/dark toggle is hidden because
-   both branches resolve to the same values here.
+   Theme 02 — Bone — Editorial print
+   Palette + type + layout override on top of the real site.css.
+   Behaviour (mega menu, classifieds, briefing, assessments) all
+   comes from the real assets, so this is the live site restyled.
+   Type: Playfair Display / Inter / IBM Plex Mono
    ============================================================ */
 :root,
 :root[data-theme="light"],
@@ -96,6 +96,9 @@
   --h4:#5B44C4; --h5:#0C6F8C; --h6:#A62668;
   --accent:#1C5D4A; --accent-hi:#164C3C; --accent-wash:#E0EBE6;
   --accent-2:#B4532A; --accent-2-wash:#F7E7DE;
+  --ff-display:"Playfair Display",Georgia,serif;
+  --ff-body:"Inter",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]),
@@ -109,6 +112,9 @@
   --h4:#5B44C4; --h5:#0C6F8C; --h6:#A62668;
   --accent:#1C5D4A; --accent-hi:#164C3C; --accent-wash:#E0EBE6;
   --accent-2:#B4532A; --accent-2-wash:#F7E7DE;
+  --ff-display:"Playfair Display",Georgia,serif;
+  --ff-body:"Inter",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
 }
 .btn,
@@ -120,13 +126,39 @@
 .btn-o{color:var(--ink)}
 .btn-o:hover{color:var(--accent)}
 .tgl{display:none}
-.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.6rem;
+
+/* ---- layout: Editorial print ---- */
+
+:root{--maxw:1120px;--sec:clamp(5rem,10vw,9rem)}
+body{line-height:1.7}
+.hdr-in{height:82px}
+.mega-t{font-size:.9rem;letter-spacing:.01em}
+.btn{font-weight:500}
+.hero{text-align:center;padding-block:clamp(4rem,9vw,7.5rem)}
+.hero-cols{grid-template-columns:1fr;gap:3rem}
+.hero h1{font-weight:400;font-size:clamp(2.6rem,6.5vw,4.6rem);line-height:1.04;margin-inline:auto;max-width:16ch}
+.hero-sub,.hero-msg{margin-inline:auto;text-align:center}
+.hero-sub{font-family:var(--ff-display);font-weight:400;font-style:italic}
+.hero-cta,.hero-more,.trust{justify-content:center}
+.hero-viz{order:-1;max-width:210px;opacity:.85}
+.trust{border-top:1px solid var(--rule);padding-top:1.6rem;margin-top:3rem}
+.sec-head{text-align:center;max-width:64ch;margin-inline:auto;border-bottom:1px solid var(--rule);padding-bottom:1.6rem}
+.sec-title{font-weight:400;font-size:clamp(1.9rem,4.4vw,3rem)}
+.sec-lead{margin-inline:auto}
+.dcard{grid-template-columns:2.75rem minmax(0,1fr) minmax(0,1.5fr) auto;padding-block:1.6rem}
+.dcard h3{font-weight:400}
+.pstep{padding-block:2rem}
+.pstep h3{font-weight:400}
+.ftr h4{font-family:var(--ff-display);font-weight:400;letter-spacing:0;text-transform:none;font-size:1rem}
+
+/* ---- theme ribbon ---- */
+.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.7rem;
   padding:.5rem .9rem;background:var(--bg-2);border:1px solid var(--rule);border-left:0;border-bottom:0;
-  border-radius:0 4px 0 0;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3)}
+  font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .theme-ribbon b{color:var(--accent);font-weight:500}
 .theme-ribbon a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2)}
 .theme-ribbon a:hover{color:var(--accent)}
+@media (max-width:760px){.theme-ribbon{display:none}}
 </style>
 </head>
 <body class="is-home">
@@ -609,6 +641,6 @@
   </div>
 </footer>
 <script src="../../assets/site.js" defer></script>
-<div class="theme-ribbon"><b>Theme 02 — Bone</b><a href="index.html">compare all five</a><a href="../../index.html">real site</a></div>
+<div class="theme-ribbon"><b>Theme 02 — Bone</b><span>Editorial print</span><a href="index.html">compare</a><a href="../../index.html">real site</a></div>
 </body>
 </html>

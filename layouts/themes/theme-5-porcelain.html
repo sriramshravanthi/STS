@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — Porcelain</title>
+<title>NorthKey AI — Porcelain · Soft modern</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -75,14 +75,14 @@
   ]
 }
 </script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Theme 05 — Porcelain — palette override
-   Loads the real site.css above, then repaints the tokens. All
-   behaviour (mega menu, classifieds, briefing, assessments) comes
-   from the real assets, so this is the live site in Porcelain colours.
-   Single-palette preview: the light/dark toggle is hidden because
-   both branches resolve to the same values here.
+   Theme 05 — Porcelain — Soft modern
+   Palette + type + layout override on top of the real site.css.
+   Behaviour (mega menu, classifieds, briefing, assessments) all
+   comes from the real assets, so this is the live site restyled.
+   Type: DM Serif Display / DM Sans / DM Mono
    ============================================================ */
 :root,
 :root[data-theme="light"],
@@ -96,6 +96,9 @@
   --h4:#7E5BE8; --h5:#0E7FA8; --h6:#B32E77;
   --accent:#3B33C4; --accent-hi:#2A2496; --accent-wash:#E9E8FA;
   --accent-2:#12A3A0; --accent-2-wash:#DDF2F1;
+  --ff-display:"DM Serif Display",Georgia,serif;
+  --ff-body:"DM Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"DM Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]),
@@ -109,6 +112,9 @@
   --h4:#7E5BE8; --h5:#0E7FA8; --h6:#B32E77;
   --accent:#3B33C4; --accent-hi:#2A2496; --accent-wash:#E9E8FA;
   --accent-2:#12A3A0; --accent-2-wash:#DDF2F1;
+  --ff-display:"DM Serif Display",Georgia,serif;
+  --ff-body:"DM Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"DM Mono",ui-monospace,Menlo,monospace;
   }
 }
 .btn,
@@ -120,13 +126,47 @@
 .btn-o{color:var(--ink)}
 .btn-o:hover{color:var(--accent)}
 .tgl{display:none}
-.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.6rem;
+
+/* ---- layout: Soft modern ---- */
+
+:root{--maxw:1180px;--sec:clamp(5rem,10vw,9rem)}
+body{line-height:1.68}
+.hdr-in{height:80px}
+.mega-t{border-radius:10px;padding:.5rem .9rem}
+.btn{border-radius:12px;padding:.85rem 1.7rem;font-weight:500;
+  box-shadow:0 1px 2px rgba(16,18,26,.08),0 10px 24px -12px rgba(16,18,26,.2)}
+.btn-o{border-radius:12px;box-shadow:none}
+.hero{text-align:center;padding-block:clamp(4rem,9vw,7rem)}
+.hero-cols{grid-template-columns:1fr;gap:2.5rem}
+.hero h1{margin-inline:auto;max-width:14ch;font-weight:400;letter-spacing:-.03em}
+.hero-sub,.hero-msg,.sec-lead{margin-inline:auto}
+.hero-cta,.hero-more,.trust{justify-content:center}
+.hero-viz{order:-1;max-width:250px}
+.sec-head{text-align:center;max-width:56ch;margin-inline:auto}
+.divs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem;border:0}
+.dcard{display:block;border:1px solid var(--rule);border-radius:20px;padding:2rem 1.8rem;background:var(--bg-2);
+  transition:transform .3s var(--ease),box-shadow .3s}
+.dcard:hover{transform:translateY(-6px);padding-left:1.8rem;
+  box-shadow:0 2px 6px rgba(16,18,26,.05),0 24px 50px -22px rgba(16,18,26,.28)}
+.dcard::after{display:none}
+.dcard h3{margin:.7rem 0 .65rem;font-weight:400}
+.dcard p,.dcard .lnk{display:block}
+.dcard .lnk{margin-top:1.2rem}
+.rescards{gap:1.3rem;background:none;border:0}
+.rescards li{border:1px solid var(--rule);border-radius:18px}
+.pstep{border:1px solid var(--rule);border-radius:16px;background:var(--bg-2);margin-bottom:.9rem;padding:1.7rem 1.6rem}
+.proc .pstep:last-child{border-bottom:1px solid var(--rule)}
+.pstep::after{display:none}
+.panel,.opt,.brief-empty,.rec{border-radius:18px}
+
+/* ---- theme ribbon ---- */
+.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.7rem;
   padding:.5rem .9rem;background:var(--bg-2);border:1px solid var(--rule);border-left:0;border-bottom:0;
-  border-radius:0 4px 0 0;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3)}
+  font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .theme-ribbon b{color:var(--accent);font-weight:500}
 .theme-ribbon a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2)}
 .theme-ribbon a:hover{color:var(--accent)}
+@media (max-width:760px){.theme-ribbon{display:none}}
 </style>
 </head>
 <body class="is-home">
@@ -609,6 +649,6 @@
   </div>
 </footer>
 <script src="../../assets/site.js" defer></script>
-<div class="theme-ribbon"><b>Theme 05 — Porcelain</b><a href="index.html">compare all five</a><a href="../../index.html">real site</a></div>
+<div class="theme-ribbon"><b>Theme 05 — Porcelain</b><span>Soft modern</span><a href="index.html">compare</a><a href="../../index.html">real site</a></div>
 </body>
 </html>

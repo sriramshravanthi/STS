@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NorthKey AI — Obsidian</title>
+<title>NorthKey AI — Obsidian · Technical grid</title>
 <meta name="description" content="USA-based AI consulting company. We help businesses identify, solve, and implement AI solutions — plus AI training, assessments, and AI talent on contract.">
 <meta name="keywords" content="AI consulting company USA, AI consulting services, AI consultant USA, generative AI consulting, AI development company, AI solutions company, AI automation company, AI agent development, enterprise AI consulting, AI training, AI courses, AI recruitment, AI staffing, AI engineers for hire, AI contract engineers">
 <meta name="robots" content="index, follow">
@@ -75,14 +75,14 @@
   ]
 }
 </script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   Theme 01 — Obsidian — palette override
-   Loads the real site.css above, then repaints the tokens. All
-   behaviour (mega menu, classifieds, briefing, assessments) comes
-   from the real assets, so this is the live site in Obsidian colours.
-   Single-palette preview: the light/dark toggle is hidden because
-   both branches resolve to the same values here.
+   Theme 01 — Obsidian — Technical grid
+   Palette + type + layout override on top of the real site.css.
+   Behaviour (mega menu, classifieds, briefing, assessments) all
+   comes from the real assets, so this is the live site restyled.
+   Type: Space Grotesk / IBM Plex Sans / IBM Plex Mono
    ============================================================ */
 :root,
 :root[data-theme="light"],
@@ -96,6 +96,9 @@
   --h4:#A78BFA; --h5:#4CC9E8; --h6:#F472B6;
   --accent:#3EE9A4; --accent-hi:#74F0BE; --accent-wash:#0B2C21;
   --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
+  --ff-display:"Space Grotesk",Georgia,sans-serif;
+  --ff-body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]),
@@ -109,6 +112,9 @@
   --h4:#A78BFA; --h5:#4CC9E8; --h6:#F472B6;
   --accent:#3EE9A4; --accent-hi:#74F0BE; --accent-wash:#0B2C21;
   --accent-2:#FF8A5E; --accent-2-wash:#2E1710;
+  --ff-display:"Space Grotesk",Georgia,sans-serif;
+  --ff-body:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
 }
 .btn,
@@ -120,13 +126,35 @@
 .btn-o{color:var(--ink)}
 .btn-o:hover{color:var(--accent)}
 .tgl{display:none}
-.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.6rem;
+
+/* ---- layout: Technical grid ---- */
+
+:root{--maxw:1320px;--sec:clamp(3.5rem,7vw,6rem)}
+.btn,.dcard,.pstep,.opt,.panel,.rescards li,.brief-empty{border-radius:0}
+.hdr-in{height:78px}
+.mega-t{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.btn{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;padding:.8rem 1.3rem}
+.hero{padding-block:clamp(3rem,6vw,5rem);border-bottom:1px solid var(--rule)}
+.hero h1{font-weight:500;letter-spacing:-.045em;line-height:.98}
+.hero-cols{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
+.trust{border-top:1px solid var(--rule);padding-top:1.4rem;margin-top:2.5rem}
+.sec-head{border-bottom:1px solid var(--rule);padding-bottom:1.2rem}
+.sec-title{font-weight:500;letter-spacing:-.035em}
+.dcard{grid-template-columns:2.5rem minmax(0,.9fr) minmax(0,1.8fr) auto;padding-block:1.15rem}
+.dcard h3{font-weight:500;letter-spacing:-.02em}
+.dcard .n{font-family:var(--ff-mono);font-size:.7rem}
+.pstep{padding-block:1.4rem}
+.pstep h3{font-weight:500}
+.mega-p{border-top:1px solid var(--accent)}
+
+/* ---- theme ribbon ---- */
+.theme-ribbon{position:fixed;left:0;bottom:0;z-index:300;display:flex;align-items:center;gap:.7rem;
   padding:.5rem .9rem;background:var(--bg-2);border:1px solid var(--rule);border-left:0;border-bottom:0;
-  border-radius:0 4px 0 0;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3)}
+  font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .theme-ribbon b{color:var(--accent);font-weight:500}
 .theme-ribbon a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2)}
 .theme-ribbon a:hover{color:var(--accent)}
+@media (max-width:760px){.theme-ribbon{display:none}}
 </style>
 </head>
 <body class="is-home">
@@ -609,6 +637,6 @@
   </div>
 </footer>
 <script src="../../assets/site.js" defer></script>
-<div class="theme-ribbon"><b>Theme 01 — Obsidian</b><a href="index.html">compare all five</a><a href="../../index.html">real site</a></div>
+<div class="theme-ribbon"><b>Theme 01 — Obsidian</b><span>Technical grid</span><a href="index.html">compare</a><a href="../../index.html">real site</a></div>
 </body>
 </html>

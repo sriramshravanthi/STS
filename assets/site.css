@@ -1017,3 +1017,13 @@ body:not(.is-home) .sec-num{display:none}
   border-radius:2px;color:var(--ink);cursor:pointer}
 .mnav{position:relative}
 .skip2{left:150px}
+
+/* ===== mega quick-link strip ===== */
+.mega-q{border-top:1px solid var(--rule);background:var(--bg-2)}
+.mega-q-in{max-width:var(--maxw);margin:0 auto;padding:.85rem var(--pad);
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem}
+.mega-q-in span{font-family:var(--ff-mono);font-size:.625rem;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ink-3)}
+.mega-q-in a{font-size:.8125rem;color:var(--ink-2);text-decoration:none}
+.mega-q-in a:hover{color:var(--accent)}
+.mega-cols{grid-template-columns:repeat(3,minmax(0,1fr))}

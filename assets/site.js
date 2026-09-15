@@ -949,7 +949,7 @@ function paintBoard(items,source){
       jDisc.innerHTML='<strong>Example listings.</strong> Published with the page so the board reads as intended before launch, and labelled as examples rather than dressed up as vacancies. No employer, salary or closing date is implied by any entry here.';
     }else{
       jbadge('Open roles','live');
-      jDisc.innerHTML='<strong>Published with the page.</strong> These listings are stored in the page itself, so every visitor sees the same board with no backend to keep in sync. A role appears here only once it is genuinely open.';
+      jDisc.innerHTML='<strong>Published with the page.</strong> These listings are stored in the page itself, so every visitor sees the same board with no backend to keep in sync. Roles are added, amended and closed by editing the listings block in the page source. No compensation figures are published on the board.';
     }
   }else if(source==='db'){
     jbadge('Live board','live');

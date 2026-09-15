@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0F1216"/>
+<g stroke="#262B32" stroke-width="1">
+<path d="M0 157.5h1200M0 315h1200M0 472.5h1200M300 0v630M600 0v630M900 0v630"/></g>
+<path d="M80 200V80l120 120V80" stroke="#3ED9A0" stroke-width="10" stroke-linecap="square" fill="none"/>
+<circle cx="140" cy="140" r="13" fill="#FF8A5E"/>
+<text x="80" y="330" font-family="Georgia,serif" font-size="74" fill="#EDEAE1">Solve Your Business</text>
+<text x="80" y="412" font-family="Georgia,serif" font-size="74" fill="#EDEAE1">Problems with <tspan fill="#3ED9A0" font-style="italic">AI</tspan>.</text>
+<text x="80" y="492" font-family="monospace" font-size="23" fill="#6E747C" letter-spacing="3">CONSULTING · DEVELOPMENT · TRAINING · TALENT</text>
+<text x="80" y="556" font-family="monospace" font-size="21" fill="#3ED9A0" letter-spacing="3">NORTHKEY AI — USA</text>
+</svg>

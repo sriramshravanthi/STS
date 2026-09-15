@@ -912,9 +912,17 @@ function jobsLoading(){
 
 function applyLink(v){
   if(!v) return '';
-  var href = /^https?:\/\//i.test(v) ? v : (v.indexOf('@')>-1 ? 'mailto:'+v : '');
+  var lv=String(v).toLowerCase(), href='', ext='';
+  var samesite=new RegExp('^[A-Za-z0-9._/#?=&-]+$');   /* contact.html, jobs/apply, #anchor */
+  if(lv.indexOf('http://')===0||lv.indexOf('https://')===0){
+    href=v; ext=' target="_blank" rel="noopener noreferrer"';
+  }else if(v.indexOf('@')>-1){
+    href='mailto:'+v;
+  }else if(samesite.test(v)){
+    href=v;
+  }
+  /* anything else, such as an unreplaced [PLACEHOLDER], stays plain text rather than a dead link */
   if(!href) return '<span class="soon">Apply: '+esc(v)+'</span>';
-  var ext = href.indexOf('mailto:')===0 ? '' : ' target="_blank" rel="noopener noreferrer"';
   return '<span class="soon"><a href="'+esc(href)+'"'+ext+'>Apply for this role</a></span>';
 }
 

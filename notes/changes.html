@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Before &amp; After — NorthKey</title>
+<style>
+:root{color-scheme:light dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,300..400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#F6F3EC; --raised:#EFEBE1; --sunk:#E6E1D3;
+  --ink:#14171A; --ink-2:#4A5158; --ink-3:#646B73;
+  --rule:#DAD4C6; --rule-2:#C4BCA8;
+  --accent:#1C5D4A; --accent-wash:#E0EBE6;
+  --warn:#A8502F;
+  --ff-d:"Newsreader",Georgia,"Times New Roman",serif;
+  --ff-b:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ff-m:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A0C0F; --raised:#101419; --sunk:#171C23;
+    --ink:#ECEFF3; --ink-2:#9AA3AE; --ink-3:#757D88;
+    --rule:#1D232B; --rule-2:#2A323C;
+    --accent:#3EE9A4; --accent-wash:#0B2C21; --warn:#E08E68;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A0C0F; --raised:#101419; --sunk:#171C23;
+  --ink:#ECEFF3; --ink-2:#9AA3AE; --ink-3:#757D88;
+  --rule:#1D232B; --rule-2:#2A323C;
+  --accent:#3EE9A4; --accent-wash:#0B2C21; --warn:#E08E68;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--ff-b);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:54rem;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+
+header{padding:clamp(2.2rem,6vw,3.4rem) 0 1.5rem;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--ff-m);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 .85rem}
+h1{font-family:var(--ff-d);font-optical-sizing:auto;font-weight:400;
+  font-size:clamp(2rem,5vw,2.9rem);line-height:1.05;letter-spacing:-.025em;margin:0 0 .65rem;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.sub{font-family:var(--ff-d);font-weight:300;font-size:1.1rem;color:var(--ink-2);
+  max-width:44ch;margin:0;text-wrap:pretty}
+.livelink{display:inline-block;margin-top:1.2rem;font-family:var(--ff-m);font-size:.75rem;
+  letter-spacing:.06em;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+section{padding:2.5rem 0;border-bottom:1px solid var(--rule)}
+h2{font-family:var(--ff-d);font-optical-sizing:auto;font-weight:400;font-size:1.5rem;
+  letter-spacing:-.02em;margin:0 0 .45rem;text-wrap:balance}
+.note{color:var(--ink-2);margin:0 0 1.5rem;max-width:58ch;text-wrap:pretty;font-size:.94rem}
+.tag{font-family:var(--ff-m);font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);display:block;margin-bottom:.5rem}
+
+/* two-up comparison */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.side{background:var(--paper);padding:1.1rem}
+.side.after{background:var(--raised)}
+.lbl{font-family:var(--ff-m);font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;
+  margin:0 0 .7rem;display:flex;align-items:center;gap:.4rem}
+.lbl.was{color:var(--warn)}
+.lbl.now{color:var(--accent)}
+.dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+/* contrast demo */
+.swatch{padding:.85rem;border-radius:2px;margin-bottom:.6rem}
+.sw-light{background:#F6F3EC}
+.sw-dark{background:#0A0C0F}
+.swatch p{margin:0;font-size:.82rem;line-height:1.5}
+.ratio{font-family:var(--ff-m);font-size:.7rem;letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;display:block;margin-top:.45rem}
+.pass{color:#1C5D4A}.fail{color:#A8502F}
+.sw-dark .pass{color:#3EE9A4}.sw-dark .fail{color:#E08E68}
+
+/* type demo */
+.typ{font-family:var(--ff-d);font-size:2.3rem;font-weight:300;line-height:1.05;
+  letter-spacing:-.025em;margin:0}
+.typ-off{font-optical-sizing:none}
+.typ-on{font-optical-sizing:auto}
+.figs{font-family:var(--ff-m);font-size:.95rem;line-height:1.8;margin:.8rem 0 0}
+.figs.tab{font-variant-numeric:tabular-nums}
+.figs span{color:var(--ink-3)}
+
+/* furniture demo */
+.demo{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--raised)}
+.demo-bar{height:2px;background:var(--sunk);position:relative}
+.demo-bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);width:34%;transition:width .12s linear}
+.demo-body{height:13rem;overflow-y:auto;padding:1.1rem;position:relative;scroll-behavior:smooth}
+.demo-body h3{font-family:var(--ff-d);font-weight:400;font-size:1.15rem;margin:0 0 .4rem;letter-spacing:-.015em}
+.demo-body h3:not(:first-child){margin-top:1.4rem}
+.demo-body p{margin:0;color:var(--ink-2);font-size:.88rem}
+.anch{margin-left:.4em;font-family:var(--ff-m);font-size:.68em;color:var(--ink-3);
+  text-decoration:none;opacity:0;transition:opacity .18s}
+.demo-body h3:hover .anch{opacity:1}
+.anch:hover{color:var(--accent)}
+.totop{position:absolute;right:.75rem;bottom:.75rem;width:2.1rem;height:2.1rem;
+  display:grid;place-items:center;border:1px solid var(--rule-2);border-radius:50%;
+  background:var(--paper);color:var(--ink-2);cursor:pointer;padding:0;
+  opacity:0;visibility:hidden;transform:translateY(.4rem);
+  transition:opacity .25s,transform .25s,visibility .25s,color .2s,border-color .2s}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{border-color:var(--accent);color:var(--accent)}
+.totop svg{width:.85rem;height:.85rem;stroke:currentColor;fill:none;stroke-width:1.7}
+.hint{font-family:var(--ff-m);font-size:.65rem;color:var(--ink-3);margin:.6rem 0 0;letter-spacing:.04em}
+
+/* url table */
+.urls{width:100%;border-collapse:collapse;font-family:var(--ff-m);font-size:.72rem;
+  font-variant-numeric:tabular-nums}
+.urlwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:3px}
+.urls th{text-align:left;padding:.6rem .8rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;font-size:.62rem;color:var(--ink-3);background:var(--raised);
+  border-bottom:1px solid var(--rule);white-space:nowrap}
+.urls td{padding:.6rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top;white-space:nowrap}
+.urls tr:last-child td{border-bottom:0}
+.urls .was{color:var(--warn)}
+.urls .now{color:var(--accent)}
+
+footer{padding:1.5rem 0 3.5rem;font-family:var(--ff-m);font-size:.68rem;
+  color:var(--ink-3);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Deployed · 22 September 2026 · commits 2061e4b + 95fe421</p>
+  <h1>The changes, as <em>working parts</em>.</h1>
+  <p class="sub">Each panel below is the real component built from the same token values now serving on the site — not a screenshot, so you can hover, scroll and toggle your system theme against it.</p>
+  <a class="livelink" href="https://sriramshravanthi.github.io/STS/" target="_blank" rel="noopener">Open the live site →</a>
+</header>
+
+<section>
+  <span class="tag">Change 01 · contrast</span>
+  <h2>Meta text now clears WCAG AA in both themes</h2>
+  <p class="note">This token carries every caption, label, section number and item of meta text on the site. It failed the 4.5:1 floor in both directions. The hue is unchanged — only the lightness moved.</p>
+  <div class="duo">
+    <div class="side">
+      <p class="lbl was"><span class="dot"></span>Before</p>
+      <div class="swatch sw-light"><p style="color:#7C838B">Indicative planning range, not a quote<span class="ratio fail">#7C838B → 3.46:1 · fails AA</span></p></div>
+      <div class="swatch sw-dark"><p style="color:#656D78">Indicative planning range, not a quote<span class="ratio fail">#656D78 → 3.74:1 · fails AA</span></p></div>
+    </div>
+    <div class="side after">
+      <p class="lbl now"><span class="dot"></span>After</p>
+      <div class="swatch sw-light"><p style="color:#646B73">Indicative planning range, not a quote<span class="ratio pass">#646B73 → 4.87:1 · passes AA</span></p></div>
+      <div class="swatch sw-dark"><p style="color:#757D88">Indicative planning range, not a quote<span class="ratio pass">#757D88 → 4.70:1 · passes AA</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Change 02 · typography</span>
+  <h2>Newsreader's optical-size axis, finally switched on</h2>
+  <p class="note">The face ships an <code>opsz</code> axis the page never used, so display type was drawn with text-grade letterforms — thicker strokes, looser spacing than the size wants. The difference is deliberately subtle; it shows most in the thin strokes and the tightness of the joins.</p>
+  <div class="duo">
+    <div class="side">
+      <p class="lbl was"><span class="dot"></span>opsz off</p>
+      <p class="typ typ-off">From AI problem to AI outcome.</p>
+      <p class="figs"><span>Prove</span> 12,400 &nbsp; <span>Produce</span> 48,900 &nbsp; <span>Pass on</span> 7,150</p>
+      <p class="hint">proportional figures — columns drift</p>
+    </div>
+    <div class="side after">
+      <p class="lbl now"><span class="dot"></span>opsz auto + tabular</p>
+      <p class="typ typ-on">From AI problem to AI outcome.</p>
+      <p class="figs tab"><span>Prove</span> 12,400 &nbsp; <span>Produce</span> 48,900 &nbsp; <span>Pass on</span> 7,150</p>
+      <p class="hint">tabular figures — columns align</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">Change 03 · reading furniture</span>
+  <h2>Progress, back-to-top and section permalinks</h2>
+  <p class="note">Scroll inside the panel: the hairline tracks position, the control fades in past the first screen, and hovering a heading reveals its permalink. All three are injected by script, so the 22 duplicated page headers were never touched.</p>
+  <div class="demo">
+    <div class="demo-bar"><i id="bar"></i></div>
+    <div class="demo-body" id="scroller">
+      <h3 id="d-prove">Prove<a class="anch" href="#d-prove" aria-label="Link to this section">#</a></h3>
+      <p>Triage, then a scoped proof that answers one question: does this work on your data, in your constraints? Exit right at the end of the phase.</p>
+      <h3 id="d-produce">Produce<a class="anch" href="#d-produce" aria-label="Link to this section">#</a></h3>
+      <p>Build to production standards — evaluation harness, control pack, monitoring — rather than a demo that has to be rebuilt before it can ship.</p>
+      <h3 id="d-pass">Pass on<a class="anch" href="#d-pass" aria-label="Link to this section">#</a></h3>
+      <p>Hand over the repository, the runbook and the team that can operate it. The accelerators ship into your repo with no separate fee.</p>
+      <h3 id="d-exit">Exit rights<a class="anch" href="#d-exit" aria-label="Link to this section">#</a></h3>
+      <p>Each of the eight phases ends at a decision point where stopping is a supported outcome, not a penalty. Keep scrolling — the control appears.</p>
+      <h3 id="d-ip">IP ownership<a class="anch" href="#d-ip" aria-label="Link to this section">#</a></h3>
+      <p>All work product is yours on delivery. No software resale margin sits between the recommendation and the recommendation's payoff.</p>
+    </div>
+    <button class="totop" id="totop" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <p class="hint">Hover a heading to reveal its <code>#</code> permalink · on the real site every h2 and h3 inside &lt;main&gt; gets one</p>
+</section>
+
+<section>
+  <span class="tag">Change 04 · the bug that mattered most</span>
+  <h2>Canonical URLs pointed at somebody else's site</h2>
+  <p class="note">The resolver rewrote every page's canonical to <code>origin + '/'</code>. On GitHub Pages, which serves a project from <code>/&lt;repo&gt;/</code>, that dropped the path segment — so all 22 pages declared the account root as their canonical, and every share card referenced a file that does not exist.</p>
+  <div class="urlwrap">
+    <table class="urls">
+      <thead><tr><th>Page</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><td>index</td><td class="was">…github.io/</td><td class="now">…github.io/STS/</td></tr>
+        <tr><td>about</td><td class="was">…github.io/</td><td class="now">…github.io/STS/about.html</td></tr>
+        <tr><td>pricing</td><td class="was">…github.io/</td><td class="now">…github.io/STS/pricing.html</td></tr>
+        <tr><td>og:image</td><td class="was">https://[DOMAIN]/assets/og.svg</td><td class="now">…github.io/STS/assets/og.svg</td></tr>
+        <tr><td>JSON-LD @id</td><td class="was">…github.io/#org</td><td class="now">…github.io/STS/#org</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="hint">Resolved from location.pathname, so the same code is correct at /STS/ and at an apex domain with no config change</p>
+</section>
+
+<footer>
+  Verified in jsdom across 22 pages and 5 theme explorations · contrast ratios computed, not estimated<br>
+  Components above are rebuilt from the deployed token values — the site itself is at sriramshravanthi.github.io/STS/
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var sc = document.getElementById('scroller');
+  var bar = document.getElementById('bar');
+  var top = document.getElementById('totop');
+  if (!sc || !bar || !top) return;
+
+  function paint(){
+    var max = sc.scrollHeight - sc.clientHeight;
+    var pct = max > 0 ? (sc.scrollTop / max) * 100 : 0;
+    bar.style.width = Math.max(4, pct).toFixed(1) + '%';
+    top.classList.toggle('on', sc.scrollTop > sc.clientHeight * 0.4);
+  }
+  sc.addEventListener('scroll', paint, { passive:true });
+  top.addEventListener('click', function(){ sc.scrollTo({ top:0 }); });
+  paint();
+})();
+</script>
+</body>
+</html>

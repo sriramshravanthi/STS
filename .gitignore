@@ -1,2 +1,9 @@
 Screenshot *.png
 *.tmp
+
+# Internal working notes. GitHub Pages serves everything in this repo,
+# so these stay local unless you deliberately decide to publish them.
+# `notes/*` rather than `notes/`, or git never descends far enough for the
+# negation below to match.
+notes/*
+!notes/changes.html

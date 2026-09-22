@@ -66,10 +66,18 @@ an element absent from the current page throws and silently kills every feature 
 on every page. Guard every entry point (`var x = $('#id'); if (x) …`), and re-check *all* pages
 after touching it, not just the one you changed.
 
+A second, separate top-level IIFE sits at the end of the file — the reading furniture (progress
+hairline, back-to-top, section permalinks). It is outside the main one on purpose: out there it
+can neither be killed by the code above it nor kill it. A new self-contained feature that needs
+nothing from the main IIFE's scope belongs in its own top-level IIFE for the same reason.
+
 **`assets/site.css` is ordered layers.** Position in the file is load-bearing: design tokens →
 base components → v2 components → vibrant palette → vibrant layer → mega menu → page shell →
-homepage hero → ledger layer. Add a new labelled block at the end rather than editing an early
-one, unless you've checked what the later layers do with the same selector.
+homepage hero → ledger layer → refinement layer. Add a new labelled block at the end rather than
+editing an early one, unless you've checked what the later layers do with the same selector. The
+refinement layer is currently last and self-contained: AA-corrected `--ink-3` restated across all
+four theme selectors, optical sizing and tabular figures, the reading-furniture styles, and the
+print stylesheet. Deleting that block returns the site to its previous appearance exactly.
 
 **Theming has three states**, and every colour must be defined for all three or the toggle breaks
 in one direction:
@@ -81,9 +89,18 @@ in one direction:
 **Placeholders stay literal.** Every company-specific fact is a bracketed placeholder —
 `[DOMAIN]`, `[COMPANY NAME]`, `[BUSINESS EMAIL]`, `[PHONE]`, `[BUSINESS ADDRESS]`,
 `[FOUNDER NAME]`, `[STATE OF INCORPORATION]`. `assets/boot.js` resolves `[DOMAIN]` at runtime and
-strips any JSON-LD node still holding a placeholder, so canonical, `og:url` and the schema graph
-stay valid in production without inventing facts. Placeholders shown in copy are wrapped in
-`<span class="ph">`. Do not fill one in with a made-up value.
+strips any JSON-LD node still holding a placeholder, so canonical, `og:url`, `og:image` and the
+schema graph stay valid in production without inventing facts. It resolves against the directory
+the page is served from rather than `location.origin`, because Pages serves this repo from `/STS/`
+and the origin is not the site root there.
+
+`sitemap.xml` and `robots.txt` are the exception: no script reaches a static file, so the
+`[DOMAIN]` in them does not self-resolve, and the sitemap stays invalid to crawlers until the
+domain is decided and substituted. `llms.txt` avoids the problem entirely by using relative links
+throughout — the reason it has no absolute URL in it.
+
+Placeholders shown in copy are wrapped in `<span class="ph">`. Do not fill one in with a made-up
+value.
 
 ## Editorial rules the site enforces on itself
 
@@ -107,4 +124,6 @@ rather than showing filler. That behaviour is the point of them, not an oversigh
   revenue model, industries. Page copy derives from this.
 - `COMPETITOR-RESEARCH.md` — positioning analysis only. No competitor copy, design or code was
   taken; keep it that way.
+- `DECISIONS.md` — why the site is built this way: the choices behind the conventions above,
+  what each one forecloses, and what is still open.
 - `CLAUDE.md` — working notes for Claude Code sessions on this repo.

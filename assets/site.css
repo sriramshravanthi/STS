@@ -1130,3 +1130,83 @@ body:not(.is-home) .sec-num{display:none}
   .pstep p{grid-column:2;grid-row:2}
   .pstep .exit{grid-column:2;grid-row:3;margin-top:.9rem}
 }
+
+/* ============================================================
+   REFINEMENT LAYER — typography, contrast, reading furniture
+   Appended last on purpose: it is meant to win over the layers
+   above it. Self-contained, so deleting this block returns the
+   site to its previous appearance exactly.
+   ============================================================ */
+
+/* --- contrast: --ink-3 carries meta text, captions and labels, and at its
+       previous value it measured 3.46:1 on paper and 3.74:1 on dark ground.
+       Both sit under the 4.5:1 WCAG AA floor for body-sized text. These
+       values measure 4.85:1 and 4.66:1 and are otherwise the same hue. --- */
+:root{ --ink-3:#646B73; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --ink-3:#757D88; }
+}
+:root[data-theme="dark"]{ --ink-3:#757D88; }
+
+/* --- Newsreader carries an optical-size axis the page was not using, so
+       display type was being rendered at text-grade contrast. --- */
+.serif,h1,h2,h3,h4,.sec-title,.dcard h3,.panel-hd h3,.q,.res-score .big{
+  font-optical-sizing:auto;
+}
+/* ragged headlines and orphaned last words, handled by the browser where supported */
+h1,h2,h3,.sec-title,.hero h1{text-wrap:balance}
+.lede,.phead p,.dcard p,.pstep p{text-wrap:pretty}
+
+/* --- figures: prices, scores, phase numbers and durations should align in a
+       column and not shift as they animate. --- */
+.mono,.sec-num,.pstep .pn,.res-score .big,.dcard .n,
+table td,table th,.price,.qmeta{
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+}
+
+/* --- reading progress: a hairline the width of the document, injected by
+       site.js so no page markup changes. --- */
+.nk-prog{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:10000;
+  background:var(--accent);opacity:.9;pointer-events:none;
+  transition:width .08s linear;
+}
+@media (prefers-reduced-motion:reduce){ .nk-prog{transition:none} }
+
+/* --- back to top --- */
+.nk-top{
+  position:fixed;right:clamp(1rem,3vw,2.2rem);bottom:clamp(1rem,3vw,2.2rem);
+  z-index:9998;width:2.75rem;height:2.75rem;display:grid;place-items:center;
+  border:1px solid var(--rule-2);border-radius:50%;background:var(--bg-2);
+  color:var(--ink-2);cursor:pointer;padding:0;
+  opacity:0;visibility:hidden;transform:translateY(.5rem);
+  transition:opacity .25s var(--ease),transform .25s var(--ease),
+             visibility .25s,border-color .2s,color .2s;
+}
+.nk-top.on{opacity:1;visibility:visible;transform:none}
+.nk-top:hover{border-color:var(--accent);color:var(--accent)}
+.nk-top svg{width:1rem;height:1rem;stroke:currentColor;fill:none;stroke-width:1.6}
+@media print{ .nk-top,.nk-prog{display:none} }
+
+/* --- section permalinks: a consulting site is a reference document, and
+       sections people cite need addresses. Hidden until hover or focus. --- */
+.nk-anchor{
+  margin-left:.45em;font-family:var(--ff-mono);font-size:.7em;
+  color:var(--ink-3);text-decoration:none;opacity:0;
+  transition:opacity .18s;vertical-align:middle;
+}
+h2:hover .nk-anchor,h3:hover .nk-anchor,.nk-anchor:focus-visible{opacity:1}
+.nk-anchor:hover{color:var(--accent)}
+@media (hover:none){ .nk-anchor{display:none} }
+@media print{ .nk-anchor{display:none} }
+
+/* --- print: the pricing table and the method are the two things people
+       actually print or export to send internally. --- */
+@media print{
+  body::before{display:none}                 /* paper grain wastes toner */
+  .hdr,.mnav,.mega-scrim,.pcta,.rel{display:none}
+  body{background:#fff;color:#000;font-size:11pt}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+  .rv{opacity:1 !important;transform:none !important}
+}

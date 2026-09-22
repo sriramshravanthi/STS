@@ -1220,3 +1220,95 @@ jobsInit();
     b.focus();
   });
 })();
+
+/* ============================================================
+   READING FURNITURE — progress, back-to-top, section permalinks
+   Deliberately a separate top-level IIFE rather than another block inside
+   the main one. The main IIFE has no try/catch, so anything added inside it
+   can kill every feature below it; out here this block can neither be killed
+   by the code above nor kill it. Every entry point is still guarded.
+   ============================================================ */
+(function(){
+  "use strict";
+  var doc = document, body = doc.body;
+  if (!body) return;
+
+  var reduced = false;
+  try { reduced = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+
+  /* ---------- reading progress ---------- */
+  var prog = doc.createElement('div');
+  prog.className = 'nk-prog';
+  prog.setAttribute('role','presentation');
+  body.appendChild(prog);
+
+  /* ---------- back to top ---------- */
+  var top = doc.createElement('button');
+  top.className = 'nk-top';
+  top.type = 'button';
+  top.setAttribute('aria-label','Back to top');
+  top.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+                  '<path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  top.addEventListener('click', function(){
+    try { scrollTo({ top:0, behavior: reduced ? 'auto' : 'smooth' }); }
+    catch(e){ scrollTo(0,0); }
+    var skip = doc.querySelector('.skip') || doc.querySelector('h1');
+    if (skip && skip.focus) skip.focus({ preventScroll:true });
+  });
+  body.appendChild(top);
+
+  var ticking = false;
+  function paint(){
+    ticking = false;
+    var h = doc.documentElement;
+    var max = (h.scrollHeight - h.clientHeight) || 1;
+    var y = h.scrollTop || body.scrollTop || 0;
+    var pct = Math.min(100, Math.max(0, (y / max) * 100));
+    prog.style.width = pct.toFixed(2) + '%';
+    if (y > h.clientHeight * 0.9) top.classList.add('on');
+    else top.classList.remove('on');
+  }
+  addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+  }, { passive:true });
+  addEventListener('resize', paint, { passive:true });
+  paint();
+
+  /* ---------- section permalinks ----------
+     Only inside <main>, only for headings that sit in a section we can
+     address. Headings that already carry an id keep it; the rest get one
+     derived from their text, de-duplicated. Never touches the nav or footer. */
+  var main = doc.querySelector('main') || doc.getElementById('main');
+  if (!main) return;
+  var used = {};
+  Array.prototype.forEach.call(doc.querySelectorAll('[id]'), function(el){ used[el.id] = true; });
+
+  function slug(s){
+    return String(s).toLowerCase()
+      .replace(/[\u2018\u2019\u201c\u201d]/g,'')
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/^-+|-+$/g,'')
+      .slice(0,60);
+  }
+
+  Array.prototype.forEach.call(main.querySelectorAll('h2,h3'), function(h){
+    if (h.querySelector('.nk-anchor')) return;
+    var host = h.closest('section,article,div[id]') || h;
+    var id = host.id || h.id;
+    if (!id) {
+      var base = slug(h.textContent);
+      if (!base) return;
+      id = base;
+      var n = 2;
+      while (used[id]) { id = base + '-' + n++; }
+      h.id = id;
+    }
+    used[id] = true;
+    var a = doc.createElement('a');
+    a.className = 'nk-anchor';
+    a.href = '#' + id;
+    a.textContent = '#';
+    a.setAttribute('aria-label','Link to this section');
+    h.appendChild(a);
+  });
+})();

@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://[DOMAIN]/sitemap.xml
+
+# Machine-readable summary for AI crawlers and assistants.
+# Note: the Sitemap line above still carries a literal [DOMAIN] placeholder and
+# will not resolve until the production domain is decided and substituted.

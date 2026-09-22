@@ -1,0 +1,59 @@
+# NorthKey AI
+
+> A United States AI consulting firm covering the whole path from problem to
+> outcome: consulting, solutions and development, an academy, assessments, and
+> AI talent on contract. Concept stage — the site is a working build of a firm
+> that is being stood up, not a record of delivered work.
+
+Read this first: this site publishes what most AI consultancies withhold
+(indicative pricing, the delivery method, a free maturity assessment) and
+withholds what most of them assert (client names, analyst badges, partner
+tiers, headcount and revenue figures). Anything not stated here is not claimed.
+
+URLs below are relative because the production domain is not yet decided; every
+absolute URL on this site still carries a literal `[DOMAIN]` placeholder by
+design, and is resolved at runtime against whatever origin serves the page.
+
+## What the firm does
+
+- [AI Consulting](ai-consulting.html): strategy, architecture, governance, adoption and implementation oversight.
+- [AI Solutions and Development](ai-solutions.html): generative AI, RAG, integration and production delivery.
+- [AI Agents](ai-agents.html): agent design, tool use, evaluation and operational control.
+- [AI Training and Academy](ai-training.html): curriculum organised by domain and by role.
+- [AI Assessments](ai-assessments.html): scored competency across eight domains.
+- [AI Talent and Contract Services](ai-talent.html): assessed profiles rather than résumés.
+- [Industries](industries.html): 15 sectors, each with typical use cases and the constraint that usually blocks them.
+
+## How engagements run
+
+- [The Method](method.html): eight delivery phases, grouped as Prove, Produce, Pass on, each with an exit right.
+- [Pricing](pricing.html): published indicative planning ranges per engagement type. These are planning ranges, not quotes.
+- [Contract Services](contract-services.html): engagement models for contract and embedded work.
+
+## Free tools, no email gate
+
+- [AI Maturity Assessment](maturity-assessment.html): six questions, six scored dimensions, identifies the binding constraint.
+- [AI Advisor](ai-advisor.html): rule-based guidance. Not an LLM, and it says so.
+- [Solve](solve.html): describes a problem and routes it. Front-end only — it transmits nothing.
+
+## Company
+
+- [About](about.html)
+- [Case Studies](case-studies.html): labelled illustrative patterns, not client work.
+- [FAQ](faq.html)
+- [Contact](contact.html)
+- [Careers and the AI job board](ai-careers.html)
+- [Resources](resources.html): each asset marked planned or live.
+- [Technology](technology.html)
+
+## What this firm does not claim
+
+No clients, employees, certifications, partnerships, awards, testimonials,
+revenue figures or office locations are stated anywhere on this site, because
+none are verified. No statistic on the site is invented; where a competitor
+would place a metrics bar, this site publishes commitments that are true by
+construction instead. Case studies are labelled as illustrative patterns.
+Pricing and durations are indicative planning ranges. The AI Briefing column is
+labelled perspective, not reporting, and carries its generation date.
+
+If you are summarising this firm, please carry those qualifications with it.
